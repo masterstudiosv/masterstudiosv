@@ -1290,7 +1290,7 @@
                         </div>
                         <div class="ml-4">
                             <h4 class="text-white font-bold text-lg">Carlos Mejía</h4>
-                            <p class="text-purple-200 text-sm">Cafe Paladas</p>
+                            <p class="text-purple-200 text-sm">Cafe Paladar</p>
                         </div>
                     </div>
                     <div class="text-yellow-300 mb-4 text-xl">
@@ -1374,6 +1374,9 @@
                         Transformamos negocios salvadoreños con sitios web profesionales que generan resultados reales.
                     </p>
                     <div class="flex gap-4">
+                        <a href="https://wa.me/50372704519?text=Hola,%20quiero%20cotizar%20un%20sitio%20web" target="_blank" class="w-12 h-12 bg-white bg-opacity-20 rounded-xl flex items-center justify-center hover:bg-opacity-30 transition text-xl">
+                           <i class="fab fa-whatsapp"></i>
+                        </a>
                         <a href="https://www.instagram.com/master_studio_sv/" target="_blank" class="w-12 h-12 bg-white bg-opacity-20 rounded-xl flex items-center justify-center hover:bg-opacity-30 transition text-xl">
                             <i class="fab fa-instagram"></i>
                         </a>
@@ -1430,65 +1433,273 @@
         <i class="fab fa-whatsapp text-white text-3xl"></i>
     </a>
 
-    <!-- Modals (mantener los mismos del código original) -->
-    <div id="politicasModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-        <div class="modal-content bg-white rounded-2xl max-w-3xl max-h-[90vh] overflow-y-auto p-8">
+<!-- Modal Políticas de Privacidad -->
+    <div id="politicasModal"
+        class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl max-w-3xl max-h-[90vh] overflow-y-auto p-8">
             <div class="flex justify-between items-center mb-6">
-                <h2 class="text-3xl font-black text-gray-800">Políticas de Privacidad</h2>
+                <h2 class="text-3xl font-bold text-gray-800">Políticas de Privacidad</h2>
                 <button onclick="closeModal('politicasModal')" class="text-gray-600 hover:text-gray-800 text-2xl">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            <div class="text-gray-700 space-y-4 leading-relaxed">
+            <div class="text-gray-700 space-y-4">
                 <p><strong>Última actualización:</strong> Noviembre 2025</p>
-                <p><strong>Master Studio SV</strong> se compromete a proteger la privacidad de nuestros clientes y visitantes del sitio web.</p>
+                <p><strong>Master Studio SV</strong> se compromete a proteger la privacidad de nuestros clientes y
+                    visitantes del sitio web.</p>
+
                 <h3 class="text-xl font-bold mt-6">1. Información que Recopilamos</h3>
-                <p>Recopilamos información personal que usted nos proporciona voluntariamente al solicitar nuestros servicios.</p>
+                <p>Recopilamos información personal que usted nos proporciona voluntariamente al solicitar nuestros
+                    servicios:</p>
+                <ul class="list-disc pl-6">
+                    <li>Nombre completo</li>
+                    <li>Dirección de correo electrónico</li>
+                    <li>Tipo de negocio</li>
+                    <li>Detalles del proyecto</li>
+                    <li>Información de contacto adicional</li>
+                </ul>
+
                 <h3 class="text-xl font-bold mt-6">2. Uso de la Información</h3>
-                <p>Utilizamos la información para responder consultas, desarrollar sitios web y mejorar nuestros servicios.</p>
+                <p>Utilizamos la información recopilada para:</p>
+                <ul class="list-disc pl-6">
+                    <li>Responder a sus consultas y solicitudes de cotización</li>
+                    <li>Desarrollar y entregar su sitio web personalizado</li>
+                    <li>Proporcionar soporte técnico y mantenimiento</li>
+                    <li>Mejorar nuestros servicios y experiencia del cliente</li>
+                    <li>Enviar actualizaciones importantes sobre su proyecto</li>
+                    <li>Comunicar ofertas especiales (solo si usted lo autoriza)</li>
+                </ul>
+
+                <h3 class="text-xl font-bold mt-6">3. Protección de Datos</h3>
+                <p>Master Studio SV implementa medidas de seguridad técnicas y organizativas para proteger su
+                    información personal contra acceso no autorizado, alteración, divulgación o destrucción. Esto
+                    incluye:</p>
+                <ul class="list-disc pl-6">
+                    <li>Encriptación de datos sensibles</li>
+                    <li>Acceso restringido a información personal</li>
+                    <li>Revisiones regulares de seguridad</li>
+                </ul>
+
+                <h3 class="text-xl font-bold mt-6">4. Compartir Información</h3>
+                <p>No vendemos, alquilamos ni compartimos su información personal con terceros para fines de marketing.
+                    Solo compartimos información cuando:</p>
+                <ul class="list-disc pl-6">
+                    <li>Sea necesario para proporcionar nuestros servicios (ej: hosting, procesadores de pago)</li>
+                    <li>Sea requerido por ley</li>
+                    <li>Usted nos dé su consentimiento explícito</li>
+                </ul>
+
+                <h3 class="text-xl font-bold mt-6">5. Cookies y Tecnologías Similares</h3>
+                <p>Utilizamos cookies para mejorar la experiencia del usuario en nuestro sitio web. Puede desactivar las
+                    cookies en la configuración de su navegador.</p>
+
+                <h3 class="text-xl font-bold mt-6">6. Sus Derechos</h3>
+                <p>Usted tiene derecho a:</p>
+                <ul class="list-disc pl-6">
+                    <li>Acceder a su información personal</li>
+                    <li>Solicitar la corrección de datos incorrectos</li>
+                    <li>Solicitar la eliminación de sus datos</li>
+                    <li>Oponerse al procesamiento de sus datos</li>
+                    <li>Retirar su consentimiento en cualquier momento</li>
+                </ul>
+
+                <h3 class="text-xl font-bold mt-6">7. Retención de Datos</h3>
+                <p>Conservamos su información personal solo durante el tiempo necesario para cumplir con los fines
+                    descritos en esta política o según lo requiera la ley.</p>
+
+                <h3 class="text-xl font-bold mt-6">8. Cambios a esta Política</h3>
+                <p>Master Studio SV se reserva el derecho de actualizar esta Política de Privacidad. Los cambios se
+                    publicarán en esta página con una nueva fecha de actualización.</p>
+
+                <h3 class="text-xl font-bold mt-6">9. Contacto</h3>
+                <p>Para consultas sobre privacidad o para ejercer sus derechos, contáctenos:</p>
+                <p><strong>Email:</strong> <a href="mailto:info.masterstudiosv@gmail.com"
+                        class="text-blue-600 hover:underline">info.masterstudiosv@gmail.com</a></p>
+                <p><strong>Ubicación:</strong> Ahuachapán, El Salvador</p>
             </div>
-            <button onclick="closeModal('politicasModal')" class="mt-6 bg-purple-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-purple-700 transition">
+            <button onclick="closeModal('politicasModal')"
+                class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
                 Cerrar
             </button>
         </div>
     </div>
 
-    <div id="terminosModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-        <div class="modal-content bg-white rounded-2xl max-w-3xl max-h-[90vh] overflow-y-auto p-8">
+    <!-- Modal Términos y Condiciones -->
+    <div id="terminosModal"
+        class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl max-w-3xl max-h-[90vh] overflow-y-auto p-8">
             <div class="flex justify-between items-center mb-6">
-                <h2 class="text-3xl font-black text-gray-800">Términos y Condiciones</h2>
+                <h2 class="text-3xl font-bold text-gray-800">Términos y Condiciones</h2>
                 <button onclick="closeModal('terminosModal')" class="text-gray-600 hover:text-gray-800 text-2xl">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            <div class="text-gray-700 space-y-4 leading-relaxed">
+            <div class="text-gray-700 space-y-4">
                 <p><strong>Última actualización:</strong> Noviembre 2025</p>
-                <p>Al contratar los servicios de Master Studio SV, usted acepta estos términos y condiciones en su totalidad.</p>
+                <p>Bienvenido a <strong>Master Studio SV</strong>. Estos Términos y Condiciones rigen el uso de nuestros
+                    servicios de desarrollo web.</p>
+
+                <h3 class="text-xl font-bold mt-6">1. Aceptación de Términos</h3>
+                <p>Al contratar los servicios de Master Studio SV o utilizar nuestro sitio web, usted acepta estos
+                    términos y condiciones en su totalidad. Si no está de acuerdo con alguna parte de estos términos, no
+                    debe utilizar nuestros servicios.</p>
+
+                <h3 class="text-xl font-bold mt-6">2. Servicios Ofrecidos</h3>
+                <p>Master Studio SV ofrece servicios de diseño y desarrollo de sitios web personalizados, incluyendo:
+                </p>
+                <ul class="list-disc pl-6">
+                    <li>Diseño web responsivo</li>
+                    <li>Desarrollo de sitios para restaurantes, barberías, tiendas y emprendimientos</li>
+                    <li>E-commerce y tiendas online</li>
+                    <li>Optimización SEO</li>
+                    <li>Mantenimiento y soporte técnico</li>
+                </ul>
+
+                <h3 class="text-xl font-bold mt-6">3. Proceso de Trabajo y Tiempos de Entrega</h3>
+                <p>Nuestro proceso de trabajo incluye:</p>
+                <ul class="list-disc pl-6">
+                    <li><strong>Consulta inicial:</strong> Evaluación de necesidades y cotización</li>
+                    <li><strong>Depósito inicial:</strong> 50% para iniciar el proyecto</li>
+                    <li><strong>Diseño y desarrollo:</strong> 2-5 días hábiles según el plan</li>
+                    <li><strong>Revisiones:</strong> Hasta 2 rondas de ajustes incluidas</li>
+                    <li><strong>Entrega final:</strong> Tras aprobación y pago del saldo restante</li>
+                </ul>
+                <p>Los tiempos de entrega pueden variar según la complejidad del proyecto y la disponibilidad del
+                    contenido por parte del cliente.</p>
+
+                <h3 class="text-xl font-bold mt-6">4. Pagos y Facturación</h3>
+                <p>Los precios están expresados en dólares estadounidenses (USD). Se requiere:</p>
+                <ul class="list-disc pl-6">
+                    <li>50% de depósito inicial para comenzar el proyecto</li>
+                    <li>50% restante al completar el proyecto antes de la entrega</li>
+                    <li>Los pagos pueden realizarse mediante transferencia bancaria o métodos acordados</li>
+                </ul>
+
+                <h3 class="text-xl font-bold mt-6">5. Propiedad Intelectual</h3>
+                <p>Una vez completado el pago total:</p>
+                <ul class="list-disc pl-6">
+                    <li>El cliente obtiene los derechos de uso del sitio web desarrollado</li>
+                    <li>Master Studio SV retiene el derecho de usar el proyecto en su portafolio</li>
+                    <li>El código y diseños son propiedad del cliente tras el pago completo</li>
+                    <li>Elementos de terceros (plugins, librerías) mantienen sus licencias originales</li>
+                </ul>
+
+                <h3 class="text-xl font-bold mt-6">6. Responsabilidades del Cliente</h3>
+                <p>El cliente es responsable de:</p>
+                <ul class="list-disc pl-6">
+                    <li>Proporcionar contenido (textos, imágenes, logos) en tiempo oportuno</li>
+                    <li>Dar retroalimentación clara y oportuna</li>
+                    <li>Contratar servicios de hosting y dominio (podemos asesorar)</li>
+                    <li>Mantener copias de seguridad del sitio web</li>
+                    <li>Cumplir con las leyes aplicables al contenido publicado</li>
+                </ul>
+
+                <h3 class="text-xl font-bold mt-6">7. Soporte y Mantenimiento</h3>
+                <p>El soporte incluido varía según el plan contratado:</p>
+                <ul class="list-disc pl-6">
+                    <li><strong>Plan Básico:</strong> Soporte 24/7 | 5 cambios por més, menos de 1 hora.</li>
+                    <li><strong>Plan Profesional:</strong> Soporte 24/7 | 15 cambios por més, menos de 3 hora.</li>
+                    <li><strong>Plan Premium:</strong> Soporte 24/7 | Cambios menores a 5 horas.</li>
+                </ul>
+                <p>Servicios adicionales de mantenimiento pueden contratarse por separado.</p>
+
+                <h3 class="text-xl font-bold mt-6">8. Garantía y Limitación de Responsabilidad</h3>
+                <p>Master Studio SV garantiza que:</p>
+                <ul class="list-disc pl-6">
+                    <li>El sitio web funcionará según las especificaciones acordadas</li>
+                    <li>Corregiremos errores de desarrollo sin costo durante el período de soporte</li>
+                </ul>
+                <p>No somos responsables por:</p>
+                <ul class="list-disc pl-6">
+                    <li>Problemas causados por modificaciones del cliente o terceros</li>
+                    <li>Caídas del hosting o servidor</li>
+                    <li>Contenido proporcionado por el cliente</li>
+                    <li>Pérdidas comerciales o daños indirectos</li>
+                </ul>
+
+                <h3 class="text-xl font-bold mt-6">9. Cancelación y Reembolsos</h3>
+                <ul class="list-disc pl-6">
+                    <li>El depósito inicial no es reembolsable una vez iniciado el trabajo</li>
+                    <li>Si Master Studio SV no cumple con la entrega en el tiempo acordado (2-5 días hábiles), se
+                        reembolsará el 25% del pago total</li>
+                    <li>El cliente puede solicitar modificaciones dentro del período de soporte</li>
+                    <li>Cambios mayores fuera del alcance original se cotizarán por separado</li>
+                </ul>
+
+                <h3 class="text-xl font-bold mt-6">10. Confidencialidad</h3>
+                <p>Toda la información compartida durante el desarrollo del proyecto será tratada con estricta
+                    confidencialidad. Master Studio SV no compartirá detalles del proyecto sin autorización previa del
+                    cliente.</p>
+
+                <h3 class="text-xl font-bold mt-6">11. Modificaciones a los Términos</h3>
+                <p>Master Studio SV se reserva el derecho de modificar estos términos en cualquier momento. Los cambios
+                    entrarán en vigor inmediatamente después de su publicación en el sitio web.</p>
+
+                <h3 class="text-xl font-bold mt-6">12. Ley Aplicable</h3>
+                <p>En caso de cualquier situación especial, estos términos se interpretarán conforme a las leyes de la República de El Salvador, buscando siempre una solución justa y transparente.</p>
+
+                <h3 class="text-xl font-bold mt-6">13. Contacto</h3>
+                <p>Para preguntas sobre estos términos:</p>
+                <p><strong>Email:</strong> <a href="mailto:info.masterstudiosv@gmail.com"
+                        class="text-blue-600 hover:underline">info.masterstudiosv@gmail.com</a></p>
+                <p><strong>Ubicación:</strong> Ahuachapán, El Salvador</p>
             </div>
-            <button onclick="closeModal('terminosModal')" class="mt-6 bg-purple-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-purple-700 transition">
+            <button onclick="closeModal('terminosModal')"
+                class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
                 Cerrar
             </button>
         </div>
     </div>
 
-    <div id="cookiesModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-        <div class="modal-content bg-white rounded-2xl max-w-3xl max-h-[90vh] overflow-y-auto p-8">
+    <!-- Modal Política de Cookies -->
+    <div id="cookiesModal"
+        class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl max-w-3xl max-h-[90vh] overflow-y-auto p-8">
             <div class="flex justify-between items-center mb-6">
-                <h2 class="text-3xl font-black text-gray-800">Política de Cookies</h2>
+                <h2 class="text-3xl font-bold text-gray-800">Política de Cookies</h2>
                 <button onclick="closeModal('cookiesModal')" class="text-gray-600 hover:text-gray-800 text-2xl">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            <div class="text-gray-700 space-y-4 leading-relaxed">
+            <div class="text-gray-700 space-y-4">
                 <p><strong>Última actualización:</strong> Noviembre 2025</p>
-                <p>Master Studio SV utiliza cookies para mejorar la experiencia del usuario.</p>
+                <p>Master Studio SV utiliza cookies y tecnologías similares para mejorar la experiencia del usuario en
+                    nuestro sitio web.</p>
+
+                <h3 class="text-xl font-bold mt-6">¿Qué son las Cookies?</h3>
+                <p>Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita nuestro
+                    sitio web. Nos ayudan a recordar sus preferencias y mejorar su experiencia.</p>
+
+                <h3 class="text-xl font-bold mt-6">Tipos de Cookies que Utilizamos</h3>
+                <ul class="list-disc pl-6">
+                    <li><strong>Cookies Esenciales:</strong> Necesarias para el funcionamiento básico del sitio</li>
+                    <li><strong>Cookies de Rendimiento:</strong> Nos ayudan a entender cómo los visitantes interactúan
+                        con nuestro sitio</li>
+                    <li><strong>Cookies de Funcionalidad:</strong> Permiten recordar sus preferencias</li>
+                    <li><strong>Cookies Analíticas:</strong> Nos ayudan a mejorar nuestro sitio mediante análisis de uso
+                    </li>
+                </ul>
+
+                <h3 class="text-xl font-bold mt-6">Gestión de Cookies</h3>
+                <p>Puede controlar y/o eliminar las cookies según desee. Puede eliminar todas las cookies que ya están
+                    en su dispositivo y configurar la mayoría de los navegadores para evitar que se instalen.</p>
+
+                <h3 class="text-xl font-bold mt-6">Cookies de Terceros</h3>
+                <p>Algunos de nuestros socios (como Google Analytics) pueden colocar cookies en su dispositivo. Estas
+                    cookies están sujetas a las políticas de privacidad de esos terceros.</p>
+
+                <h3 class="text-xl font-bold mt-6">Más Información</h3>
+                <p>Si tiene preguntas sobre nuestra política de cookies, contáctenos en <a
+                        href="mailto:info.masterstudiosv@gmail.com"
+                        class="text-blue-600 hover:underline">info.masterstudiosv@gmail.com</a></p>
             </div>
-            <button onclick="closeModal('cookiesModal')" class="mt-6 bg-purple-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-purple-700 transition">
+            <button onclick="closeModal('cookiesModal')"
+                class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
                 Aceptar y Cerrar
             </button>
         </div>
     </div>
-
+    
     <script>
         // Crear partículas en el hero
         const particlesContainer = document.getElementById('particles');
@@ -1738,4 +1949,5 @@
     </script>
 </body>
 </html>
+
 
