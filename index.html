@@ -1946,9 +1946,45 @@
             el.style.transition = 'all 0.6s ease';
             observer.observe(el);
         });
+        // Event listeners for modal links
+        document.addEventListener('DOMContentLoaded', function () {
+            // Políticas de Privacidad
+            document.querySelectorAll('a[href="#politicas"]').forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    openModal('politicasModal');
+                });
+            });
+
+            // Términos y Condiciones
+            document.querySelectorAll('a[href="#terminos"]').forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    openModal('terminosModal');
+                });
+            });
+
+            // Política de Cookies
+            document.querySelectorAll('a[href="#cookies"]').forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    openModal('cookiesModal');
+                });
+            });
+
+            // Cerrar modales al hacer clic fuera
+            ['politicasModal', 'terminosModal', 'cookiesModal'].forEach(modalId => {
+                document.getElementById(modalId).addEventListener('click', function (e) {
+                    if (e.target === this) {
+                        closeModal(modalId);
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
+
 
 
 
