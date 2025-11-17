@@ -1803,38 +1803,6 @@
             }, 500);
         }
 
-        // Event listeners for modals
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('a[href="#politicas"]').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    openModal('politicasModal');
-                });
-            });
-
-            document.querySelectorAll('a[href="#terminos"]').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    openModal('terminosModal');
-                });
-            });
-
-            document.querySelectorAll('a[href="#cookies"]').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    openModal('cookiesModal');
-                });
-            });
-
-            ['politicasModal', 'terminosModal', 'cookiesModal'].forEach(modalId => {
-                document.getElementById(modalId).addEventListener('click', function(e) {
-                    if (e.target === this) {
-                        closeModal(modalId);
-                    }
-                });
-            });
-        });
-
         // Contact Form Handler
         const form = document.getElementById('contactForm');
         const loadingMessage = document.getElementById('loadingMessage');
@@ -1907,24 +1875,6 @@
             });
         }
 
-        // Scroll to Top functionality
-        const scrollTopBtn = document.getElementById('scrollTop');
-
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollTopBtn.classList.add('show');
-            } else {
-                scrollTopBtn.classList.remove('show');
-            }
-        });
-
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
         // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
@@ -1946,6 +1896,7 @@
             el.style.transition = 'all 0.6s ease';
             observer.observe(el);
         });
+
         // Event listeners for modal links
         document.addEventListener('DOMContentLoaded', function () {
             // Políticas de Privacidad
@@ -1984,6 +1935,7 @@
     </script>
 </body>
 </html>
+
 
 
 
