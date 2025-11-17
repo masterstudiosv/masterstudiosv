@@ -20,6 +20,10 @@
         body {
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
         }
 
         /* Variables de color mejoradas */
@@ -282,21 +286,109 @@
             transform: rotateY(360deg);
         }
 
-        /* Delivery badge mejorado */
+        /* Delivery badge mejorado - SUPER WOW */
         .delivery-badge {
-            background: linear-gradient(135deg, #10b981, #059669);
+            background: linear-gradient(135deg, #2d3748, #1a202c, #0f1419);
             color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-weight: 700;
-            display: inline-block;
-            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
-            animation: pulse-badge 2s infinite;
+            padding: 20px 40px;
+            border-radius: 60px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 10px 40px rgba(45, 55, 72, 0.6), 
+                        0 0 0 0 rgba(45, 55, 72, 0.7);
+            animation: pulse-badge-wow 2s infinite;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.2);
         }
 
-        @keyframes pulse-badge {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+        .delivery-badge::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        .delivery-badge .badge-icon {
+            font-size: 1.5rem;
+            animation: rocket-move 1.5s ease-in-out infinite;
+        }
+
+        .delivery-badge .badge-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .delivery-badge .badge-main {
+            font-size: 1.3rem;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            text-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        .delivery-badge .badge-sub {
+            font-size: 0.85rem;
+            font-weight: 600;
+            opacity: 0.95;
+            margin-top: 2px;
+        }
+
+        @keyframes pulse-badge-wow {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 10px 40px rgba(45, 55, 72, 0.6), 
+                            0 0 0 0 rgba(45, 55, 72, 0.7);
+            }
+            50% { 
+                transform: scale(1.08);
+                box-shadow: 0 15px 50px rgba(45, 55, 72, 0.8), 
+                            0 0 0 20px rgba(45, 55, 72, 0);
+            }
+        }
+
+        @keyframes shine {
+            0% { left: -50%; }
+            100% { left: 150%; }
+        }
+
+        @keyframes rocket-move {
+            0%, 100% { transform: translateY(0) rotate(-45deg); }
+            50% { transform: translateY(-8px) rotate(-45deg); }
+        }
+
+        /* Responsive para el badge */
+        @media (max-width: 768px) {
+            .delivery-badge {
+                padding: 16px 30px;
+                font-size: 1rem;
+            }
+            
+            .delivery-badge .badge-icon {
+                font-size: 1.2rem;
+            }
+            
+            .delivery-badge .badge-main {
+                font-size: 1.1rem;
+            }
+            
+            .delivery-badge .badge-sub {
+                font-size: 0.75rem;
+            }
         }
 
         /* Pricing cards mejoradas */
@@ -379,7 +471,8 @@
         /* Navigation mejorada */
         nav {
             backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.95);
+            background: white !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
         .nav-link {
@@ -494,7 +587,7 @@
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             border-radius: 50%;
-            display: flex;
+            display: none;
             align-items: center;
             justify-content: center;
             cursor: pointer;
@@ -506,6 +599,7 @@
 
         #scrollTop.show {
             opacity: 1;
+            display: flex;
         }
 
         #scrollTop:hover {
@@ -557,8 +651,12 @@
     <section id="inicio" class="hero-section text-white pt-40 pb-32 px-6 min-h-screen flex items-center">
         <div class="hero-particles" id="particles"></div>
         <div class="hero-content container mx-auto text-center relative z-10">
-            <div class="delivery-badge mb-8">
-                <i class="fas fa-rocket mr-2"></i> Entrega en 2-5 días hábiles
+            <div class="delivery-badge mb-12">
+                <i class="fas fa-rocket badge-icon"></i>
+                <div class="badge-text">
+                    <span class="badge-main">⚡ ENTREGA ULTRA RÁPIDA</span>
+                    <span class="badge-sub">Tu sitio web listo en 2-5 días hábiles</span>
+                </div>
             </div>
             <h1 class="text-5xl md:text-7xl font-black mb-8 animate-fade-in leading-tight">
                 Impulsa Tu Negocio Digital<br>
@@ -1127,6 +1225,13 @@
                         <i class="fas fa-phone-alt mr-2 text-purple-600"></i>O contáctanos directamente:
                     </p>
                     <div class="flex justify-center gap-6 flex-wrap">
+                        <a href="https://wa.me/50372704519?text=Hola%2C%20quiero%20cotizar%20un%20sitio%20web" target="_blank" class="flex flex-col items-center group transform hover:scale-110 transition">
+                            <div class="w-20 h-20 bg-green-500 rounded-2xl flex items-center justify-center text-white text-3xl shadow-lg">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <span class="mt-3 text-gray-800 font-semibold">WhatsApp</span>
+                            <span class="text-sm text-gray-600">+503 7270-4519</span>
+                        </a>
                         <a href="https://www.instagram.com/master_studio_sv/" target="_blank" class="flex flex-col items-center group transform hover:scale-110 transition">
                             <div class="w-20 h-20 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 rounded-2xl flex items-center justify-center text-white text-3xl shadow-lg">
                                 <i class="fab fa-instagram"></i>
@@ -1326,13 +1431,8 @@
         </div>
     </footer>
 
-    <!-- Scroll to Top Button -->
-    <div id="scrollTop" onclick="scrollToTop()">
-        <i class="fas fa-arrow-up text-xl"></i>
-    </div>
-
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/50370000000?text=Hola%2C%20quiero%20cotizar%20un%20sitio%20web" target="_blank" id="whatsappBtn" class="fixed bottom-24 right-8 w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-2xl z-50 transition-all transform hover:scale-110 animate-pulse">
+    <a href="https://wa.me/50372704519?text=Hola%2C%20quiero%20cotizar%20un%20sitio%20web" target="_blank" id="whatsappBtn" class="fixed bottom-8 right-8 w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-2xl z-50 transition-all transform hover:scale-110 animate-pulse">
         <i class="fab fa-whatsapp text-white text-3xl"></i>
     </a>
 
@@ -1583,6 +1683,24 @@
                 }
             });
         });
+
+        // Scroll to Top functionality
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
 
         // Scroll to Top functionality
         const scrollTopBtn = document.getElementById('scrollTop');
