@@ -43,7 +43,10 @@
                     <a href="index.html"><img src="logo.svg" alt="Master Studio SV" style="max-height: 100%; width: auto;"></a>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="formulario.html" class="nav-link text-purple-600 font-bold">Trabaja con Nosotros</a>
+                    <a href="index.html" class="nav-link text-purple-600 font-bold">Regresar al incio</a>
+                    <a href="job.html" class="nav-link text-purple-600 font-bold">Trabaja con Nosotros</a>
+                    <a id="termsModal" class="nav-link text-purple-600 font-bold">Términos y Condiciones</a>
+                    <a id="privacyModal" class="nav-link text-purple-600 font-bold">Políticas de Privacidad</a>
                 </div>
                 <button class="md:hidden" onclick="toggleMenu()"><i class="fas fa-bars text-2xl"></i></button>
             </div>
@@ -241,4 +244,5 @@
         document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => { const t = document.querySelector(a.getAttribute('href')); if(t) { e.preventDefault(); t.scrollIntoView({behavior: 'smooth'}); }}));
     </script>
 </body>
+
 </html>
