@@ -1,250 +1,181 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trabaja con Nosotros - Master Studio SV</title>
-    <link rel="icon" href="loks.png" type="image/png">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; color: #191414; background: #fff; overflow-x: hidden; }
-        nav { backdrop-filter: blur(10px); background: rgba(255,255,255,0.98) !important; box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
-        .nav-link { position: relative; transition: color 0.3s; font-weight: 500; }
-        .nav-link::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 3px; background: linear-gradient(90deg, #667eea, #764ba2); transition: width 0.3s; }
-        .nav-link:hover::after { width: 100%; }
-        .hero-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 140px 20px 100px; }
-        .hero-image { border-radius: 20px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.3); }
-        .hero-image img { width: 100%; height: 500px; object-fit: cover; }
-        .stat-number { font-size: 3.5rem; font-weight: 900; background: linear-gradient(135deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .benefit-card { background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: all 0.3s; border: 1px solid #f0f0f0; }
-        .benefit-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(102,126,234,0.2); border-color: #667eea; }
-        .benefit-icon { width: 60px; height: 60px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; color: white; font-size: 28px; }
-        .position-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 30px rgba(0,0,0,0.1); transition: all 0.3s; margin-bottom: 40px; }
-        .position-card:hover { transform: translateY(-5px); box-shadow: 0 10px 40px rgba(0,0,0,0.15); }
-        .position-image { width: 100%; height: 300px; object-fit: cover; }
-        .team-photo { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin: 0 auto 20px; border: 5px solid #f0f0f0; transition: all 0.3s; }
-        .team-photo:hover { border-color: #667eea; transform: scale(1.05); }
-        .cta-button { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 18px 40px; border-radius: 50px; font-weight: 700; text-decoration: none; transition: all 0.3s; }
-        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(102,126,234,0.4); }
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; overflow-y: auto; }
-        .modal-content { background: white; max-width: 900px; margin: 60px auto; padding: 60px; border-radius: 24px; position: relative; }
-        .close-modal { position: absolute; top: 30px; right: 30px; font-size: 2rem; cursor: pointer; color: #999; }
-        @media (max-width: 768px) { .hero-image img { height: 300px; } .modal-content { padding: 40px 30px; margin: 30px 20px; } }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trabaja con Nosotros - Master Studio SV</title>
+  <link rel="icon" href="loks.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+    .nav-link { position: relative; font-weight: 600; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -5px; left: 0;
+      width: 0; height: 3px;
+      background: linear-gradient(90deg,#667eea,#764ba2);
+      transition: width .3s;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .cta-button {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg,#667eea,#764ba2);
+      color: white; padding: 16px 36px;
+      border-radius: 999px; font-weight: 700;
+      transition: .3s;
+    }
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(102,126,234,.4);
+    }
+    .modal {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,.7);
+      z-index: 1000;
+      align-items: center; justify-content: center;
+    }
+    .modal-content {
+      background: white;
+      max-width: 900px;
+      width: 90%;
+      padding: 40px;
+      border-radius: 20px;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .close-modal {
+      position: absolute; top: 20px; right: 20px;
+      font-size: 2rem; cursor: pointer;
+    }
+  </style>
 </head>
+
 <body>
-    <nav class="shadow-lg fixed w-full top-0 z-50">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <div style="max-width: 250px; height: 60px;">
-                    <a href="index.html"><img src="logo.svg" alt="Master Studio SV" style="max-height: 100%; width: auto;"></a>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="nav-link text-purple-600 font-bold">Regresar al incio</a>
-                    <a href="job.html" class="nav-link text-purple-600 font-bold">Trabaja con Nosotros</a>
-                    <a href="#" class="nav-link text-purple-600 font-bold" onclick="openModal('terms')">Términos y Condiciones</a>
-                    <a href="#" class="nav-link text-purple-600 font-bold" onclick="openModal('privacy')">Políticas de Privacidad</a>
-                </div>
-                <button class="md:hidden" onclick="toggleMenu()"><i class="fas fa-bars text-2xl"></i></button>
-            </div>
-        </div>
-    </nav>
 
-    <section class="hero-section">
-        <div class="container mx-auto" style="max-width: 1400px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
-            <div>
-                <h1 style="font-size: 3.5rem; font-weight: 900; color: white; margin-bottom: 24px; line-height: 1.2;">Construye tu carrera en el mundo digital</h1>
-                <p style="font-size: 1.3rem; color: rgba(255,255,255,0.95); margin-bottom: 40px;">Únete a Master Studio SV y forma parte de un equipo que transforma la presencia digital de negocios.</p>
-                <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-                    <a href="#positions" class="cta-button">Ver Posiciones<i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=500&fit=crop" alt="Equipo">
-            </div>
-        </div>
-    </section>
+<!-- NAV -->
+<nav class="fixed top-0 w-full bg-white shadow-lg z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="index.html">
+      <img src="logo.svg" alt="Master Studio SV" class="h-12">
+    </a>
 
-    <section style="padding: 80px 20px; background: #f8f9fa;">
-        <div class="container mx-auto" style="max-width: 1400px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center;">
-            <div><div class="stat-number">50+</div><p style="font-size: 1.2rem; color: #666; font-weight: 600;">Proyectos</p></div>
-            <div><div class="stat-number">15+</div><p style="font-size: 1.2rem; color: #666; font-weight: 600;">Equipo</p></div>
-            <div><div class="stat-number">5</div><p style="font-size: 1.2rem; color: #666; font-weight: 600;">Países</p></div>
-            <div><div class="stat-number">100%</div><p style="font-size: 1.2rem; color: #666; font-weight: 600;">Remoto</p></div>
-        </div>
-    </section>
-
-    <section style="padding: 100px 20px; background: white;">
-        <div class="container mx-auto" style="max-width: 1400px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
-            <div>
-                <h2 style="font-size: 3rem; font-weight: 900; margin-bottom: 30px;">Cultura de innovación</h2>
-                <p style="font-size: 1.2rem; color: #666; line-height: 1.8;">Trabajamos de forma remota, priorizamos resultados y fomentamos el aprendizaje continuo. Cada miembro tiene voz en las decisiones importantes.</p>
-            </div>
-            <div style="border-radius: 16px; overflow: hidden;">
-                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=400&fit=crop" alt="Colaboración" style="width: 100%; height: 400px; object-fit: cover;">
-            </div>
-        </div>
-    </section>
-
-    <section style="padding: 100px 20px; background: #f8f9fa;">
-        <div class="container mx-auto" style="max-width: 1400px;">
-            <div style="text-align: center; margin-bottom: 60px;">
-                <h2 style="font-size: 3rem; font-weight: 900; margin-bottom: 20px;">Beneficios</h2>
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="fas fa-home"></i></div>
-                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 16px;">100% Remoto</h3>
-                    <p style="color: #666;">Trabaja desde donde quieras. Lo importante son los resultados.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="fas fa-clock"></i></div>
-                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 16px;">Flexibilidad</h3>
-                    <p style="color: #666;">Organiza tu tiempo. Valoramos productividad sobre horarios.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="fas fa-rocket"></i></div>
-                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 16px;">Proyectos Diversos</h3>
-                    <p style="color: #666;">Clientes variados con desafíos únicos e innovadores.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 16px;">Desarrollo</h3>
-                    <p style="color: #666;">Cursos y recursos para mantenerte actualizado.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="fas fa-dollar-sign"></i></div>
-                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 16px;">Compensación</h3>
-                    <p style="color: #666;">Salarios competitivos con potencial ilimitado.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="fas fa-users"></i></div>
-                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 16px;">Equipo</h3>
-                    <p style="color: #666;">Grupo apasionado que celebra cada logro.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="positions" style="padding: 100px 20px; background: #f8f9fa;">
-        <div class="container mx-auto" style="max-width: 1200px;">
-            <div style="text-align: center; margin-bottom: 60px;">
-                <h2 style="font-size: 3rem; font-weight: 900; margin-bottom: 20px;">Posiciones Disponibles</h2>
-            </div>
-            <div class="position-card">
-                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=300&fit=crop" class="position-image">
-                <div style="padding: 40px;">
-                    <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 30px; border-radius: 12px; margin-bottom: 30px;">
-                        <h3 style="font-size: 2rem; font-weight: 800; margin-bottom: 12px;">Desarrollador Web</h3>
-                        <p style="font-size: 1.1rem;">Remoto · Por Proyecto</p>
-                    </div>
-                    <div style="margin-bottom: 30px;">
-                        <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 20px;">Requisitos</h4>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="padding: 12px 0; color: #666; display: flex; gap: 12px;"><i class="fas fa-check-circle" style="color: #667eea; font-size: 1.2rem;"></i>Experiencia mínima 1 año en desarrollo web</li>
-                            <li style="padding: 12px 0; color: #666; display: flex; gap: 12px;"><i class="fas fa-check-circle" style="color: #667eea; font-size: 1.2rem;"></i>Dominio de HTML5, CSS3 y JavaScript</li>
-                            <li style="padding: 12px 0; color: #666; display: flex; gap: 12px;"><i class="fas fa-check-circle" style="color: #667eea; font-size: 1.2rem;"></i>Experiencia con frameworks modernos</li>
-                            <li style="padding: 12px 0; color: #666; display: flex; gap: 12px;"><i class="fas fa-check-circle" style="color: #667eea; font-size: 1.2rem;"></i>Portfolio con proyectos demostrables</li>
-                        </ul>
-                    </div>
-                    <div style="margin-bottom: 30px;">
-                        <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 20px;">Compensación</h4>
-                        <p style="color: #666; line-height: 1.8;">Pago por proyecto según complejidad. Rangos competitivos basados en experiencia.</p>
-                    </div>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc4Lcrj5T3caK70jlPp5vACsdak7d9TpxkC0FbHSjNTPHeStQ/viewform?usp=dialog" class="cta-button">Aplicar Ahora</a>
-                </div>
-            </div>
-            <div class="position-card">
-                <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&h=300&fit=crop" class="position-image">
-                <div style="padding: 40px;">
-                    <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 30px; border-radius: 12px; margin-bottom: 30px;">
-                        <h3 style="font-size: 2rem; font-weight: 800; margin-bottom: 12px;">Vendedor Digital</h3>
-                        <p style="font-size: 1.1rem;">Remoto/presencial · Por Comisión</p>
-                    </div>
-                    <div style="margin-bottom: 30px;">
-                        <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 20px;">Requisitos</h4>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="padding: 12px 0; color: #666; display: flex; gap: 12px;"><i class="fas fa-check-circle" style="color: #667eea; font-size: 1.2rem;"></i>Experiencia en ventas o desarrollo de negocios</li>
-                            <li style="padding: 12px 0; color: #666; display: flex; gap: 12px;"><i class="fas fa-check-circle" style="color: #667eea; font-size: 1.2rem;"></i>Excelentes habilidades de comunicación</li>
-                            <li style="padding: 12px 0; color: #666; display: flex; gap: 12px;"><i class="fas fa-check-circle" style="color: #667eea; font-size: 1.2rem;"></i>Conocimiento sobre desarrollo web</li>
-                            <li style="padding: 12px 0; color: #666; display: flex; gap: 12px;"><i class="fas fa-check-circle" style="color: #667eea; font-size: 1.2rem;"></i>Actitud proactiva y orientada a resultados</li>
-                        </ul>
-                    </div>
-                    <div style="margin-bottom: 30px;">
-                        <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 20px;">Compensación</h4>
-                        <p style="color: #666; line-height: 1.8;">Comisión 15-25% por proyecto cerrado. Potencial ilimitado de ingresos.</p>
-                    </div>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc76p1s4WFBjspPBuxsESnIf-Ds7zhSt3-jP_iuhc71KEjVQQ/viewform?usp=dialog" class="cta-button">Aplicar Ahora</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section style="padding: 100px 20px; background: white;">
-        <div class="container mx-auto" style="max-width: 1200px; text-align: center;">
-            <h2 style="font-size: 3rem; font-weight: 900; margin-bottom: 20px;">¿Listo para unirte?</h2>
-            <p style="font-size: 1.3rem; color: #666; margin-bottom: 40px;">Envía tu CV y portfolio a nuestro email</p>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=masterstudiosv@gmail.com"class="cta-button"style="font-size: 1.2rem; padding: 20px 50px;"target="_blank">masterstudiosv@gmail.com</a>
-            <div style="margin-top: 40px; display: flex; gap: 20px; justify-content: center;">
-                <button onclick="openModal('terms')" style="color: #667eea; text-decoration: underline; background: none; border: none; cursor: pointer; font-size: 1rem;">Términos y Condiciones</button>
-                <button onclick="openModal('privacy')" style="color: #667eea; text-decoration: underline; background: none; border: none; cursor: pointer; font-size: 1rem;">Políticas de Privacidad</button>
-            </div>
-        </div>
-    </section>
-
-    <footer style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 60px 20px;">
-        <div class="container mx-auto" style="max-width: 1400px; text-align: center;">
-            <p style="font-size: 1.2rem; margin-bottom: 20px;">© Master Studio SV. Todos los derechos reservados.</p>
-            <div style="display: flex; gap: 20px; justify-content: center;">
-                <a href="https://wa.me/50372704519" style="color: white; font-size: 1.5rem;"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://instagram.com/master_studio_sv" style="color: white; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
-                <a href="mailto:info.masterstudiosv@gmail.com" style="color: white; font-size: 1.5rem;"><i class="fas fa-envelope"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <div id="termsModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('terms')">&times;</span>
-            <h2 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 30px;">Términos y Condiciones</h2>
-            <div style="color: #666; line-height: 1.8;">
-                <h3 style="font-size: 1.5rem; font-weight: 700; margin: 30px 0 15px;">Proceso de Aplicación</h3>
-                <p>Al aplicar acepta que la información proporcionada es veraz y autoriza la verificación de referencias.</p>
-                <h3 style="font-size: 1.5rem; font-weight: 700; margin: 30px 0 15px;">Modalidad de Trabajo</h3>
-                <p>Trabajo remoto con flexibilidad de horarios. Compromiso de disponibilidad para reuniones coordinadas.</p>
-                <h3 style="font-size: 1.5rem; font-weight: 700; margin: 30px 0 15px;">Compensación</h3>
-                <p>Desarrolladores: Pago por proyecto. Vendedores: Comisión 15-25% por proyecto cerrado.</p>
-            </div>
-        </div>
+    <!-- Desktop -->
+    <div class="hidden md:flex space-x-8">
+      <a href="index.html" class="nav-link text-purple-600">Inicio</a>
+      <a href="job.html" class="nav-link text-purple-600">Trabaja con Nosotros</a>
+      <button onclick="openModal('terms')" class="nav-link text-purple-600">Términos</button>
+      <button onclick="openModal('privacy')" class="nav-link text-purple-600">Privacidad</button>
     </div>
 
-    <div id="privacyModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('privacy')">&times;</span>
-            <h2 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 30px;">Políticas de Privacidad</h2>
-            <div style="color: #666; line-height: 1.8;">
-                <h3 style="font-size: 1.5rem; font-weight: 700; margin: 30px 0 15px;">Información Recopilada</h3>
-                <p>Recopilamos nombre, email, experiencia profesional y portfolio para evaluar candidaturas.</p>
-                <h3 style="font-size: 1.5rem; font-weight: 700; margin: 30px 0 15px;">Uso de Datos</h3>
-                <p>Los datos se usan únicamente para procesos de reclutamiento y no se comparten con terceros.</p>
-                <h3 style="font-size: 1.5rem; font-weight: 700; margin: 30px 0 15px;">Tus Derechos</h3>
-                <p>Puedes solicitar acceso, corrección o eliminación de tus datos en cualquier momento.</p>
-            </div>
-        </div>
-    </div>
+    <!-- Mobile button -->
+    <button class="md:hidden" onclick="toggleMenu()">
+      <i class="fas fa-bars text-2xl text-purple-600"></i>
+    </button>
+  </div>
+</nav>
 
-    <script>
-        function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('hidden'); }
-        function openModal(type) { document.getElementById(type+'Modal').style.display = 'block'; document.body.style.overflow = 'hidden'; }
-        function closeModal(type) { document.getElementById(type+'Modal').style.display = 'none'; document.body.style.overflow = 'auto'; }
-        window.onclick = e => { if(e.target.classList.contains('modal')) { e.target.style.display = 'none'; document.body.style.overflow = 'auto'; }}
-        document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => { const t = document.querySelector(a.getAttribute('href')); if(t) { e.preventDefault(); t.scrollIntoView({behavior: 'smooth'}); }}));
-    </script>
+<!-- MOBILE MENU -->
+<div id="mobileMenu" class="hidden fixed top-20 left-0 w-full bg-white shadow-lg z-40 md:hidden">
+  <div class="flex flex-col p-6 space-y-4">
+    <a href="index.html" class="text-purple-600 font-bold">Inicio</a>
+    <a href="job.html" class="text-purple-600 font-bold">Trabaja con Nosotros</a>
+    <button onclick="openModal('terms')" class="text-purple-600 text-left font-bold">Términos</button>
+    <button onclick="openModal('privacy')" class="text-purple-600 text-left font-bold">Privacidad</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="pt-32 pb-20 bg-gradient-to-r from-purple-500 to-indigo-600 text-white">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+    <div>
+      <h1 class="text-4xl md:text-5xl font-black mb-6">
+        Construye tu carrera digital
+      </h1>
+      <p class="text-lg mb-8">
+        Únete a Master Studio SV y crece con nosotros.
+      </p>
+      <a href="#positions" class="cta-button">Ver posiciones</a>
+    </div>
+    <img class="rounded-xl shadow-xl"
+      src="https://images.unsplash.com/photo-1522071820081-009f0129c71c"
+      alt="">
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="py-20 bg-gray-100">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div><h3 class="text-4xl font-black text-purple-600">50+</h3><p>Proyectos</p></div>
+    <div><h3 class="text-4xl font-black text-purple-600">15+</h3><p>Equipo</p></div>
+    <div><h3 class="text-4xl font-black text-purple-600">5</h3><p>Países</p></div>
+    <div><h3 class="text-4xl font-black text-purple-600">100%</h3><p>Remoto</p></div>
+  </div>
+</section>
+
+<!-- POSITIONS -->
+<section id="positions" class="py-20 bg-white">
+  <div class="max-w-5xl mx-auto px-6">
+    <h2 class="text-4xl font-black text-center mb-12">Posiciones</h2>
+
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+      <img class="w-full h-64 object-cover"
+        src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6">
+      <div class="p-8">
+        <h3 class="text-2xl font-bold mb-4">Desarrollador Web</h3>
+        <a href="https://docs.google.com/forms/" class="cta-button">
+          Aplicar ahora
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-10 text-center">
+  <p>© Master Studio SV. Todos los derechos reservados.</p>
+</footer>
+
+<!-- MODALS -->
+<div id="termsModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal('terms')">&times;</span>
+    <h2 class="text-2xl font-bold mb-4">Términos y Condiciones</h2>
+    <p>Contenido legal...</p>
+  </div>
+</div>
+
+<div id="privacyModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal('privacy')">&times;</span>
+    <h2 class="text-2xl font-bold mb-4">Políticas de Privacidad</h2>
+    <p>Contenido legal...</p>
+  </div>
+</div>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  }
+
+  function openModal(type) {
+    document.getElementById(type + 'Modal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(type) {
+    document.getElementById(type + 'Modal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+
+  window.onclick = e => {
+    if (e.target.classList.contains('modal')) {
+      e.target.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  };
+</script>
+
 </body>
-
 </html>
-
-
