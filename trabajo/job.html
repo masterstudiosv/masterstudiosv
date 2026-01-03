@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trabaja con Nosotros - Master Studio SV</title>
+<link rel="icon" href="loks.png" type="image/png">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #191414;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.98) !important;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+}
+
+.nav-link {
+  position: relative;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ===== HERO ===== */
+.hero-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 140px 20px 100px;
+}
+
+.hero-image {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+}
+
+.hero-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+/* ===== ESTADÍSTICAS ===== */
+.stat-number {
+  font-size: 3.5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== BENEFICIOS ===== */
+.benefit-card {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s;
+  border: 1px solid #f0f0f0;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(102,126,234,0.2);
+  border-color: #667eea;
+}
+
+.benefit-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: white;
+  font-size: 28px;
+}
+
+/* ===== POSICIONES ===== */
+.position-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+  transition: all 0.3s;
+  margin-bottom: 40px;
+}
+
+.position-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+.position-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* ===== EQUIPO ===== */
+.team-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 20px;
+  border: 5px solid #f0f0f0;
+  transition: all 0.3s;
+}
+
+.team-photo:hover {
+  border-color: #667eea;
+  transform: scale(1.05);
+}
+
+/* ===== BOTONES ===== */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 18px 40px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(102,126,234,0.4);
+}
+
+/* ===== MENÚ MÓVIL ===== */
+#mobileMenu {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  background: white;
+  z-index: 999;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  padding: 30px 20px;
+  animation: slideDown 0.3s ease;
+}
+
+#mobileMenu a {
+  display: block;
+  padding: 15px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #5b21b6;
+  border-bottom: 1px solid #eee;
+}
+
+#mobileMenu a:last-child {
+  border-bottom: none;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== MODALES ===== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.modal-content {
+  background: white;
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 60px;
+  border-radius: 24px;
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #999;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero-section > div {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
+
+  .hero-image {
+    margin-top: 40px;
+  }
+
+  .hero-image img {
+    height: 300px;
+  }
+
+  section div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  .modal-content {
+    padding: 40px 30px;
+    margin: 30px 20px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="fixed w-full top-0 z-50">
+  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="index.html">
+      <img src="logo.svg" alt="Master Studio SV" style="height:60px">
+    </a>
+
+    <div class="hidden md:flex space-x-8">
+      <a href="index.html" class="nav-link text-purple-600">Regresar al inicio</a>
+      <a href="job.html" class="nav-link text-purple-600">Trabaja con Nosotros</a>
+      <a href="#" onclick="openModal('terms')" class="nav-link text-purple-600">Términos y Condiciones</a>
+      <a href="#" onclick="openModal('privacy')" class="nav-link text-purple-600">Políticas de Privacidad</a>
+    </div>
+
+    <button class="md:hidden" onclick="toggleMenu()">
+      <i class="fas fa-bars text-2xl"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- MENÚ MÓVIL -->
+<div id="mobileMenu" class="hidden md:hidden">
+  <a href="index.html">Regresar al inicio</a>
+  <a href="job.html">Trabaja con Nosotros</a>
+  <a href="#" onclick="openModal('terms')">Términos y Condiciones</a>
+  <a href="#" onclick="openModal('privacy')">Políticas de Privacidad</a>
+</div>
+
+<!-- HERO -->
+<section class="hero-section">
+    <div class="container mx-auto"
+         style="max-width: 1400px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+
+        <div>
+            <h1 style="font-size: 3.5rem; font-weight: 900; color: white; margin-bottom: 24px; line-height: 1.2;">
+                Construye tu carrera en el mundo digital
+            </h1>
+
+            <p style="font-size: 1.3rem; color: rgba(255,255,255,0.95); margin-bottom: 40px;">
+                Únete a Master Studio SV y forma parte de un equipo que transforma la presencia digital de negocios.
+            </p>
+
+            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <a href="#positions" class="cta-button">
+                    Ver Posiciones <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=500&fit=crop"
+                 alt="Equipo">
+        </div>
+    </div>
+</section>
+
+<!-- STATS -->
+<section style="padding: 80px 20px; background: #f8f9fa;">
+    <div class="container mx-auto"
+         style="max-width: 1400px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center;">
+
+        <div>
+            <div class="stat-number">50+</div>
+            <p style="font-size: 1.2rem; color: #666; font-weight: 600;">Proyectos</p>
+        </div>
+
+        <div>
+            <div class="stat-number">15+</div>
+            <p style="font-size: 1.2rem; color: #666; font-weight: 600;">Equipo</p>
+        </div>
+
+        <div>
+            <div class="stat-number">5</div>
+            <p style="font-size: 1.2rem; color: #666; font-weight: 600;">Países</p>
+        </div>
+
+        <div>
+            <div class="stat-number">100%</div>
+            <p style="font-size: 1.2rem; color: #666; font-weight: 600;">Remoto</p>
+        </div>
+    </div>
+</section>
+
+<!-- CULTURA -->
+<section style="padding: 100px 20px; background: white;">
+    <div class="container mx-auto"
+         style="max-width: 1400px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+
+        <div>
+            <h2 style="font-size: 3rem; font-weight: 900; margin-bottom: 30px;">
+                Cultura de innovación
+            </h2>
+
+            <p style="font-size: 1.2rem; color: #666; line-height: 1.8;">
+                Trabajamos de forma remota, priorizamos resultados y fomentamos el aprendizaje continuo.
+                Cada miembro tiene voz en las decisiones importantes.
+            </p>
+        </div>
+
+        <div style="border-radius: 16px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=400&fit=crop"
+                 alt="Colaboración"
+                 style="width: 100%; height: 400px; object-fit: cover;">
+        </div>
+    </div>
+</section>
+
+<section id="positions" style="padding: 100px 20px; background: #f8f9fa;"> <div class="container mx-auto" style="max-width: 1200px;"> <div style="text-align: center; margin-bottom: 60px;"> <h2 style="font-size: 3rem; font-weight: 900; margin-bottom: 20px;">Posiciones Disponibles</h2> </div> <div class="position-card"> <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=300&fit=crop" class="position-image"> <div style="padding: 40px;"> <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 30px; border-radius: 12px; margin-bottom: 30px;"> <h3 style="font-size: 2rem; font-weight: 800; margin-bottom: 12px;">Desarrollador Web</h3> <p style="font-size: 1.1rem;">Remoto · Por Proyecto</p> </div> <div style="margin-bottom: 30px;"> <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 20px;">Requisitos</h4> <ul style="list-style: none; padding: 0;"> <li style="padding: 12px 0; color: #666; display: flex; gap: 12px;"><i class="fas fa-check-circle" style="color: #667eea; font-size: 1.2rem;"></i>Experiencia mínima 1 año en desarrollo web</li> <li style="padding: 12px 0; color: #666; display: flex; gap: 12px;"><i class="fas fa-check-circle" style="color: #667eea; font-size: 1.2rem;"></i>Dominio de HTML5, CSS3 y JavaScript</li> <li style="padding: 12px 0; color: #666; display: flex; gap: 12px;"><i class="fas fa-check-circle" style="color: #667eea; font-size: 1.2rem;"></i>Experiencia con frameworks modernos</li> <li style="padding: 12px 0; color: #666; display: flex; gap: 12px;"><i class="fas fa-check-circle" style="color: #667eea; font-size: 1.2rem;"></i>Portfolio con proyectos demostrables</li> </ul> </div> <div style="margin-bottom: 30px;"> <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 20px;">Compensación</h4> <p style="color: #666; line-height: 1.8;">Pago por proyecto según complejidad. Rangos competitivos basados en experiencia.</p> </div> <a href="https://docs.google.com/forms/d/e/1FAIpQLSc4Lcrj5T3caK70jlPp5vACsdak7d9TpxkC0FbHSjNTPHeStQ/viewform?usp=dialog" class="cta-button">Aplicar Ahora</a> </div> </div> <div class="position-card"> <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&h=300&fit=crop" class="position-image"> <div style="padding: 40px;"> <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 30px; border-radius: 12px; margin-bottom: 30px;"> <h3 style="font-size: 2rem; font-weight: 800; margin-bottom: 12px;">Vendedor Digital</h3> <p style="font-size: 1.1rem;">Remoto/presencial · Por Comisión</p> </div> <div style="margin-bottom: 30px;"> <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 20px;">Requisitos</h4> <ul style="list-style: none; padding: 0;"> <li style="padding: 12px 0; color: #666; display: flex; gap: 12px;"><i class="fas fa-check-circle" style="color: #667eea; font-size: 1.2rem;"></i>Experiencia en ventas o desarrollo de negocios</li> <li style="padding: 12px 0; color: #666; display: flex; gap: 12px;"><i class="fas fa-check-circle" style="color: #667eea; font-size: 1.2rem;"></i>Excelentes habilidades de comunicación</li> <li style="padding: 12px 0; color: #666; display: flex; gap: 12px;"><i class="fas fa-check-circle" style="color: #667eea; font-size: 1.2rem;"></i>Conocimiento sobre desarrollo web</li> <li style="padding: 12px 0; color: #666; display: flex; gap: 12px;"><i class="fas fa-check-circle" style="color: #667eea; font-size: 1.2rem;"></i>Actitud proactiva y orientada a resultados</li> </ul> </div> <div style="margin-bottom: 30px;"> <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 20px;">Compensación</h4> <p style="color: #666; line-height: 1.8;">Comisión 15-25% por proyecto cerrado. Potencial ilimitado de ingresos.</p> </div> <a href="https://docs.google.com/forms/d/e/1FAIpQLSc76p1s4WFBjspPBuxsESnIf-Ds7zhSt3-jP_iuhc71KEjVQQ/viewform?usp=dialog" class="cta-button">Aplicar Ahora</a> </div> </div> </div> </section> <section style="padding: 100px 20px; background: white;"> <div class="container mx-auto" style="max-width: 1200px; text-align: center;"> <h2 style="font-size: 3rem; font-weight: 900; margin-bottom: 20px;">¿Listo para unirte?</h2> <p style="font-size: 1.3rem; color: #666; margin-bottom: 40px;">Envía tu CV y portfolio a nuestro email</p> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=masterstudiosv@gmail.com"class="cta-button"style="font-size: 1.2rem; padding: 20px 50px;"target="_blank">masterstudiosv@gmail.com</a> <div style="margin-top: 40px; display: flex; gap: 20px; justify-content: center;"> <button onclick="openModal('terms')" style="color: #667eea; text-decoration: underline; background: none; border: none; cursor: pointer; font-size: 1rem;">Términos y Condiciones</button> <button onclick="openModal('privacy')" style="color: #667eea; text-decoration: underline; background: none; border: none; cursor: pointer; font-size: 1rem;">Políticas de Privacidad</button> </div> </div> </section> <footer style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 60px 20px;"> <div class="container mx-auto" style="max-width: 1400px; text-align: center;"> <p style="font-size: 1.2rem; margin-bottom: 20px;">© Master Studio SV. Todos los derechos reservados.</p> <div style="display: flex; gap: 20px; justify-content: center;"> <a href="https://wa.me/50372704519" style="color: white; font-size: 1.5rem;"><i class="fab fa-whatsapp"></i></a> <a href="https://instagram.com/master_studio_sv" style="color: white; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a> <a href="mailto:info.masterstudiosv@gmail.com" style="color: white; font-size: 1.5rem;"><i class="fas fa-envelope"></i></a> </div> </div> </footer>
+ 
+
+<!-- TÉRMINOS Y CONDICIONES -->
+<div id="termsModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal('terms')">&times;</span>
+
+    <h2 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 30px;">
+      Términos y Condiciones
+    </h2>
+
+    <div style="color: #666; line-height: 1.8;">
+
+      <h3 style="font-size: 1.5rem; font-weight: 700; margin: 30px 0 15px;">
+        Proceso de Aplicación
+      </h3>
+      <p>
+        Al enviar este formulario, el postulante declara que toda la información proporcionada es
+        verídica, completa y actualizada. Master Studio SV se reserva el derecho de verificar
+        referencias, experiencia previa y portafolio presentado como parte del proceso de selección.
+      </p>
+
+      <h3 style="font-size: 1.5rem; font-weight: 700; margin: 30px 0 15px;">
+        Modalidad de Trabajo
+      </h3>
+      <p>
+        La colaboración se realiza bajo modalidad remota y por contrato. Los horarios son flexibles,
+        sin embargo, el postulante acepta mantener disponibilidad para reuniones, entregas y
+        coordinaciones previamente establecidas con el equipo de trabajo.
+      </p>
+
+      <h3 style="font-size: 1.5rem; font-weight: 700; margin: 30px 0 15px;">
+        Compensación
+      </h3>
+      <p>
+        La compensación económica varía según el rol asignado.  
+        <strong>Desarrolladores y creativos:</strong> pago acordado por proyecto.  
+        <strong>Área de ventas:</strong> comisión que oscila entre el 15% y 25% por cada contrato
+        efectivamente cerrado y pagado.
+      </p>
+
+      <h3 style="font-size: 1.5rem; font-weight: 700; margin: 30px 0 15px;">
+        Relación Laboral
+      </h3>
+      <p>
+        El envío del formulario no garantiza contratación inmediata ni genera relación laboral fija.
+        Toda colaboración será formalizada mediante acuerdo previo entre ambas partes.
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<!-- POLÍTICAS DE PRIVACIDAD -->
+<div id="privacyModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal('privacy')">&times;</span>
+
+    <h2 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 30px;">
+      Políticas de Privacidad
+    </h2>
+
+    <div style="color: #666; line-height: 1.8;">
+
+      <h3 style="font-size: 1.5rem; font-weight: 700; margin: 30px 0 15px;">
+        Información Recopilada
+      </h3>
+      <p>
+        Master Studio SV recopila información personal como nombre completo, correo electrónico,
+        experiencia profesional, habilidades y portafolio con el único fin de evaluar perfiles
+        interesados en colaborar con la empresa.
+      </p>
+
+      <h3 style="font-size: 1.5rem; font-weight: 700; margin: 30px 0 15px;">
+        Uso de la Información
+      </h3>
+      <p>
+        Los datos recopilados serán utilizados exclusivamente para procesos de reclutamiento,
+        evaluación y contacto profesional. La información no será vendida, cedida ni compartida con
+        terceros ajenos a la empresa.
+      </p>
+
+      <h3 style="font-size: 1.5rem; font-weight: 700; margin: 30px 0 15px;">
+        Protección de Datos
+      </h3>
+      <p>
+        Master Studio SV se compromete a proteger la información proporcionada, aplicando medidas
+        razonables de seguridad para evitar accesos no autorizados, pérdidas o usos indebidos.
+      </p>
+
+      <h3 style="font-size: 1.5rem; font-weight: 700; margin: 30px 0 15px;">
+        Derechos del Postulante
+      </h3>
+      <p>
+        El postulante puede solicitar en cualquier momento el acceso, corrección o eliminación de sus
+        datos personales escribiendo directamente a los canales oficiales de contacto de Master
+        Studio SV.
+      </p>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- SCRIPT -->
+<script>
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('hidden');
+}
+
+function openModal(type) {
+  document.getElementById(type + 'Modal').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(type) {
+  document.getElementById(type + 'Modal').style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+document.addEventListener('click', e => {
+  const menu = document.getElementById('mobileMenu');
+  if (!e.target.closest('nav') && !e.target.closest('#mobileMenu')) {
+    menu.classList.add('hidden');
+  }
+});
+</script>
+
+</body>
+</html>
