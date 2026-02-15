@@ -1,0 +1,123 @@
+/* Contenedor principal */
+.navbar-container {
+    width: 100%;
+    background-color: #019aec; /* celeste del logo */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 2rem;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Logo */
+.navbar-logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo-area img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Links principales */
+.navbar-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar-links a {
+    color: #fdfcf9; /* blanco suave */
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-links a:hover,
+.navbar-links a:focus {
+    color: #f5f2eb; /* blanco más claro */
+}
+
+/* Dropdown Servicios (solo hover) */
+.navbar-links .dropdown {
+    position: relative;
+}
+
+.navbar-links .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #019aec;
+    min-width: 180px;
+    flex-direction: column;
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    z-index: 1000;
+}
+
+.navbar-links .dropdown-content a {
+    padding: 0.5rem 1rem;
+    display: block;
+    font-size: 1rem;
+}
+
+.navbar-links .dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+/* ------------------ MÓVILES ------------------ */
+@media (max-width: 768px) {
+
+    .navbar-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 1rem;
+    }
+
+    /* Centrar logo */
+    .navbar-logo-area {
+        justify-content: center;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    /* Links centrados y horizontal si cabe */
+    .navbar-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Links más grandes en móvil */
+    .navbar-links a {
+        font-size: 1.0rem;
+        padding: 0.5rem 0.7rem;
+    }
+
+    /* Dropdown siempre visible como sublinks en línea */
+    .navbar-links .dropdown-content {
+        position: static;
+        box-shadow: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .navbar-links .dropdown a {
+        padding: 0.5rem 0.7rem;
+    }
+}
