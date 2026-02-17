@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería - Funeraria La Asunción</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../../logos/Funeraria Asuncion.png">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/galeria.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="navbar-container">
+            <div class="navbar-logo-area">
+                <img src="../../logos/Funeraria Asuncion.png" alt="Logo Funeraria La Asunción">
+            </div>
+            <div class="navbar-links">
+                <a href="../index.html">Inicio</a>
+                <a href="nostros.html">Nosotros</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="Contacto.html">Contacto</a>
+                <a href="Galeria.html">Galería</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gallery-hero">
+        <div class="hero-overlay">
+            <h1>Nuestra Galería</h1>
+            <p>Conoce nuestras instalaciones, servicios y todo lo que ofrecemos</p>
+        </div>
+    </section>
+
+    <!-- Contenido Principal de Galería -->
+    <section class="gallery-main-section">
+        <div class="container-gallery">
+
+           
+
+
+            <!-- Categoría 2: Funerales -->
+            <div class="gallery-category">
+                <div class="category-header">
+                    <h2>Funerales</h2>
+                    <button class="btn-ver-mas" onclick="openModal('funerales')">Ver más</button>
+                </div>
+                <div class="carousel-container">
+                    <button class="carousel-btn prev" onclick="scrollCarousel('funerales', -1)">‹</button>
+                    <div class="carousel" id="carousel-funerales">
+                        <img src="../img/galeria/funerales/img1.jpg" alt="Funeral 1" onclick="openLightbox('funerales', 0)">
+                        <img src="../img/galeria/funerales/img2.jpg" alt="Funeral 2" onclick="openLightbox('funerales', 1)">
+                        <img src="../img/galeria/funerales/img3.jpg" alt="Funeral 3" onclick="openLightbox('funerales', 2)">
+                        <img src="../img/galeria/funerales/img4.jpg" alt="Funeral 4" onclick="openLightbox('funerales', 3)">
+                        <img src="../img/galeria/funerales/img5.jpg" alt="Funeral 5" onclick="openLightbox('funerales', 4)">
+                        <img src="../img/galeria/funerales/img6.jpg" alt="Funeral 6" onclick="openLightbox('funerales', 5)">
+                        <img src="../img/galeria/funerales/img7.jpg" alt="Funeral 7" onclick="openLightbox('funerales', 6)">
+                        <img src="../img/galeria/funerales/img8.jpg" alt="Funeral 8" onclick="openLightbox('funerales', 7)">
+                        <img src="../img/galeria/funerales/img9.jpg" alt="Funeral 9" onclick="openLightbox('funerales', 8)">
+                        <img src="../img/galeria/funerales/img10.jpg" alt="Funeral 10" onclick="openLightbox('funerales', 9)">
+                        <img src="../img/galeria/funerales/img11.jpg" alt="Funeral 11" onclick="openLightbox('funerales', 10)">
+                        <img src="../img/galeria/funerales/img12.jpg" alt="Funeral 12" onclick="openLightbox('funerales', 11)">
+                        <img src="../img/galeria/funerales/img13.jpg" alt="Funeral 13" onclick="openLightbox('funerales', 12)">
+                        <img src="../img/galeria/funerales/img14.jpg" alt="Funeral 14" onclick="openLightbox('funerales', 13)">
+                        <img src="../img/galeria/funerales/img15.jpg" alt="Fun  eral 15" onclick="openLightbox('funerales', 14)">
+                        <img src="../img/galeria/funerales/img16.jpg" alt="Funeral 16" onclick="openLightbox('funerales', 15)">
+                        <img src="../img/galeria/funerales/img17.jpg" alt="Funeral 17" onclick="openLightbox('funerales', 16)"
+                    </div>
+                    <button class="carousel-btn next" onclick="scrollCarousel('funerales', 1)">›</button>
+                </div>
+            </div>
+
+            <!-- Categoría 3: Capillas de Velación -->
+            <div class="gallery-category">
+                <div class="category-header">
+                    <h2>Capillas de Velación</h2>
+                    <button class="btn-ver-mas" onclick="openModal('capillas')">Ver más</button>
+                </div>
+                <div class="carousel-container">
+                    <button class="carousel-btn prev" onclick="scrollCarousel('capillas', -1)">‹</button>
+                    <div class="carousel" id="carousel-capillas">
+                        <img src="../img/galeria/capilla/img2.jpg" alt="Capilla 2" onclick="openLightbox('capillas', 1)">
+                        <img src="../img/galeria/capilla/img3.jpg" alt="Capilla 3" onclick="openLightbox('capillas', 2)">
+                        <img src="../img/galeria/capilla/img4.jpg" alt="Capilla 4" onclick="openLightbox('capillas', 3)">
+                        <img src="../img/galeria/capilla/img5.jpg" alt="Capilla 5" onclick="openLightbox('capillas', 4)">
+                        <img src="../img/galeria/capilla/img1.jpg" alt="Capilla 1" onclick="openLightbox('capillas', 0)">
+                        <img src="../img/galeria/capilla/img6.jpg" alt="Capilla 6" onclick="openLightbox('capillas', 5)">
+                        <img src="../img/galeria/capilla/img7.jpg" alt="Capilla 7" onclick="openLightbox('capillas', 6)">
+                        <img src="../img/galeria/capilla/img8.jpg" alt="Capilla 8" onclick="openLightbox('capillas', 7)">
+                        <img src="../img/galeria/capilla/img9.jpg" alt="Capilla 9" onclick="openLightbox('capillas', 8)">
+                    </div>
+                    <button class="carousel-btn next" onclick="scrollCarousel('capillas', 1)">›</button>
+                </div>
+            </div>
+
+             <!-- Categoría 1: Flota de Vehículos -->
+            <div class="gallery-category">
+    <div class="category-header">
+        <h2>Flota de Vehículos</h2>
+        <button class="btn-ver-mas" onclick="openModal('vehiculos')">Ver más</button>
+    </div>
+    <div class="carousel-container">
+        <button class="carousel-btn prev" onclick="scrollCarousel('vehiculos', -1)">‹</button>
+        <div class="carousel" id="carousel-vehiculos">
+            <img src="../img/galeria/flota veiculos/img1.jpg" alt="Vehículo 1" onclick="openLightbox('vehiculos', 0)">
+            <img src="../img/galeria/flota veiculos/img4.jpg" alt="Vehículo 4" onclick="openLightbox('vehiculos', 3)">
+            <img src="../img/galeria/flota veiculos/img8.jpg" alt="Vehículo 8" onclick="openLightbox('vehiculos', 7)">
+            <img src="../img/galeria/flota veiculos/img2.jpg" alt="Vehículo 2" onclick="openLightbox('vehiculos', 1)">
+            <img src="../img/galeria/flota veiculos/img3.jpg" alt="Vehículo 3" onclick="openLightbox('vehiculos', 2)">
+            <img src="../img/galeria/flota veiculos/img5.jpg" alt="Vehículo 5" onclick="openLightbox('vehiculos', 4)">
+            <img src="../img/galeria/flota veiculos/img6.jpg" alt="Vehículo 6" onclick="openLightbox('vehiculos', 5)">
+            <img src="../img/galeria/flota veiculos/img7.jpg" alt="Vehículo 7" onclick="openLightbox('vehiculos', 6)">
+        </div>
+        <button class="carousel-btn next" onclick="scrollCarousel('vehiculos', 1)">›</button>
+    </div>
+</div>
+
+            <!-- Categoría 4: Ataúdes -->
+            <div class="gallery-category">
+                <div class="category-header">
+                    <h2>Ataúdes</h2>
+                    <button class="btn-ver-mas" onclick="openModal('ataudes')">Ver más</button>
+                </div>
+                <div class="carousel-container">
+                    <button class="carousel-btn prev" onclick="scrollCarousel('ataudes', -1)">‹</button>
+                    <div class="carousel" id="carousel-ataudes">
+                        <img src="../img/galeria/ataud/img1.jpg" alt="Ataúd 1" onclick="openLightbox('ataudes', 0)">
+                        <img src="../img/galeria/ataud/img2.jpg" alt="Ataúd 2" onclick="openLightbox('ataudes', 1)">
+                        <img src="../img/galeria/ataud/img3.jpg" alt="Ataúd 3" onclick="openLightbox('ataudes', 2)">
+                        <img src="../img/galeria/ataud/img4.jpg" alt="Ataúd 4" onclick="openLightbox('ataudes', 3)">
+                        <img src="../img/galeria/ataud/img5.jpg" alt="Ataúd 5" onclick="openLightbox('ataudes', 4)">
+                        <img src="../img/galeria/ataud/img6.jpg" alt="Ataúd 6" onclick="openLightbox('ataudes', 5)">
+                    </div>
+                    <button class="carousel-btn next" onclick="scrollCarousel('ataudes', 1)">›</button>
+                </div>
+            </div>
+
+            <!-- Categoría 6: Nuestro Personal -->
+            <div class="gallery-category">
+    <div class="category-header">
+        <h2>Nuestro Personal</h2>
+        <button class="btn-ver-mas" onclick="openModal('personal')">Ver más</button>
+    </div>
+    <div class="carousel-container">
+        <button class="carousel-btn prev" onclick="scrollCarousel('personal', -1)">‹</button>
+        <div class="carousel" id="carousel-personal">
+            <img src="../img/galeria/personal/img6.jpg" alt="Personal 6" onclick="openLightbox('personal', 5)">
+            <img src="../img/galeria/personal/img7.jpg" alt="Personal 7" onclick="openLightbox('personal', 6)">
+            <img src="../img/galeria/personal/img8.jpg" alt="Personal 8" onclick="openLightbox('personal', 7)">
+            <img src="../img/galeria/personal/img1.jpg" alt="Personal 1" onclick="openLightbox('personal', 0)">
+            <img src="../img/galeria/personal/img2.jpg" alt="Personal 2" onclick="openLightbox('personal', 1)">
+            <img src="../img/galeria/personal/img3.jpg" alt="Personal 3" onclick="openLightbox('personal', 2)">
+            <img src="../img/galeria/personal/img4.jpg" alt="Personal 4" onclick="openLightbox('personal', 3)">
+            <img src="../img/galeria/personal/img5.jpg" alt="Personal 5" onclick="openLightbox('personal', 4)">
+            <img src="../img/galeria/personal/img10.jpg" alt="Personal 10" onclick="openLightbox('personal', 9)">
+            <img src="../img/galeria/personal/img11.jpg" alt="Personal 11" onclick="openLightbox('personal', 10)">
+            <img src="../img/galeria/personal/img12.jpg" alt="Personal 12" onclick="openLightbox('personal', 11)">
+            <img src="../img/galeria/personal/img13.jpg" alt="Personal 13" onclick="openLightbox('personal', 12)">
+            <img src="../img/galeria/personal/img14.jpg" alt="Personal 14" onclick="openLightbox('personal', 13)">
+            <img src="../img/galeria/personal/img15.jpg" alt="Personal 15" onclick="openLightbox('personal', 14)">
+            <img src="../img/galeria/personal/img16.jpg" alt="Personal 16" onclick="openLightbox('personal', 15)">
+            <img src="../img/galeria/personal/img17.jpg" alt="Personal 17" onclick="openLightbox('personal', 16)">
+            <img src="../img/galeria/personal/img18.jpg" alt="Personal 18" onclick="openLightbox('personal', 17)">
+            <img src="../img/galeria/personal/img19.jpg" alt="Personal 19" onclick="openLightbox('personal', 18)">
+        </div>
+        <button class="carousel-btn next" onclick="scrollCarousel('personal', 1)">›</button>
+    </div>
+</div>
+
+        </div>
+    </section>
+
+    <!-- Modal para "Ver más" -->
+    <div id="modal-gallery" class="modal-gallery">
+        <div class="modal-content-gallery">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <div class="modal-grid" id="modal-grid"></div>
+        </div>
+    </div>
+
+    <!-- Lightbox para ver imagen completa -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <button class="lightbox-btn prev" onclick="changeLightboxImage(-1)">‹</button>
+        <img id="lightbox-img" src="" alt="">
+        <button class="lightbox-btn next" onclick="changeLightboxImage(1)">›</button>
+        <div class="lightbox-counter">
+            <span id="lightbox-current">1</span> / <span id="lightbox-total">6</span>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="footer-container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <br>
+                <center>
+                    <img src="../../logos/Funeraria Asuncion.png" alt="Logo Funeraria La Asunción">
+                    <p class="footer-tagline">"Acompañándote con respeto y dignidad"</p>
+                </center>
+            </div>
+
+            <div class="footer-section">
+                <h4>Servicios</h4>
+                <p>
+                    <a href="servicios.html" class="btn-servicio">Velación</a><br>
+                    <a href="servicios.html" class="btn-servicio">Capillas</a><br>
+                    <a href="servicios.html" class="btn-servicio">Traslados</a><br>
+                    <a href="servicios.html" class="btn-servicio">Ataúdes</a><br>
+                    <a href="servicios.html" class="btn-servicio">Asesoría familiar</a>
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>
+                    <a href="https://maps.app.goo.gl/bBeFfSHbtQgkeDXb8" class="btn-servicio">Ahuachapán, El Salvador</a><br>
+                    <a href="tel:+50372470650" class="btn-servicio">Tel: +(503) 7247 0650</a><br>
+                    <a href="https://wa.me/50372470650" class="btn-servicio">WhatsApp: +(503) 7247-0650</a><br>
+                    <a href="mailto:funerarialaasuncion2023@gmail.com" class="btn-servicio">Correo: funerarialaasuncion2023@gmail.com</a><br>
+                    Disponibles 24/7
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <center><h4>Redes Sociales</h4></center>
+                <p>
+                    <a href="https://wa.me/50372470650" target="_blank">WhatsApp</a><br>
+                    <a href="https://www.facebook.com/ataudesdelujo" target="_blank">Facebook</a><br>
+                    <a href="https://www.instagram.com/funeraria_la_asuncion/" target="_blank">Instagram</a><br>
+                    <a href="mailto:funerarialaasuncion2023@gmail.com">Email</a><br>
+                    <a href="https://www.tiktok.com/@funeraria_la_asuncion" target="_blank">TikTok</a><br>
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2026 Funeraria La Asunción. Todos los derechos reservados. Ahuachapán, El Salvador.
+        </div>
+    </footer>
+
+    <script src="../js/galeria.js"></script>
+</body>
+</html>
