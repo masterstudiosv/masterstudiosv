@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sitio en Mantenimiento</title>
+<link rel="stylesheet" href="../css/mantenimiento.css">
+<link rel="icon" href="../logos/loks.png" type="image/png">
+</head>
+<body>
+
+<!-- Imagen de mantenimiento -->
+<img src="https://www.cegid.com/ib/wp-content/uploads/sites/3/2023/11/Padre-imagen-mantenimiento-3.png" alt="Mantenimiento">
+
+<h1>Sitio en Mantenimiento</h1>
+<p>Estamos trabajando para mejorar tu experiencia.<br>Por favor, regresa pronto.</p>
+
+<a href="../index.html" class="btn-home">Regresar al Inicio</a>
+
+<!-- Botón flotante de soporte -->
+<button class="support-btn" onclick="toggleSupport()" aria-label="Contactar soporte">
+    <!-- Cambia esta ruta por tu imagen de icono de soporte -->
+    <img src="https://cdn-icons-png.freepik.com/256/7611/7611368.png?semt=ais_white_label" alt="Soporte">
+</button>
+
+<!-- Overlay oscuro -->
+<div class="overlay" id="overlay" onclick="closeSupport()"></div>
+
+<!-- Panel de soporte -->
+<div class="support-panel" id="supportPanel">
+    <button class="close-btn" onclick="closeSupport()">&times;</button>
+    <h3>Contactar Soporte</h3>
+    <p>¿Necesitas ayuda? Elige una opción para comunicarte con nosotros:</p>
+    
+    <div class="support-options">
+        <!-- Correo -->
+        <a href="mailto:info.masterstudiosv@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 8L10.89 13.26C11.567 13.672 12.433 13.672 13.11 13.26L21 8M5 19H19C20.105 19 21 18.105 21 17V7C21 5.895 20.105 5 19 5H5C3.895 5 3 5.895 3 7V17C3 18.105 3.895 19 5 19Z" stroke="#4a90e2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>info.masterstudiosv@gmail.com</span>
+        </a>
+    </div>
+
+    <a href="../index.html" class="btn-return">Regresar al Inicio</a>
+</div>
+
+<!-- Modal de inactividad -->
+<div class="inactivity-modal" id="inactivityModal">
+    <h3>⚠️ Advertencia</h3>
+    <p>Debido a tu inactividad, esta ventana se cerrará automáticamente en:</p>
+    <div class="timer-display" id="timerDisplay">30</div>
+    <p>¿Deseas permanecer en esta página?</p>
+    <div class="modal-buttons">
+        <button class="btn-stay" onclick="stayOnPage()">Permanecer Aquí</button>
+        <button class="btn-leave" onclick="leavePage()">Ir al Inicio</button>
+    </div>
+</div>
+
+<script src="../js/mantenimiento.js"></script>
+</body>
+</html>

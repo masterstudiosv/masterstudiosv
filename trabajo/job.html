@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabaja con Nosotros - Master Studio SV</title>
+    <link rel="icon" href="../logos/loks.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="shadow-lg fixed w-full top-0 z-50 bg-white">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <!-- Logo -->
+        <div class="logo-container" style="max-width: 250px; height: 60px;">
+            <a href="../index.html">
+                <img src="../logos/logo.svg" alt="Master Studio SV" style="max-height: 100%; width: auto; object-fit: contain;">
+            </a>
+        </div>
+
+        <!-- Menú escritorio -->
+        <div class="hidden md:flex space-x-8">
+            <a href="../index.html" class="nav-link text-gray-700 hover:text-purple-600">Inicio</a>
+            <a href="#" onclick="openModal('terms'); return false;" class="nav-link text-gray-700 hover:text-purple-600">Términos y Condiciones</a>
+            <a href="#" onclick="openModal('privacy'); return false;" class="nav-link text-gray-700 hover:text-purple-600">Políticas de Privacidad</a>
+        </div>
+
+        <!-- Botón hamburguesa móvil -->
+        <button class="md:hidden text-gray-700 focus:outline-none" onclick="toggleMenu()">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
+    </div>
+
+    <!-- Menú móvil -->
+    <div id="mobileMenu" class="hidden flex-col md:hidden bg-white px-6 pb-4">
+        <a href="../index.html" class="block py-2 text-gray-700 hover:text-purple-600">Inicio</a>
+        <a href="#" onclick="openModal('terms'); return false;" class="block py-2 text-gray-700 hover:text-purple-600">Términos y Condiciones</a>
+        <a href="#" onclick="openModal('privacy'); return false;" class="block py-2 text-gray-700 hover:text-purple-600">Políticas de Privacidad</a>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white pt-32 pb-20 px-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+                <div>
+                    <div class="inline-block bg-white bg-opacity-20 backdrop-blur-sm px-6 py-2 rounded-full mb-6">
+                        <span class="text-sm font-bold">ÚNETE AL EQUIPO</span>
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
+                        Construye Tu Carrera Digital
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 leading-relaxed opacity-95">
+                        Únete a Master Studio SV y transforma la presencia digital de negocios en toda Latinoamérica.
+                    </p>
+                    <a href="#positions" class="inline-block bg-white text-purple-700 px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition">
+                        Ver Posiciones <i class="fas fa-arrow-down ml-2"></i>
+                    </a>
+                </div>
+                <div class="rounded-3xl overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=500&fit=crop" 
+                         alt="Equipo Trabajando" 
+                         class="w-full h-[500px] object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 px-6 bg-white -mt-16">
+        <div class="container mx-auto max-w-6xl">
+            <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <div class="text-5xl font-black bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text text-transparent mb-2">50+</div>
+                        <p class="text-gray-600 font-semibold">Proyectos</p>
+                    </div>
+                    <div>
+                        <div class="text-5xl font-black bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text text-transparent mb-2">15+</div>
+                        <p class="text-gray-600 font-semibold">Equipo</p>
+                    </div>
+                    <div>
+                        <div class="text-5xl font-black bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text text-transparent mb-2">5</div>
+                        <p class="text-gray-600 font-semibold">Países</p>
+                    </div>
+                    <div>
+                        <div class="text-5xl font-black bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text text-transparent mb-2">100%</div>
+                        <p class="text-gray-600 font-semibold">Remoto</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section class="py-24 px-6 bg-gray-50">
+        <div class="container mx-auto max-w-7xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-black text-gray-800 mb-6">
+                        Cultura de Innovación
+                    </h2>
+                    <p class="text-xl text-gray-600 leading-relaxed mb-6">
+                        Trabajamos de forma 100% remota, priorizamos resultados sobre horarios y fomentamos el aprendizaje continuo.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-home text-purple-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-800 text-lg mb-1">Trabajo Remoto</h3>
+                                <p class="text-gray-600">Trabaja desde cualquier lugar del mundo</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-purple-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-800 text-lg mb-1">Horarios Flexibles</h3>
+                                <p class="text-gray-600">Organiza tu tiempo como prefieras</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-rocket text-purple-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-800 text-lg mb-1">Crecimiento Continuo</h3>
+                                <p class="text-gray-600">Aprende constantemente en cada proyecto</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-3xl overflow-hidden shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop" 
+                         alt="Colaboración" 
+                         class="w-full h-[500px] object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-24 px-6 bg-white">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-black text-gray-800 mb-6">
+                    ¿Por Qué Trabajar con Nosotros?
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Beneficios que hacen la diferencia
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-800 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-dollar-sign text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Pagos Competitivos</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Compensación justa según experiencia y complejidad del proyecto.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-800 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Equipo Unido</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Colabora con profesionales apasionados de toda Latinoamérica.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-800 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Crecimiento Real</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Proyectos diversos que expanden tus habilidades constantemente.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Positions Section -->
+    <section id="positions" class="py-24 px-6 bg-gray-50">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-black text-gray-800 mb-6">
+                    Posiciones Disponibles
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Encuentra tu lugar en nuestro equipo
+                </p>
+            </div>
+
+            <!-- Desarrollador Web -->
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden mb-12 hover:shadow-2xl transition">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=300&fit=crop" 
+                         alt="Desarrollo Web" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                </div>
+                <div class="p-8 md:p-12">
+                    <div class="bg-gradient-to-r from-purple-600 to-purple-800 text-white p-6 rounded-2xl mb-8">
+                        <h3 class="text-3xl font-black mb-2">Desarrollador Web</h3>
+                        <p class="text-lg opacity-90">
+                            <i class="fas fa-map-marker-alt mr-2"></i>Remoto · 
+                            <i class="fas fa-briefcase ml-3 mr-2"></i>Por Proyecto
+                        </p>
+                    </div>
+
+                    <div class="mb-8">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                            <i class="fas fa-clipboard-check text-purple-600 mr-3"></i>
+                            Requisitos
+                        </h4>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-check-circle text-green-500 text-xl mt-1"></i>
+                                <p class="text-gray-700 text-lg">Experiencia mínima 1 año en desarrollo web</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-check-circle text-green-500 text-xl mt-1"></i>
+                                <p class="text-gray-700 text-lg">Dominio de PHP, MySQL, HTML5, CSS3 y JavaScript</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-check-circle text-green-500 text-xl mt-1"></i>
+                                <p class="text-gray-700 text-lg">Experiencia con frameworks modernos (React, Vue, Laravel, etc.)</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-check-circle text-green-500 text-xl mt-1"></i>
+                                <p class="text-gray-700 text-lg">Portfolio con proyectos demostrables</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-8 bg-purple-50 p-6 rounded-xl">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-money-bill-wave text-purple-600 mr-3"></i>
+                            Compensación
+                        </h4>
+                        <p class="text-gray-700 text-lg leading-relaxed">
+                            Pago por proyecto según complejidad. Rangos competitivos basados en experiencia y calidad de entrega.
+                        </p>
+                    </div>
+
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc4Lcrj5T3caK70jlPp5vACsdak7d9TpxkC0FbHSjNTPHeStQ/viewform?usp=dialog" 
+                       target="_blank"
+                       class="block text-center bg-gradient-to-r from-purple-600 to-purple-800 text-white px-10 py-5 rounded-xl font-bold text-xl hover:shadow-xl transition-all transform hover:scale-105">
+                        Aplicar como Desarrollador <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Vendedor Digital -->
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&h=300&fit=crop" 
+                         alt="Ventas Digitales" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                </div>
+                <div class="p-8 md:p-12">
+                    <div class="bg-gradient-to-r from-purple-600 to-purple-800 text-white p-6 rounded-2xl mb-8">
+                        <h3 class="text-3xl font-black mb-2">Vendedor Digital</h3>
+                        <p class="text-lg opacity-90">
+                            <i class="fas fa-map-marker-alt mr-2"></i>Remoto/Presencial · 
+                            <i class="fas fa-percentage ml-3 mr-2"></i>Por Comisión
+                        </p>
+                    </div>
+
+                    <div class="mb-8">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                            <i class="fas fa-clipboard-check text-purple-600 mr-3"></i>
+                            Requisitos
+                        </h4>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-check-circle text-green-500 text-xl mt-1"></i>
+                                <p class="text-gray-700 text-lg">Experiencia en ventas o desarrollo de negocios</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-check-circle text-green-500 text-xl mt-1"></i>
+                                <p class="text-gray-700 text-lg">Excelentes habilidades de comunicación</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-check-circle text-green-500 text-xl mt-1"></i>
+                                <p class="text-gray-700 text-lg">Conocimiento básico sobre desarrollo web y marketing digital</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-check-circle text-green-500 text-xl mt-1"></i>
+                                <p class="text-gray-700 text-lg">Actitud proactiva y orientada a resultados</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-8 bg-purple-50 p-6 rounded-xl">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-money-bill-wave text-purple-600 mr-3"></i>
+                            Compensación
+                        </h4>
+                        <p class="text-gray-700 text-lg leading-relaxed">
+                            Comisión del 15-25% por cada proyecto cerrado y pagado. <strong>Potencial ilimitado de ingresos.</strong>
+                        </p>
+                    </div>
+
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc76p1s4WFBjspPBuxsESnIf-Ds7zhSt3-jP_iuhc71KEjVQQ/viewform?usp=dialog" 
+                       target="_blank"
+                       class="block text-center bg-gradient-to-r from-purple-600 to-purple-800 text-white px-10 py-5 rounded-xl font-bold text-xl hover:shadow-xl transition-all transform hover:scale-105">
+                        Aplicar como Vendedor <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 px-6 bg-white">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-4xl md:text-5xl font-black text-gray-800 mb-6">
+                ¿Listo Para Unirte?
+            </h2>
+            <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                Envía tu CV y portfolio directamente a nuestro email
+            </p>
+            <a href="mailto:masterstudiosv@gmail.com" 
+               class="inline-block bg-gradient-to-r from-purple-600 to-purple-800 text-white px-12 py-5 rounded-full font-black text-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition mb-8">
+                <i class="fas fa-envelope mr-2"></i> masterstudiosv@gmail.com
+            </a>
+            <div class="flex gap-6 justify-center flex-wrap mt-8">
+                <button onclick="openModal('terms')" class="text-purple-600 hover:text-purple-800 font-semibold underline">
+                    <i class="fas fa-file-contract mr-2"></i>Términos y Condiciones
+                </button>
+                <button onclick="openModal('privacy')" class="text-purple-600 hover:text-purple-800 font-semibold underline">
+                    <i class="fas fa-shield-alt mr-2"></i>Políticas de Privacidad
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-16 px-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="text-3xl font-black mb-4">
+                        Master Studio SV
+                    </h3>
+                    <p class="text-purple-100 mb-6 leading-relaxed">
+                        Transformamos negocios salvadoreños con sitios web profesionales que generan resultados reales.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://wa.me/50372704519?text=Hola,%20quiero%20cotizar%20un%20sitio%20web" target="_blank" class="w-12 h-12 bg-white bg-opacity-20 rounded-xl flex items-center justify-center hover:bg-opacity-30 transition text-xl">
+                           <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/master_studio_sv/" target="_blank" class="w-12 h-12 bg-white bg-opacity-20 rounded-xl flex items-center justify-center hover:bg-opacity-30 transition text-xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61581772635363" target="_blank" class="w-12 h-12 bg-white bg-opacity-20 rounded-xl flex items-center justify-center hover:bg-opacity-30 transition text-xl">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="mailto:info.masterstudiosv@gmail.com" class="w-12 h-12 bg-white bg-opacity-20 rounded-xl flex items-center justify-center hover:bg-opacity-30 transition text-xl">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Enlaces Rápidos</h4>
+                    <ul class="space-y-3">
+                        <li><a href="../index.html" class="text-purple-100 hover:text-white transition flex items-center"><i class="fas fa-chevron-right mr-2 text-sm"></i> Inicio</a></li>
+                        <li><a href="../pages/servicios.html" class="text-purple-100 hover:text-white transition flex items-center"><i class="fas fa-chevron-right mr-2 text-sm"></i> Servicios</a></li>
+                        <li><a href="../pages/planes.html" class="text-purple-100 hover:text-white transition flex items-center"><i class="fas fa-chevron-right mr-2 text-sm"></i> Planes</a></li>
+                        <li><a href="../pages/portafolio.html" class="text-purple-100 hover:text-white transition flex items-center"><i class="fas fa-chevron-right mr-2 text-sm"></i> Portafolio</a></li>
+                        <li><a href="../pages/contacto.html" class="text-purple-100 hover:text-white transition flex items-center"><i class="fas fa-chevron-right mr-2 text-sm"></i> Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Contacto</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-purple-300 mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-sm text-purple-200">Email</p>
+                                <a href="mailto:info.masterstudiosv@gmail.com" class="text-white hover:text-purple-200">info.masterstudiosv@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fab fa-whatsapp text-purple-300 mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-sm text-purple-200">WhatsApp</p>
+                                <a href="https://wa.me/50372704519" class="text-white hover:text-purple-200">+503 7270 4519</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-purple-300 mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-sm text-purple-200">Ubicación</p>
+                                <p class="text-white">El Salvador</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Legal</h4>
+                    <ul class="space-y-3">
+                        <li><button onclick="openModal('privacy')" class="text-purple-100 hover:text-white transition flex items-center"><i class="fas fa-shield-alt mr-2"></i> Políticas de Privacidad</button></li>
+                        <li><button onclick="openModal('terms')" class="text-purple-100 hover:text-white transition flex items-center"><i class="fas fa-file-contract mr-2"></i> Términos y Condiciones</button></li>
+                        <li><a href="#cookies" class="text-purple-100 hover:text-white transition flex items-center"><i class="fas fa-cookie-bite mr-2"></i> Política de Cookies</a></li>
+                        <li><a href="job.html" class="text-white font-bold flex items-center"><i class="fas fa-briefcase mr-2"></i> Trabaja con nosotros</a></li>
+                                                <li><a href="../colaboraciones/colaboracion.html" class="text-purple-100 hover:text-white transition flex items-center"><i class="fas fa-project-diagram mr-2"></i> Colaboración de Proyectos</a></li>
+                      </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white border-opacity-20 pt-8 text-center">
+                <p class="text-purple-100 text-lg">
+                    &copy; 2026 Master Studio SV. Todos los derechos reservados.
+                </p>
+                <p class="text-purple-200 text-sm mt-2">
+                    <i class="fas fa-map-marker-alt mr-1"></i> El Salvador | Haciendo crecer negocios digitalmente
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/50372704519?text=Hola%2C%20quiero%20información%20sobre%20trabajar%20con%20Master%20Studio" target="_blank" class="fixed bottom-8 right-8 w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-2xl z-50 transition-all transform hover:scale-110 animate-pulse">
+        <i class="fab fa-whatsapp text-white text-3xl"></i>
+    </a>
+
+    <!-- Modal: Términos y Condiciones -->
+    <div id="termsModal" class="fixed inset-0 bg-black bg-opacity-80 z-[9999] hidden overflow-y-auto">
+        <div class="container mx-auto px-6 py-12">
+            <div class="bg-white rounded-3xl max-w-4xl mx-auto p-8 md:p-12 relative">
+                <button onclick="closeModal('terms')" class="absolute top-6 right-6 text-gray-400 hover:text-gray-600 text-3xl">
+                    <i class="fas fa-times"></i>
+                </button>
+                
+                <h2 class="text-4xl font-black text-gray-800 mb-8">
+                    <i class="fas fa-file-contract text-purple-600 mr-3"></i>
+                    Términos y Condiciones
+                </h2>
+
+                <div class="text-gray-700 leading-relaxed space-y-6">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Proceso de Aplicación</h3>
+                        <p>
+                            Al enviar este formulario, el postulante declara que toda la información proporcionada es verídica, completa y actualizada. Master Studio SV se reserva el derecho de verificar referencias, experiencia previa y portafolio presentado como parte del proceso de selección.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Modalidad de Trabajo</h3>
+                        <p>
+                            La colaboración se realiza bajo modalidad remota y por contrato. Los horarios son flexibles, sin embargo, el postulante acepta mantener disponibilidad para reuniones, entregas y coordinaciones previamente establecidas con el equipo de trabajo.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Compensación</h3>
+                        <p>
+                            La compensación económica varía según el rol asignado.<br>
+                            <strong>Desarrolladores y creativos:</strong> pago acordado por proyecto.<br>
+                            <strong>Área de ventas:</strong> comisión que oscila entre el 15% y 25% por cada contrato efectivamente cerrado y pagado.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Relación Laboral</h3>
+                        <p>
+                            El envío del formulario no garantiza contratación inmediata ni genera relación laboral fija. Toda colaboración será formalizada mediante acuerdo previo entre ambas partes.
+                        </p>
+                    </div>
+                </div>
+
+                <button onclick="closeModal('terms')" class="mt-8 bg-gradient-to-r from-purple-600 to-purple-800 text-white px-8 py-4 rounded-xl font-bold hover:shadow-xl transition">
+                    Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Políticas de Privacidad -->
+    <div id="privacyModal" class="fixed inset-0 bg-black bg-opacity-80 z-[9999] hidden overflow-y-auto">
+        <div class="container mx-auto px-6 py-12">
+            <div class="bg-white rounded-3xl max-w-4xl mx-auto p-8 md:p-12 relative">
+                <button onclick="closeModal('privacy')" class="absolute top-6 right-6 text-gray-400 hover:text-gray-600 text-3xl">
+                    <i class="fas fa-times"></i>
+                </button>
+                
+                <h2 class="text-4xl font-black text-gray-800 mb-8">
+                    <i class="fas fa-shield-alt text-purple-600 mr-3"></i>
+                    Políticas de Privacidad
+                </h2>
+
+                <div class="text-gray-700 leading-relaxed space-y-6">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Información Recopilada</h3>
+                        <p>
+                            Master Studio SV recopila información personal como nombre completo, correo electrónico, experiencia profesional, habilidades y portafolio con el único fin de evaluar perfiles interesados en colaborar con la empresa.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Uso de la Información</h3>
+                        <p>
+                            Los datos recopilados serán utilizados exclusivamente para procesos de reclutamiento, evaluación y contacto profesional. La información no será vendida, cedida ni compartida con terceros ajenos a la empresa.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Protección de Datos</h3>
+                        <p>
+                            Master Studio SV se compromete a proteger la información proporcionada, aplicando medidas razonables de seguridad para evitar accesos no autorizados, pérdidas o usos indebidos.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Derechos del Postulante</h3>
+                        <p>
+                            El postulante puede solicitar en cualquier momento el acceso, corrección o eliminación de sus datos personales escribiendo directamente a los canales oficiales de contacto de Master Studio SV.
+                        </p>
+                    </div>
+                </div>
+
+                <button onclick="closeModal('privacy')" class="mt-8 bg-gradient-to-r from-purple-600 to-purple-800 text-white px-8 py-4 rounded-xl font-bold hover:shadow-xl transition">
+                    Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/job.js"></script> 
+</body>
+</html>

@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Master Studio SV</title>
+    <link rel="icon" href="../logos/loks.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="shadow-lg fixed w-full top-0 z-50 bg-white">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="logo-container" style="max-width: 250px; height: 60px;">
+                    <img src="../logos/logo.svg" alt="Master Studio SV" style="max-height: 100%; width: auto; object-fit: contain;">
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="../index.html" class="nav-link text-gray-700 hover:text-purple-600">Inicio</a>
+                    <a href="servicios.html" class="nav-link text-gray-700 hover:text-purple-600 font-bold text-purple-600">Servicios</a>
+                    <a href="planes.html" class="nav-link text-gray-700 hover:text-purple-600">Planes</a>
+                    <a href="portafolio.html" class="nav-link text-gray-700 hover:text-purple-600">Portafolio</a>
+                    <a href="contacto.html" class="nav-link text-gray-700 hover:text-purple-600">Contacto</a>
+                </div>
+                <button class="md:hidden text-gray-700" onclick="toggleMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4">
+                <a href="../index.html" class="block py-2 text-gray-700 hover:text-purple-600">Inicio</a>
+                <a href="servicios.html" class="block py-2 text-purple-600 font-bold">Servicios</a>
+                <a href="planes.html" class="block py-2 text-gray-700 hover:text-purple-600">Planes</a>
+                <a href="portafolio.html" class="block py-2 text-gray-700 hover:text-purple-600">Portafolio</a>
+                <a href="contacto.html" class="block py-2 text-gray-700 hover:text-purple-600">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white pt-32 pb-20 px-6">
+        <div class="container mx-auto text-center">
+            <h1 class="text-5xl md:text-6xl font-black mb-6">
+                Nuestros Servicios
+            </h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto">
+                Soluciones web diseñadas específicamente para hacer crecer tu negocio y atraer más clientes
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="py-24 px-6 bg-white">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <!-- Fotografía -->
+                <div class="service-card">
+                    <div class="service-icon-container">
+                        <i class="fas fa-camera text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">Fotografía</h3>
+                    <p class="text-gray-600 mb-6 text-center leading-relaxed">
+                        Portafolio visual impactante con galerías elegantes y formulario de contacto.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Portafolio de proyectos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Galerías por categorías</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Paquetes y precios</span>
+                        </li>
+                    </ul>
+                    <a href="contacto.html" class="block text-center bg-gradient-to-r from-purple-600 to-purple-800 text-white px-6 py-3 rounded-lg font-bold hover:shadow-lg transition">
+                        Solicitar <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Clínicas -->
+                <div class="service-card">
+                    <div class="service-icon-container">
+                        <i class="fas fa-hospital text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">Clínicas</h3>
+                    <p class="text-gray-600 mb-6 text-center leading-relaxed">
+                        Sistema de citas médicas, información de servicios y perfiles profesionales.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Citas médicas online</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Perfiles de doctores</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Especialidades y servicios</span>
+                        </li>
+                    </ul>
+                    <a href="contacto.html" class="block text-center bg-gradient-to-r from-purple-600 to-purple-800 text-white px-6 py-3 rounded-lg font-bold hover:shadow-lg transition">
+                        Solicitar <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Tiendas Online -->
+                <div class="service-card">
+                    <div class="service-icon-container">
+                        <i class="fas fa-shopping-cart text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">Tiendas Online</h3>
+                    <p class="text-gray-600 mb-6 text-center leading-relaxed">
+                        E-commerce completo con catálogo, carrito de compras y pagos seguros integrados.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Catálogo de productos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Carrito de compras</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Pagos seguros integrados</span>
+                        </li>
+                    </ul>
+                    <a href="contacto.html" class="block text-center bg-gradient-to-r from-purple-600 to-purple-800 text-white px-6 py-3 rounded-lg font-bold hover:shadow-lg transition">
+                        Solicitar <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Personalizados -->
+                <div class="service-card">
+                    <div class="service-icon-container">
+                        <i class="fas fa-magic text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">Personalizados</h3>
+                    <p class="text-gray-600 mb-6 text-center leading-relaxed">
+                        Diseño único y a medida para cualquier tipo de negocio o emprendimiento.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Diseño 100% personalizado</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Funciones a tu medida</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Asesoría personalizada</span>
+                        </li>
+                    </ul>
+                    <a href="contacto.html" class="block text-center bg-gradient-to-r from-purple-600 to-purple-800 text-white px-6 py-3 rounded-lg font-bold hover:shadow-lg transition">
+                        Solicitar <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Restaurantes -->
+                <div class="service-card">
+                    <div class="service-icon-container">
+                        <i class="fas fa-utensils text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">Restaurantes</h3>
+                    <p class="text-gray-600 mb-6 text-center leading-relaxed">
+                        Menú digital interactivo, reservas online y galería de platillos que hace agua la boca.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Menú digital con fotos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Sistema de reservas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Integración con delivery</span>
+                        </li>
+                    </ul>
+                    <a href="contacto.html" class="block text-center bg-gradient-to-r from-purple-600 to-purple-800 text-white px-6 py-3 rounded-lg font-bold hover:shadow-lg transition">
+                        Solicitar <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Barberías -->
+                <div class="service-card">
+                    <div class="service-icon-container">
+                        <i class="fas fa-cut text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">Barberías</h3>
+                    <p class="text-gray-600 mb-6 text-center leading-relaxed">
+                        Sistema de citas online, galería de estilos y presentación moderna de servicios.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Agenda de citas online</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Galería de estilos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Perfiles de barberos</span>
+                        </li>
+                    </ul>
+                    <a href="contacto.html" class="block text-center bg-gradient-to-r from-purple-600 to-purple-800 text-white px-6 py-3 rounded-lg font-bold hover:shadow-lg transition">
+                        Solicitar <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Educación -->
+                <div class="service-card">
+                    <div class="service-icon-container">
+                        <i class="fas fa-graduation-cap text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">Educación / Academia</h3>
+                    <p class="text-gray-600 mb-6 text-center leading-relaxed">
+                        Plataforma educativa con cursos, horarios e inscripciones online.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Catálogo de cursos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Inscripciones online</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Horarios y calendario</span>
+                        </li>
+                    </ul>
+                    <a href="contacto.html" class="block text-center bg-gradient-to-r from-purple-600 to-purple-800 text-white px-6 py-3 rounded-lg font-bold hover:shadow-lg transition">
+                        Solicitar <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Eventos -->
+                <div class="service-card">
+                    <div class="service-icon-container">
+                        <i class="fas fa-ring text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">Eventos / Wedding Planner</h3>
+                    <p class="text-gray-600 mb-6 text-center leading-relaxed">
+                        Diseño elegante para bodas y eventos con portafolios y paquetes personalizados.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Portafolio de eventos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Paquetes personalizados</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Cotizador online</span>
+                        </li>
+                    </ul>
+                    <a href="contacto.html" class="block text-center bg-gradient-to-r from-purple-600 to-purple-800 text-white px-6 py-3 rounded-lg font-bold hover:shadow-lg transition">
+                        Solicitar <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-24 px-6 bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-black text-gray-800 mb-6">
+                    Todos Nuestros Servicios Incluyen
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Características premium que hacen destacar tu sitio web
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-mobile-alt text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Diseño Responsivo</h3>
+                    <p class="text-gray-600">Perfecto en todos los dispositivos: móviles, tablets y computadoras</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-search text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">SEO Optimizado</h3>
+                    <p class="text-gray-600">Optimización para que te encuentren fácilmente en Google</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-rocket text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Carga Rápida</h3>
+                    <p class="text-gray-600">Sitios optimizados para velocidad y rendimiento superior</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Seguridad SSL</h3>
+                    <p class="text-gray-600">Certificado de seguridad para proteger tu sitio y usuarios</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-share-alt text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Redes Sociales</h3>
+                    <p class="text-gray-600">Integración completa con todas tus redes sociales</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-headset text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Soporte 24/7</h3>
+                    <p class="text-gray-600">Asistencia técnica disponible cuando la necesites</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 px-6 bg-white">
+        <div class="container mx-auto text-center max-w-4xl">
+            <div class="bg-gradient-to-r from-purple-600 to-purple-800 rounded-3xl p-12 md:p-16 shadow-2xl">
+                <h2 class="text-4xl md:text-5xl font-black text-white mb-6">
+                    ¿Listo Para Comenzar Tu Proyecto?
+                </h2>
+                <p class="text-xl text-purple-100 mb-8 leading-relaxed">
+                    Cuéntanos qué necesitas y te enviamos una cotización personalizada
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="contacto.html" class="bg-white text-purple-700 px-12 py-5 rounded-full font-black text-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition">
+                        <i class="fas fa-paper-plane mr-2"></i> Solicitar Cotización
+                    </a>
+                    <a href="planes.html" class="bg-purple-900 text-white px-12 py-5 rounded-full font-black text-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition border-2 border-white">
+                        <i class="fas fa-tag mr-2"></i> Ver Planes y Precios
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-16 px-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="text-3xl font-black mb-4">
+                        Master Studio SV
+                    </h3>
+                    <p class="text-purple-100 mb-6 leading-relaxed">
+                        Transformamos negocios salvadoreños con sitios web profesionales que generan resultados reales.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://wa.me/50372704519?text=Hola,%20quiero%20cotizar%20un%20sitio%20web" target="_blank" class="w-12 h-12 bg-white bg-opacity-20 rounded-xl flex items-center justify-center hover:bg-opacity-30 transition text-xl">
+                           <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/master_studio_sv/" target="_blank" class="w-12 h-12 bg-white bg-opacity-20 rounded-xl flex items-center justify-center hover:bg-opacity-30 transition text-xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61581772635363" target="_blank" class="w-12 h-12 bg-white bg-opacity-20 rounded-xl flex items-center justify-center hover:bg-opacity-30 transition text-xl">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="mailto:info.masterstudiosv@gmail.com" class="w-12 h-12 bg-white bg-opacity-20 rounded-xl flex items-center justify-center hover:bg-opacity-30 transition text-xl">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Enlaces Rápidos</h4>
+                    <ul class="space-y-3">
+                        <li><a href="../index.html" class="text-purple-100 hover:text-white transition flex items-center"><i class="fas fa-chevron-right mr-2 text-sm"></i> Inicio</a></li>
+                        <li><a href="servicios.html" class="text-purple-100 hover:text-white transition flex items-center"><i class="fas fa-chevron-right mr-2 text-sm"></i> Servicios</a></li>
+                        <li><a href="planes.html" class="text-purple-100 hover:text-white transition flex items-center"><i class="fas fa-chevron-right mr-2 text-sm"></i> Planes</a></li>
+                        <li><a href="portafolio.html" class="text-purple-100 hover:text-white transition flex items-center"><i class="fas fa-chevron-right mr-2 text-sm"></i> Portafolio</a></li>
+                        <li><a href="contacto.html" class="text-white font-bold flex items-center"><i class="fas fa-chevron-right mr-2 text-sm"></i> Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Contacto</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-purple-300 mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-sm text-purple-200">Email</p>
+                                <a href="mailto:info.masterstudiosv@gmail.com" class="text-white hover:text-purple-200">info.masterstudiosv@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fab fa-whatsapp text-purple-300 mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-sm text-purple-200">WhatsApp</p>
+                                <a href="https://wa.me/50372704519" class="text-white hover:text-purple-200">+503 7270 4519</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-purple-300 mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-sm text-purple-200">Ubicación</p>
+                                <p class="text-white">El Salvador</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Legal</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#politicasModal" class="text-purple-100 hover:text-white transition flex items-center"><i class="fas fa-shield-alt mr-2"></i> Políticas de Privacidad</a></li>
+                        <li><a href="#terminosModal" class="text-purple-100 hover:text-white transition flex items-center"><i class="fas fa-file-contract mr-2"></i> Términos y Condiciones</a></li>
+                        <li><a href="#cookiesModal" class="text-purple-100 hover:text-white transition flex items-center"><i class="fas fa-cookie-bite mr-2"></i> Política de Cookies</a></li>
+                        <li><a href="../trabajo/job.html" class="text-purple-100 hover:text-white transition flex items-center"><i class="fas fa-briefcase mr-2"></i> Trabaja con nosotros</a></li>
+                                                <li><a href="../colaboraciones/colaboracion.html" class="text-purple-100 hover:text-white transition flex items-center"><i class="fas fa-project-diagram mr-2"></i> Colaboración de Proyectos</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white border-opacity-20 pt-8 text-center">
+                <p class="text-purple-100 text-lg">
+                    &copy; 2026 Master Studio SV. Todos los derechos reservados.
+                    <p class="text-purple-200 text-sm mt-2">
+                    <i class="fas fa-map-marker-alt mr-1"></i> El Salvador | Haciendo crecer negocios digitalmente
+                </p>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/50372704519?text=Hola%2C%20quiero%20cotizar%20un%20sitio%20web" target="_blank" id="whatsappBtn" class="fixed bottom-8 right-8 w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-2xl z-50 transition-all transform hover:scale-110 animate-pulse">
+        <i class="fab fa-whatsapp text-white text-3xl"></i>
+    </a>
+
+    <!-- Modal Políticas de Privacidad -->
+    <div id="politicasModal"
+        class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl max-w-3xl max-h-[90vh] overflow-y-auto p-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-gray-800">Políticas de Privacidad</h2>
+                <button onclick="closeModal('politicasModal')" class="text-gray-600 hover:text-gray-800 text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="text-gray-700 space-y-4">
+                <p><strong>Última actualización:</strong> Noviembre 2025</p>
+                <p><strong>Master Studio SV</strong> se compromete a proteger la privacidad de nuestros clientes y
+                    visitantes del sitio web.</p>
+
+                <h3 class="text-xl font-bold mt-6">1. Información que Recopilamos</h3>
+                <p>Recopilamos información personal que usted nos proporciona voluntariamente al solicitar nuestros
+                    servicios:</p>
+                <ul class="list-disc pl-6">
+                    <li>Nombre completo</li>
+                    <li>Dirección de correo electrónico</li>
+                    <li>Tipo de negocio</li>
+                    <li>Detalles del proyecto</li>
+                    <li>Información de contacto adicional</li>
+                </ul>
+
+                <h3 class="text-xl font-bold mt-6">2. Uso de la Información</h3>
+                <p>Utilizamos la información recopilada para:</p>
+                <ul class="list-disc pl-6">
+                    <li>Responder a sus consultas y solicitudes de cotización</li>
+                    <li>Desarrollar y entregar su sitio web personalizado</li>
+                    <li>Proporcionar soporte técnico y mantenimiento</li>
+                    <li>Mejorar nuestros servicios y experiencia del cliente</li>
+                    <li>Enviar actualizaciones importantes sobre su proyecto</li>
+                    <li>Comunicar ofertas especiales (solo si usted lo autoriza)</li>
+                </ul>
+
+                <h3 class="text-xl font-bold mt-6">3. Protección de Datos</h3>
+                <p>Master Studio SV implementa medidas de seguridad técnicas y organizativas para proteger su
+                    información personal contra acceso no autorizado, alteración, divulgación o destrucción. Esto
+                    incluye:</p>
+                <ul class="list-disc pl-6">
+                    <li>Encriptación de datos sensibles</li>
+                    <li>Acceso restringido a información personal</li>
+                    <li>Revisiones regulares de seguridad</li>
+                </ul>
+
+                <h3 class="text-xl font-bold mt-6">4. Compartir Información</h3>
+                <p>No vendemos, alquilamos ni compartimos su información personal con terceros para fines de marketing.
+                    Solo compartimos información cuando:</p>
+                <ul class="list-disc pl-6">
+                    <li>Sea necesario para proporcionar nuestros servicios (ej: hosting, procesadores de pago)</li>
+                    <li>Sea requerido por ley</li>
+                    <li>Usted nos dé su consentimiento explícito</li>
+                </ul>
+
+                <h3 class="text-xl font-bold mt-6">5. Cookies y Tecnologías Similares</h3>
+                <p>Utilizamos cookies para mejorar la experiencia del usuario en nuestro sitio web. Puede desactivar las
+                    cookies en la configuración de su navegador.</p>
+
+                <h3 class="text-xl font-bold mt-6">6. Sus Derechos</h3>
+                <p>Usted tiene derecho a:</p>
+                <ul class="list-disc pl-6">
+                    <li>Acceder a su información personal</li>
+                    <li>Solicitar la corrección de datos incorrectos</li>
+                    <li>Solicitar la eliminación de sus datos</li>
+                    <li>Oponerse al procesamiento de sus datos</li>
+                    <li>Retirar su consentimiento en cualquier momento</li>
+                </ul>
+
+                <h3 class="text-xl font-bold mt-6">7. Retención de Datos</h3>
+                <p>Conservamos su información personal solo durante el tiempo necesario para cumplir con los fines
+                    descritos en esta política o según lo requiera la ley.</p>
+
+                <h3 class="text-xl font-bold mt-6">8. Cambios a esta Política</h3>
+                <p>Master Studio SV se reserva el derecho de actualizar esta Política de Privacidad. Los cambios se
+                    publicarán en esta página con una nueva fecha de actualización.</p>
+
+                <h3 class="text-xl font-bold mt-6">9. Contacto</h3>
+                <p>Para consultas sobre privacidad o para ejercer sus derechos, contáctenos:</p>
+                <p><strong>Email:</strong> <a href="mailto:info.masterstudiosv@gmail.com"
+                        class="text-blue-600 hover:underline">info.masterstudiosv@gmail.com</a></p>
+                <p><strong>Ubicación:</strong> El Salvador</p>
+            </div>
+            <button onclick="closeModal('politicasModal')"
+                class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                Cerrar
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal Términos y Condiciones -->
+    <div id="terminosModal"
+        class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl max-w-3xl max-h-[90vh] overflow-y-auto p-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-gray-800">Términos y Condiciones</h2>
+                <button onclick="closeModal('terminosModal')" class="text-gray-600 hover:text-gray-800 text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="text-gray-700 space-y-4">
+                <p><strong>Última actualización:</strong> Noviembre 2025</p>
+                <p>Bienvenido a <strong>Master Studio SV</strong>. Estos Términos y Condiciones rigen el uso de nuestros
+                    servicios de desarrollo web.</p>
+
+                <h3 class="text-xl font-bold mt-6">1. Aceptación de Términos</h3>
+                <p>Al contratar los servicios de Master Studio SV o utilizar nuestro sitio web, usted acepta estos
+                    términos y condiciones en su totalidad. Si no está de acuerdo con alguna parte de estos términos, no
+                    debe utilizar nuestros servicios.</p>
+
+                <h3 class="text-xl font-bold mt-6">2. Servicios Ofrecidos</h3>
+                <p>Master Studio SV ofrece servicios de diseño y desarrollo de sitios web personalizados, incluyendo:
+                </p>
+                <ul class="list-disc pl-6">
+                    <li>Diseño web responsivo</li>
+                    <li>Desarrollo de sitios para restaurantes, barberías, tiendas y emprendimientos</li>
+                    <li>E-commerce y tiendas online</li>
+                    <li>Optimización SEO</li>
+                    <li>Mantenimiento y soporte técnico</li>
+                </ul>
+
+                <h3 class="text-xl font-bold mt-6">3. Proceso de Trabajo y Tiempos de Entrega</h3>
+                <p>Nuestro proceso de trabajo incluye:</p>
+                <ul class="list-disc pl-6">
+                    <li><strong>Consulta inicial:</strong> Evaluación de necesidades y cotización</li>
+                    <li><strong>Depósito inicial:</strong> 50% para iniciar el proyecto</li>
+                    <li><strong>Diseño y desarrollo:</strong> 2-5 días hábiles según el plan</li>
+                    <li><strong>Revisiones:</strong> Hasta 2 rondas de ajustes incluidas</li>
+                    <li><strong>Entrega final:</strong> Tras aprobación y pago del saldo restante</li>
+                </ul>
+                <p>Los tiempos de entrega pueden variar según la complejidad del proyecto y la disponibilidad del
+                    contenido por parte del cliente.</p>
+
+                <h3 class="text-xl font-bold mt-6">4. Pagos y Facturación</h3>
+                <p>Los precios están expresados en dólares estadounidenses (USD). Se requiere:</p>
+                <ul class="list-disc pl-6">
+                    <li>50% de depósito inicial para comenzar el proyecto</li>
+                    <li>50% restante al completar el proyecto antes de la entrega</li>
+                    <li>Los pagos pueden realizarse mediante transferencia bancaria o métodos acordados</li>
+                </ul>
+
+                <h3 class="text-xl font-bold mt-6">5. Propiedad Intelectual</h3>
+                <p>Una vez completado el pago total:</p>
+                <ul class="list-disc pl-6">
+                    <li>El cliente obtiene los derechos de uso del sitio web desarrollado</li>
+                    <li>Master Studio SV retiene el derecho de usar el proyecto en su portafolio</li>
+                    <li>El código y diseños son propiedad del cliente tras el pago completo</li>
+                    <li>Elementos de terceros (plugins, librerías) mantienen sus licencias originales</li>
+                </ul>
+
+                <h3 class="text-xl font-bold mt-6">6. Responsabilidades del Cliente</h3>
+                <p>El cliente es responsable de:</p>
+                <ul class="list-disc pl-6">
+                    <li>Proporcionar contenido (textos, imágenes, logos) en tiempo oportuno</li>
+                    <li>Dar retroalimentación clara y oportuna</li>
+                    <li>Contratar servicios de hosting y dominio (podemos asesorar)</li>
+                    <li>Mantener copias de seguridad del sitio web</li>
+                    <li>Cumplir con las leyes aplicables al contenido publicado</li>
+                </ul>
+
+                <h3 class="text-xl font-bold mt-6">7. Soporte y Mantenimiento</h3>
+                <p>El soporte incluido varía según el plan contratado:</p>
+                <ul class="list-disc pl-6">
+                    <li><strong>Plan Básico:</strong> Soporte 24/7 | 5 cambios por més, menos de 1 hora.</li>
+                    <li><strong>Plan Profesional:</strong> Soporte 24/7 | 15 cambios por més, menos de 3 hora.</li>
+                    <li><strong>Plan Premium:</strong> Soporte 24/7 | Cambios menores a 5 horas.</li>
+                </ul>
+                <p>Servicios adicionales de mantenimiento pueden contratarse por separado.</p>
+
+                <h3 class="text-xl font-bold mt-6">8. Garantía y Limitación de Responsabilidad</h3>
+                <p>Master Studio SV garantiza que:</p>
+                <ul class="list-disc pl-6">
+                    <li>El sitio web funcionará según las especificaciones acordadas</li>
+                    <li>Corregiremos errores de desarrollo sin costo durante el período de soporte</li>
+                </ul>
+                <p>No somos responsables por:</p>
+                <ul class="list-disc pl-6">
+                    <li>Problemas causados por modificaciones del cliente o terceros</li>
+                    <li>Caídas del hosting o servidor</li>
+                    <li>Contenido proporcionado por el cliente</li>
+                    <li>Pérdidas comerciales o daños indirectos</li>
+                </ul>
+
+                <h3 class="text-xl font-bold mt-6">9. Cancelación y Reembolsos</h3>
+                <ul class="list-disc pl-6">
+                    <li>El depósito inicial no es reembolsable una vez iniciado el trabajo</li>
+                    <li>Si Master Studio SV no cumple con la entrega en el tiempo acordado (2-5 días hábiles), se
+                        reembolsará el 25% del pago total</li>
+                    <li>El cliente puede solicitar modificaciones dentro del período de soporte</li>
+                    <li>Cambios mayores fuera del alcance original se cotizarán por separado</li>
+                </ul>
+
+                <h3 class="text-xl font-bold mt-6">10. Confidencialidad</h3>
+                <p>Toda la información compartida durante el desarrollo del proyecto será tratada con estricta
+                    confidencialidad. Master Studio SV no compartirá detalles del proyecto sin autorización previa del
+                    cliente.</p>
+
+                <h3 class="text-xl font-bold mt-6">11. Modificaciones a los Términos</h3>
+                <p>Master Studio SV se reserva el derecho de modificar estos términos en cualquier momento. Los cambios
+                    entrarán en vigor inmediatamente después de su publicación en el sitio web.</p>
+
+                <h3 class="text-xl font-bold mt-6">12. Ley Aplicable</h3>
+                <p>En caso de cualquier situación especial, estos términos se interpretarán conforme a las leyes de la República de El Salvador, buscando siempre una solución justa y transparente.</p>
+
+                <h3 class="text-xl font-bold mt-6">13. Contacto</h3>
+                <p>Para preguntas sobre estos términos:</p>
+                <p><strong>Email:</strong> <a href="mailto:info.masterstudiosv@gmail.com"
+                        class="text-blue-600 hover:underline">info.masterstudiosv@gmail.com</a></p>
+                <p><strong>Ubicación:</strong>El Salvador</p>
+            </div>
+            <button onclick="closeModal('terminosModal')"
+                class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                Cerrar
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal Política de Cookies -->
+    <div id="cookiesModal"
+        class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl max-w-3xl max-h-[90vh] overflow-y-auto p-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-gray-800">Política de Cookies</h2>
+                <button onclick="closeModal('cookiesModal')" class="text-gray-600 hover:text-gray-800 text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="text-gray-700 space-y-4">
+                <p><strong>Última actualización:</strong> Noviembre 2025</p>
+                <p>Master Studio SV utiliza cookies y tecnologías similares para mejorar la experiencia del usuario en
+                    nuestro sitio web.</p>
+
+                <h3 class="text-xl font-bold mt-6">¿Qué son las Cookies?</h3>
+                <p>Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita nuestro
+                    sitio web. Nos ayudan a recordar sus preferencias y mejorar su experiencia.</p>
+
+                <h3 class="text-xl font-bold mt-6">Tipos de Cookies que Utilizamos</h3>
+                <ul class="list-disc pl-6">
+                    <li><strong>Cookies Esenciales:</strong> Necesarias para el funcionamiento básico del sitio</li>
+                    <li><strong>Cookies de Rendimiento:</strong> Nos ayudan a entender cómo los visitantes interactúan
+                        con nuestro sitio</li>
+                    <li><strong>Cookies de Funcionalidad:</strong> Permiten recordar sus preferencias</li>
+                    <li><strong>Cookies Analíticas:</strong> Nos ayudan a mejorar nuestro sitio mediante análisis de uso
+                    </li>
+                </ul>
+
+                <h3 class="text-xl font-bold mt-6">Gestión de Cookies</h3>
+                <p>Puede controlar y/o eliminar las cookies según desee. Puede eliminar todas las cookies que ya están
+                    en su dispositivo y configurar la mayoría de los navegadores para evitar que se instalen.</p>
+
+                <h3 class="text-xl font-bold mt-6">Cookies de Terceros</h3>
+                <p>Algunos de nuestros socios (como Google Analytics) pueden colocar cookies en su dispositivo. Estas
+                    cookies están sujetas a las políticas de privacidad de esos terceros.</p>
+
+                <h3 class="text-xl font-bold mt-6">Más Información</h3>
+                <p>Si tiene preguntas sobre nuestra política de cookies, contáctenos en <a
+                        href="mailto:info.masterstudiosv@gmail.com"
+                        class="text-blue-600 hover:underline">info.masterstudiosv@gmail.com</a></p>
+            </div>
+            <button onclick="closeModal('cookiesModal')"
+                class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                Aceptar y Cerrar
+            </button>
+        </div>
+    </div>
+
+    <script>
+    // ==============================
+    // TOGGLE MOBILE MENU
+    // ==============================
+    function toggleMenu() {
+        const menu = document.getElementById('mobileMenu');
+        if (menu) {
+            menu.classList.toggle('hidden');
+        }
+    }
+
+    // ==============================
+    // SMOOTH SCROLL (EXCLUYE MODALES)
+    // ==============================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+
+            const targetId = this.getAttribute('href');
+
+            // Si es solo "#" no hacer nada
+            if (targetId === "#") return;
+
+            // Si es un modal, no aplicar smooth scroll
+            if (targetId.includes('Modal')) return;
+
+            const target = document.querySelector(targetId);
+
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // ==============================
+    // MODALES
+    // ==============================
+    function openModal(id) {
+        const modal = document.getElementById(id);
+        if (modal) {
+            modal.classList.remove('hidden');
+            document.body.style.overflow = "hidden"; // bloquea scroll
+        }
+    }
+
+    function closeModal(id) {
+        const modal = document.getElementById(id);
+        if (modal) {
+            modal.classList.add('hidden');
+            document.body.style.overflow = "auto"; // activa scroll
+        }
+    }
+
+    // Cerrar modal haciendo click fuera del contenido
+    window.addEventListener('click', function(e) {
+        document.querySelectorAll('[id$="Modal"]').forEach(modal => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = "auto";
+            }
+        });
+    });
+
+    // ==============================
+    // ANIMACIONES AL HACER SCROLL
+    // ==============================
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.service-card').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'all 0.6s ease';
+        observer.observe(el);
+    });
+     // ===== FUNCIONES PARA ABRIR Y CERRAR MODALES =====
+
+    function openModal(id) {
+        const modal = document.getElementById(id);
+        if (modal) {
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // bloquea scroll
+        }
+    }
+
+    function closeModal(id) {
+        const modal = document.getElementById(id);
+        if (modal) {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // activa scroll
+        }
+    }
+
+    // ===== ABRIR MODAL DESDE LINKS =====
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href').substring(1);
+            const modal = document.getElementById(targetId);
+
+            if (modal) {
+                e.preventDefault();
+                openModal(targetId);
+            }
+        });
+    });
+
+    // ===== CERRAR HACIENDO CLICK FUERA =====
+    window.addEventListener('click', function (e) {
+        document.querySelectorAll('[id$="Modal"]').forEach(modal => {
+            if (e.target === modal) {
+                closeModal(modal.id);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
