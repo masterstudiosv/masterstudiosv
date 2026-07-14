@@ -2,7 +2,7 @@
         // Lista todos los archivos SVG que tengas en la carpeta clientes/
         const logoFiles = [
             'cli1.svg', 'cli2.svg', 'cli3.svg', 'cli4.svg', 
-            'cli5.svg', 'cli6.svg', 'cli7.svg', 'cli8'
+            'cli5.svg', 'cli6.svg', 'cli7.svg', 'cli8.svg'
             // Agrega aquí cualquier logo nuevo que subas a clientes/
             // Ejemplo: 'cli8.svg', 'cli9.svg', 'cli10.svg'
         ];
