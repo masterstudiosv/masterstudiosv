@@ -1,11 +1,31 @@
 // Cargar logos automáticamente desde la carpeta clientes/
         // Lista todos los archivos SVG que tengas en la carpeta clientes/
-        const logoFiles = [
-            'cli1.svg', 'cli2.svg', 'cli3.svg', 'cli4.svg', 
-            'cli5.svg', 'cli6.svg', 'cli7.svg'
-            // Agrega aquí cualquier logo nuevo que subas a clientes/
-            // Ejemplo: 'cli8.svg', 'cli9.svg', 'cli10.svg'
-        ];
+        fetch('obtener-logos.php')
+    .then(response => response.json())
+    .then(logoFiles => {
+
+        const logoTrack = document.getElementById('logoTrack');
+
+        logoFiles.forEach(file => {
+            const img = document.createElement('img');
+            img.src = `clientes/${file}`;
+            img.alt = file;
+            img.className = 'logo-item';
+
+            logoTrack.appendChild(img);
+        });
+
+        // Si duplicas los logos para hacer un carrusel infinito
+        logoFiles.forEach(file => {
+            const img = document.createElement('img');
+            img.src = `clientes/${file}`;
+            img.alt = file;
+            img.className = 'logo-item';
+
+            logoTrack.appendChild(img);
+        });
+
+    });
         
         const logoTrack = document.getElementById('logoTrack');
         
