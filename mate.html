@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía de Estudio · Examen de Matemáticas 2026</title>
+<style>
+  :root{
+    --bg: #14161a;
+    --bg-panel: #1b1e24;
+    --bg-panel-2: #21252c;
+    --bg-code: #101216;
+    --border: #2c313a;
+    --text: #e4e6eb;
+    --text-dim: #9aa1ac;
+    --text-dimmer: #6c7280;
+    --accent: #4fd1a5;
+    --practice-bg: #1a2622;
+    --practice-border: #2d4a3e;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height:1.5;
+    padding-bottom:60px;
+  }
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(20,22,26,0.97);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--border);
+    padding:16px 20px;
+  }
+  header h1{
+    margin:0 0 4px 0;
+    font-size:1.25rem;
+    font-weight:700;
+    letter-spacing:0.2px;
+  }
+  header p.sub{
+    margin:0 0 12px 0;
+    color:var(--text-dim);
+    font-size:0.85rem;
+  }
+  .toolbar{
+    display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+  }
+  #search{
+    flex:1; min-width:180px;
+    background:var(--bg-panel);
+    border:1px solid var(--border);
+    color:var(--text);
+    padding:9px 12px;
+    border-radius:8px;
+    font-size:0.9rem;
+    outline:none;
+  }
+  #search:focus{border-color:var(--accent);}
+  .btn{
+    background:var(--bg-panel);
+    border:1px solid var(--border);
+    color:var(--text-dim);
+    padding:9px 12px;
+    border-radius:8px;
+    font-size:0.82rem;
+    cursor:pointer;
+    white-space:nowrap;
+  }
+  .btn:hover{color:var(--text); border-color:var(--accent);}
+
+  main{max-width:900px; margin:0 auto; padding:18px 14px;}
+
+  .toc{
+    display:flex; gap:8px; flex-wrap:wrap;
+    margin-bottom:22px;
+  }
+  .toc a{
+    text-decoration:none;
+    font-size:0.78rem;
+    padding:7px 12px;
+    border-radius:20px;
+    border:1px solid var(--border);
+    color:var(--text-dim);
+  }
+  .toc a:hover{color:var(--text); border-color:var(--text-dim);}
+
+  .unidad{
+    margin-bottom:26px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    overflow:hidden;
+    background:var(--bg-panel);
+  }
+  .unidad-header{
+    padding:14px 16px;
+    display:flex; align-items:center; gap:10px;
+    cursor:pointer;
+    user-select:none;
+  }
+  .unidad-header .dot{
+    width:10px; height:10px; border-radius:50%; flex-shrink:0;
+  }
+  .unidad-header h2{
+    margin:0; font-size:1.02rem; flex:1;
+  }
+  .unidad-header .count{
+    font-size:0.75rem; color:var(--text-dimmer);
+    background:var(--bg-panel-2);
+    padding:3px 9px; border-radius:12px;
+  }
+  .unidad-header .chev{
+    color:var(--text-dimmer);
+    transition:transform 0.2s;
+    font-size:0.8rem;
+  }
+  .unidad.open .unidad-header .chev{transform:rotate(90deg);}
+  .unidad-body{display:none;}
+  .unidad.open .unidad-body{display:block;}
+
+  .tema{
+    border-top:1px solid var(--border);
+  }
+  .tema-header{
+    padding:12px 16px 12px 30px;
+    cursor:pointer;
+    display:flex; align-items:center; gap:8px;
+    user-select:none;
+  }
+  .tema-header:hover{background:var(--bg-panel-2);}
+  .tema-header .idx{
+    font-size:0.7rem; color:var(--text-dimmer);
+    min-width:20px;
+  }
+  .tema-header h3{
+    margin:0; font-size:0.9rem; font-weight:600; flex:1;
+    color:var(--text);
+  }
+  .tema-header .chev{
+    color:var(--text-dimmer); font-size:0.75rem;
+    transition:transform 0.2s;
+  }
+  .tema.open .tema-header .chev{transform:rotate(90deg);}
+  .tema-body{
+    display:none;
+    padding:4px 18px 22px 30px;
+  }
+  .tema.open .tema-body{display:block;}
+
+  .explicacion{
+    font-size:0.88rem;
+    color:var(--text-dim);
+    background:var(--bg-code);
+    border-left:3px solid var(--accent);
+    padding:10px 14px;
+    border-radius:0 8px 8px 0;
+    margin-bottom:16px;
+  }
+
+  .sec-label{
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.8px;
+    color:var(--text-dimmer);
+    margin:16px 0 8px 0;
+    font-weight:700;
+  }
+
+  .ejemplo{
+    background:var(--bg-panel-2);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:12px 14px;
+    margin-bottom:10px;
+  }
+  .ejemplo .num{
+    display:inline-block;
+    font-size:0.68rem;
+    color:var(--bg);
+    background:var(--accent);
+    padding:2px 8px;
+    border-radius:10px;
+    font-weight:700;
+    margin-bottom:6px;
+  }
+  .ejemplo .ctx{
+    font-size:0.85rem;
+    font-weight:600;
+    color:var(--text);
+    margin-bottom:4px;
+  }
+  .ejemplo .plan{
+    font-size:0.84rem;
+    color:var(--text-dim);
+    margin-bottom:8px;
+  }
+  .ejemplo .sol{
+    font-size:0.84rem;
+    color:var(--text);
+    background:var(--bg-code);
+    border-radius:6px;
+    padding:8px 10px;
+    border:1px dashed var(--border);
+  }
+  .ejemplo .sol b{color:var(--accent);}
+
+  .practica-item{
+    background:var(--practice-bg);
+    border:1px solid var(--practice-border);
+    border-radius:8px;
+    padding:11px 13px;
+    margin-bottom:8px;
+  }
+  .practica-item .enun{
+    font-size:0.85rem;
+    margin-bottom:6px;
+  }
+  .practica-item .toggle-resp{
+    font-size:0.72rem;
+    color:var(--accent);
+    cursor:pointer;
+    display:inline-block;
+    user-select:none;
+  }
+  .practica-item .resp{
+    display:none;
+    margin-top:6px;
+    font-size:0.82rem;
+    color:var(--text-dim);
+    padding-top:6px;
+    border-top:1px dashed var(--practice-border);
+  }
+  .practica-item.show .resp{display:block;}
+  .practica-item.show .toggle-resp{color:var(--text-dimmer);}
+
+  mark{
+    background:#4fd1a5; color:#0c0f0d; border-radius:3px; padding:0 2px;
+  }
+
+  .hidden-by-search{display:none !important;}
+
+  footer{
+    text-align:center;
+    color:var(--text-dimmer);
+    font-size:0.75rem;
+    padding:30px 20px 10px;
+  }
+
+  @media (max-width:600px){
+    header h1{font-size:1.05rem;}
+    .tema-header{padding-left:20px;}
+    .tema-body{padding-left:20px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📐 Guía de Estudio — Examen de Matemáticas 2026</h1>
+  <p class="sub">45 temas del temario · 4 ejemplos de la vida real por tema · ejercicios de práctica con respuesta oculta</p>
+  <div class="toolbar">
+    <input id="search" type="text" placeholder="Buscar un tema (ej: 'radicales', 'ley de senos', 'probabilidad')...">
+    <button class="btn" id="expandAll">Abrir todo</button>
+    <button class="btn" id="collapseAll">Cerrar todo</button>
+  </div>
+</header>
+
+<main>
+  <div class="toc" id="toc"></div>
+  <div id="contenido"></div>
+</main>
+
+<footer>Guía generada a partir del temario propuesto para el examen 2026 · FGK</footer>
+
+<script>
+const UNIDAD_ARITMETICA = {
+  nombre: "Aritmética",
+  color: "#5eb3ff",
+  temas: [
+    {
+      titulo: "Operaciones básicas con números enteros. Precedencia de los operadores",
+      explicacion: "Los números enteros son los positivos, negativos y el cero (…-3,-2,-1,0,1,2,3…). Al mezclar sumas, restas, multiplicaciones, divisiones y paréntesis en una misma expresión, el orden en que se resuelve NO es de izquierda a derecha: se sigue la jerarquía PEMDAS — Paréntesis, Exponentes, Multiplicación/División (de izq. a der.), Adición/Sustracción (de izq. a der.).",
+      ejemplos: [
+        {ctx:"Saldo bancario", plan:"Tu cuenta tiene $1,200. Pagas 3 recibos de $150 cada uno y luego depositas $400.", sol:"Se plantea: 1200 − 3×150 + 400. Primero la multiplicación: 3×150=450. Luego, de izq. a der.: 1200 − 450 + 400 = 750 + 400 = 1150. Saldo final: $1,150."},
+        {ctx:"Temperatura en una cámara de refrigeración", plan:"La cámara está a −5 °C. Baja 3 °C por cada una de las 4 veces que se abre la puerta y luego el compresor la sube 6 °C.", sol:"−5 − 4×3 + 6. Primero 4×3=12. Luego: −5 − 12 + 6 = −17 + 6 = −11. La cámara queda a −11 °C."},
+        {ctx:"Deudas y pagos de un negocio", plan:"Una tienda debe $2,000. Vende mercadería y gana $500 en 6 días distintos, pero además paga una multa fija de $300.", sol:"−2000 + 6×500 − 300. Primero 6×500=3000. Luego: −2000+3000−300 = 1000−300 = 700. La tienda queda con $700 a favor."},
+        {ctx:"Puntaje de un videojuego", plan:"Empiezas con 0 puntos. Ganas 3 rondas de 250 puntos cada una y pierdes 2 rondas de 100 puntos cada una.", sol:"0 + 3×250 − 2×100 = 750 − 200 = 550 puntos. Se resuelven ambas multiplicaciones antes de restar."}
+      ],
+      practica: [
+        {enun:"Calcula: −8 + 5×(−2) − (−6)", resp:"−8 + (−10) − (−6) = −18+6 = −12"},
+        {enun:"Un elevador está en el piso 2. Sube 3 pisos, 4 veces seguidas, y luego baja 5 pisos. ¿En qué piso queda? (plantéalo como operación)", resp:"2 + 4×3 − 5 = 2+12−5 = 9. Queda en el piso 9."},
+        {enun:"Calcula: (−3 + 7) × 2 − 4÷2", resp:"(4)×2 − 2 = 8−2 = 6"}
+      ]
+    },
+    {
+      titulo: "Conversión de números fraccionarios a decimales o enteros y viceversa",
+      explicacion: "Toda fracción a/b representa una división: se convierte a decimal dividiendo el numerador entre el denominador. Un decimal se convierte a fracción escribiéndolo sobre una potencia de 10 (según sus cifras decimales) y simplificando. Si el decimal es exacto y sin residuo, puede convertirse en número entero.",
+      ejemplos: [
+        {ctx:"Receta de cocina", plan:"Una receta pide 3/4 de taza de azúcar, pero tu taza medidora solo tiene marcas decimales.", sol:"3/4 = 3÷4 = 0.75. Usas 0.75 de taza (la marca de 3/4 en la taza medidora)."},
+        {ctx:"Precio con descuento en una tienda", plan:"Un artículo cuesta $80.50. El cajero necesita expresar los centavos como fracción de dólar para el reporte contable.", sol:"$80.50 = 80 + 50/100 = 80 + 1/2 = 80 y 1/2 dólares, es decir 161/2 en fracción impropia."},
+        {ctx:"Medición de tela en una sastrería", plan:"Se necesitan 2.25 metros de tela para un vestido. La orden de compra debe registrarse como fracción.", sol:"2.25 = 2 + 25/100 = 2 + 1/4 = 2 1/4 m, o como fracción impropia: 9/4 m."},
+        {ctx:"Reparto de una pizza entre trabajadores", plan:"Sobraron 12/4 de pizza en un almuerzo de oficina. ¿A cuántas pizzas enteras equivale?", sol:"12/4 = 12÷4 = 3. Sobraron exactamente 3 pizzas enteras."}
+      ],
+      practica: [
+        {enun:"Convierte 7/8 a decimal.", resp:"7÷8 = 0.875"},
+        {enun:"Convierte 3.6 a fracción simplificada.", resp:"3.6 = 36/10 = 18/5"},
+        {enun:"Un albañil necesita 5/2 sacos de cemento. ¿A qué número mixto/entero equivale?", resp:"5/2 = 2.5 = 2 sacos y medio (2 1/2)"}
+      ]
+    },
+    {
+      titulo: "Operaciones básicas con fracciones",
+      explicacion: "Para sumar o restar fracciones se necesita común denominador (usando el mínimo común múltiplo). Para multiplicar, se multiplican numeradores entre sí y denominadores entre sí. Para dividir, se multiplica por el recíproco (se 'invierte' la segunda fracción). Siempre se simplifica al final.",
+      ejemplos: [
+        {ctx:"Mezcla de pintura", plan:"Un pintor usa 1/3 de galón de pintura blanca y 1/4 de galón de pintura azul para una mezcla. ¿Cuánta pintura total usó?", sol:"MCM(3,4)=12. 1/3=4/12, 1/4=3/12. 4/12+3/12=7/12 de galón en total."},
+        {ctx:"Reparto de terreno agrícola", plan:"Un agricultor divide un terreno: siembra maíz en 3/5 del terreno y de esa parte, riega solo 1/2. ¿Qué fracción del terreno total está regada?", sol:"Se multiplica: 3/5 × 1/2 = 3/10 del terreno total está regado."},
+        {ctx:"Reparto de agua en botellas", plan:"Tienes 3/4 de litro de agua y quieres repartirlo en botellitas de 1/8 de litro cada una. ¿Cuántas botellitas llenas obtienes?", sol:"3/4 ÷ 1/8 = 3/4 × 8/1 = 24/4 = 6 botellitas."},
+        {ctx:"Costura de cortinas", plan:"Se necesitan 2/3 de metro de tela por cortina. Si sobran 5/6 de metro, ¿cuánta tela queda después de restar el material de una cortina más ancha que usa 1/6?", sol:"5/6 − 1/6 = 4/6 = 2/3 m de tela sobrante, suficiente exacto para una cortina más."}
+      ],
+      practica: [
+        {enun:"Suma: 2/5 + 3/10", resp:"MCM=10. 4/10+3/10 = 7/10"},
+        {enun:"Multiplica: 2/3 × 9/4", resp:"18/12 = 3/2"},
+        {enun:"Divide: 5/6 ÷ 2/3", resp:"5/6 × 3/2 = 15/12 = 5/4"}
+      ]
+    },
+    {
+      titulo: "Números mixtos",
+      explicacion: "Un número mixto combina una parte entera con una fracción propia (ej. 2 3/4). Para operarlos, normalmente se convierten a fracción impropia (parte entera × denominador + numerador, todo sobre el denominador), se opera, y el resultado se vuelve a expresar como mixto si es necesario.",
+      ejemplos: [
+        {ctx:"Distancia recorrida en una caminata", plan:"El sábado caminaste 2 1/2 km y el domingo 1 3/4 km. ¿Cuánto caminaste en total?", sol:"2 1/2=5/2, 1 3/4=7/4. MCM=4: 10/4+7/4=17/4 = 4 1/4 km en total."},
+        {ctx:"Compra de material de construcción", plan:"Se compran 3 2/3 sacos de arena y se usan 1 1/3 sacos en un trabajo. ¿Cuántos sacos sobran?", sol:"3 2/3=11/3, 1 1/3=4/3. 11/3−4/3=7/3 = 2 1/3 sacos sobrantes."},
+        {ctx:"Tiempo de cocción en la cocina", plan:"Una receta requiere hornear un pan por 1 1/4 horas y luego dejarlo reposar 3/4 de hora. ¿Cuánto tiempo total del proceso?", sol:"1 1/4=5/4, +3/4 = 8/4 = 2 horas en total."},
+        {ctx:"Reparto de horas de trabajo entre empleados", plan:"Un proyecto de 4 1/2 horas se reparte entre 3 empleados por igual. ¿Cuántas horas trabaja cada uno?", sol:"4 1/2 = 9/2 horas. 9/2 ÷ 3 = 9/6 = 3/2 = 1 1/2 horas por empleado."}
+      ],
+      practica: [
+        {enun:"Suma: 3 1/3 + 2 1/6", resp:"3 1/3=10/3=20/6; 2 1/6=13/6; suma=33/6=5 1/2"},
+        {enun:"Resta: 5 1/4 − 2 3/4", resp:"21/4 − 11/4 = 10/4 = 2 1/2"},
+        {enun:"Un carpintero corta 3 tablas de 1 1/2 m cada una de un tronco de 6 m. ¿Cuánto tronco sobra?", resp:"3×1 1/2 = 4 1/2 m usados. 6 − 4 1/2 = 1 1/2 m sobrantes"}
+      ]
+    },
+    {
+      titulo: "Valor absoluto",
+      explicacion: "El valor absoluto de un número, |x|, es su distancia al cero en la recta numérica, siempre positiva o cero. Se usa mucho para medir diferencias, errores o distancias sin importar la dirección/signo.",
+      ejemplos: [
+        {ctx:"Diferencia de temperatura entre ciudades", plan:"San Salvador está a 28°C y una ciudad de montaña a −2°C. ¿Cuál es la diferencia de temperatura entre ambas?", sol:"|28−(−2)| = |30| = 30°C de diferencia."},
+        {ctx:"Control de calidad en fábrica", plan:"Una pieza debe medir 50 mm exactos. Se mide y da 47.6 mm. ¿Cuál es el error absoluto?", sol:"|50 − 47.6| = |2.4| = 2.4 mm de error, sin importar si fue de más o de menos."},
+        {ctx:"Posición en una carrera (línea de meta como referencia)", plan:"En una simulación, un corredor está en la posición −15 m respecto a la salida (aún no llega) y otro en +8 m. ¿Quién está más lejos de la salida (0)?", sol:"|−15|=15 y |8|=8. El primero está más lejos de la salida (15 m contra 8 m)."},
+        {ctx:"Variación de precio de una acción", plan:"El precio de una acción cambió de $120 a $113. Un reporte debe mostrar la magnitud del cambio, sin signo.", sol:"|113−120| = |−7| = 7. La acción varió 7 dólares (sin indicar si subió o bajó)."}
+      ],
+      practica: [
+        {enun:"Calcula |−9| + |4|", resp:"9+4=13"},
+        {enun:"Calcula |7−15|", resp:"|−8|=8"},
+        {enun:"Un buzo está a −18 m de profundidad y un dron a +25 m de altura, ambos respecto al nivel del mar. ¿Cuál está más lejos del nivel del mar?", resp:"|−18|=18, |25|=25. El dron está más lejos (25 m)"}
+      ]
+    }
+  ]
+};
+const UNIDAD_ALGEBRA = {
+  nombre: "Álgebra",
+  color: "#8fd67a",
+  temas: [
+    {
+      titulo: "Valor numérico",
+      explicacion: "El valor numérico de una expresión algebraica es el resultado que se obtiene al sustituir cada variable por un número dado y resolver la operación siguiendo la precedencia de operadores.",
+      ejemplos: [
+        {ctx:"Costo total de un pedido", plan:"El costo de un pedido es C = 5x + 20, donde x es el número de productos. Calcula el costo si x=8.", sol:"C = 5(8)+20 = 40+20 = 60. El pedido cuesta $60."},
+        {ctx:"Fórmula de conversión de temperatura", plan:"F = 9/5·C + 32. ¿A cuántos °F equivalen 20 °C?", sol:"F = 9/5(20)+32 = 36+32 = 68 °F."},
+        {ctx:"Distancia recorrida por un vehículo", plan:"d = v·t, con v en km/h y t en horas. Halla d si v=60 y t=2.5.", sol:"d = 60×2.5 = 150 km."},
+        {ctx:"Ganancia de un vendedor", plan:"La ganancia semanal es G = 15n − 45, con n el número de ventas. Calcula G si n=10.", sol:"G = 15(10)−45 = 150−45 = 105. Gana $105."}
+      ],
+      practica: [
+        {enun:"Si P = 2a+3b, halla P para a=4, b=−2", resp:"2(4)+3(−2)=8−6=2"},
+        {enun:"Si A = x² − 3x + 1, halla A para x=3", resp:"9−9+1=1"},
+        {enun:"El área de un jardín rectangular es A = (x+2)(x−1). Halla A si x=5", resp:"(7)(4)=28"}
+      ]
+    },
+    {
+      titulo: "Exponentes enteros",
+      explicacion: "Un exponente entero indica cuántas veces se multiplica la base por sí misma. Leyes clave: aᵐ·aⁿ=aᵐ⁺ⁿ; aᵐ/aⁿ=aᵐ⁻ⁿ; (aᵐ)ⁿ=aᵐⁿ; a⁰=1 (a≠0); a⁻ⁿ=1/aⁿ.",
+      ejemplos: [
+        {ctx:"Crecimiento de bacterias", plan:"Una bacteria se duplica cada hora. Si empiezas con 1, ¿cuántas hay después de 6 horas?", sol:"2⁶ = 64 bacterias."},
+        {ctx:"Capacidad de almacenamiento digital", plan:"Un disco tiene 2¹⁰ bytes = 1 KB. ¿Cuántos bytes son 2¹⁰ × 2¹⁰ (1 MB)?", sol:"2¹⁰×2¹⁰=2²⁰=1,048,576 bytes."},
+        {ctx:"Interés compuesto simplificado (potencias de base 1.1)", plan:"Un ahorro crece como (1.1)³ veces el capital inicial en 3 años. Si inicias con $1, calcula el factor.", sol:"(1.1)³ = 1.1×1.1×1.1 = 1.331. Tu dinero se multiplica por 1.331."},
+        {ctx:"Concentración de un medicamento que decae", plan:"La concentración se reduce a la mitad cada hora: C = C₀·2⁻ᵗ. Con C₀=80 mg, halla C cuando t=3.", sol:"C = 80×2⁻³ = 80×(1/8) = 10 mg."}
+      ],
+      practica: [
+        {enun:"Simplifica: 3⁴ × 3²", resp:"3⁶ = 729"},
+        {enun:"Simplifica: 5⁷ ÷ 5⁵", resp:"5² = 25"},
+        {enun:"Evalúa: 4⁻² ", resp:"1/16"}
+      ]
+    },
+    {
+      titulo: "Radicales",
+      explicacion: "Un radical, ⁿ√a, es la operación inversa de elevar a la potencia n. Propiedades: √(a·b)=√a·√b; √(a/b)=√a/√b; √a·√a=a. Se simplifica extrayendo factores que sean potencias perfectas del índice.",
+      ejemplos: [
+        {ctx:"Longitud del lado de un terreno cuadrado", plan:"Un terreno cuadrado tiene área de 200 m². ¿Cuál es la longitud aproximada del lado?", sol:"lado=√200=√(100×2)=10√2 ≈ 14.14 m."},
+        {ctx:"Velocidad de caída (física básica)", plan:"La velocidad de un objeto que cae es v=√(2·g·h). Con g=10 m/s² y h=45 m, halla v.", sol:"v=√(2×10×45)=√900=30 m/s."},
+        {ctx:"Diagonal de una pantalla rectangular", plan:"Una TV mide 48 cm de ancho y 27 cm de alto. Estima la diagonal.", sol:"d=√(48²+27²)=√(2304+729)=√3033≈55.07 cm."},
+        {ctx:"Desviación estándar en un reporte estadístico simple", plan:"La varianza de un conjunto de datos es 49. ¿Cuál es la desviación estándar?", sol:"√49 = 7 (unidades de la variable)."}
+      ],
+      practica: [
+        {enun:"Simplifica √72", resp:"√(36×2)=6√2"},
+        {enun:"Simplifica √50 + √18", resp:"5√2+3√2=8√2"},
+        {enun:"Halla el lado de un terreno cuadrado de 121 m² de área", resp:"√121=11 m"}
+      ]
+    },
+    {
+      titulo: "Exponentes racionales",
+      explicacion: "Un exponente racional (fraccionario) conecta potencias con raíces: a^(m/n) = ⁿ√(aᵐ) = (ⁿ√a)ᵐ. El denominador n es el índice de la raíz y el numerador m es la potencia.",
+      ejemplos: [
+        {ctx:"Fórmula de escala en biología (área-volumen)", plan:"El lado de un cubo en función de su volumen es L=V^(1/3). Si V=27 cm³, halla L.", sol:"L=27^(1/3)=³√27=3 cm."},
+        {ctx:"Rendimiento financiero anualizado", plan:"Si una inversión creció un factor de 1.21 en 2 años, la tasa anual aproximada es r=1.21^(1/2)−1. Calcula el factor 1.21^(1/2).", sol:"1.21^(1/2)=√1.21=1.1, entonces r≈0.10 = 10% anual."},
+        {ctx:"Intensidad de una señal (ingeniería)", plan:"Una fórmula da la potencia como P=8^(2/3) vatios. Calcula P.", sol:"8^(2/3)=(³√8)²=2²=4 vatios."},
+        {ctx:"Escalado de modelos a escala (arquitectura)", plan:"La relación de áreas entre un modelo y el real es A=16^(1/2). Calcula A.", sol:"16^(1/2)=√16=4."}
+      ],
+      practica: [
+        {enun:"Evalúa 64^(1/3)", resp:"³√64=4"},
+        {enun:"Evalúa 9^(3/2)", resp:"(√9)³=3³=27"},
+        {enun:"Evalúa 32^(2/5)", resp:"(⁵√32)²=2²=4"}
+      ]
+    },
+    {
+      titulo: "Reducción de términos semejantes",
+      explicacion: "Los términos semejantes tienen exactamente la misma parte literal (misma variable y mismo exponente). Se reducen sumando o restando solo sus coeficientes, dejando la parte literal intacta.",
+      ejemplos: [
+        {ctx:"Inventario de una tienda (mismo producto)", plan:"En la mañana llegan 3x cajas y en la tarde 5x cajas más del mismo producto, pero se venden 2x. ¿Cuántas cajas quedan en términos de x?", sol:"3x+5x−2x = 6x cajas."},
+        {ctx:"Gastos mensuales por categoría", plan:"Los gastos son: 4a (comida) + 2b (transporte) + 3a (comida extra) − b (reembolso de transporte). Reduce.", sol:"(4a+3a)+(2b−b) = 7a + b."},
+        {ctx:"Perímetro de una figura compuesta", plan:"Un terreno tiene lados: 2x+3, x+5, 2x+3, x+5 (rectángulo). Suma el perímetro.", sol:"(2x+3)+(x+5)+(2x+3)+(x+5) = 6x+16."},
+        {ctx:"Producción diaria de una fábrica en varios turnos", plan:"Turno 1 produce 5y+2 piezas, turno 2 produce 3y−4 piezas. Total del día.", sol:"(5y+3y)+(2−4)=8y−2 piezas."}
+      ],
+      practica: [
+        {enun:"Reduce: 7m − 2m + 5m", resp:"10m"},
+        {enun:"Reduce: 4x²+3x−2x²+x", resp:"2x²+4x"},
+        {enun:"Reduce: 6a+3b−4a+b−2b", resp:"2a+2b"}
+      ]
+    },
+    {
+      titulo: "Suma de polinomios",
+      explicacion: "Para sumar polinomios se agrupan y reducen los términos semejantes de cada polinomio, respetando el signo. Es útil ordenar por grado (potencias decrecientes) antes de sumar.",
+      ejemplos: [
+        {ctx:"Costos combinados de dos sucursales", plan:"Sucursal A: (3x²+2x+50). Sucursal B: (x²+4x+30). Costo combinado.", sol:"(3x²+x²)+(2x+4x)+(50+30) = 4x²+6x+80."},
+        {ctx:"Áreas de dos terrenos que se van a unir", plan:"Terreno 1: (2x²+3x). Terreno 2: (x²−x+7). Área total.", sol:"3x²+2x+7."},
+        {ctx:"Ingresos de dos meses de un negocio", plan:"Mes 1: (5x+200). Mes 2: (3x²+2x+150). Ingreso total.", sol:"3x²+7x+350."},
+        {ctx:"Materiales usados en dos etapas de construcción", plan:"Etapa 1: (4x²+2x+10) sacos. Etapa 2: (2x²+5) sacos.", sol:"6x²+2x+15 sacos."}
+      ],
+      practica: [
+        {enun:"Suma: (2x²+3x−1) + (x²−2x+5)", resp:"3x²+x+4"},
+        {enun:"Suma: (5a−3b+2) + (−2a+b−7)", resp:"3a−2b−5"},
+        {enun:"Suma: (x³+2x−4) + (3x²−x+9)", resp:"x³+3x²+x+5"}
+      ]
+    },
+    {
+      titulo: "Resta de polinomios",
+      explicacion: "Para restar polinomios se cambia el signo de cada término del sustraendo (el que se resta) y luego se suma normalmente, reduciendo términos semejantes.",
+      ejemplos: [
+        {ctx:"Comparar ganancias entre dos años", plan:"Ganancia año 1: (4x²+5x+100). Ganancia año 2: (2x²+3x+40). Diferencia (año1 − año2).", sol:"(4x²−2x²)+(5x−3x)+(100−40)=2x²+2x+60."},
+        {ctx:"Material sobrante después de un proyecto", plan:"Material comprado: (3x²+6x+20). Material usado: (x²+2x+8). ¿Cuánto sobra?", sol:"2x²+4x+12."},
+        {ctx:"Reducción de deuda de una empresa", plan:"Deuda inicial: (5x²+10). Pago realizado: (2x²+3x+4). Deuda restante.", sol:"5x²+10 − (2x²+3x+4) = 3x²−3x+6."},
+        {ctx:"Diferencia entre presupuesto planeado y gastado", plan:"Planeado: (6x+300). Gastado: (2x+250). Diferencia.", sol:"4x+50."}
+      ],
+      practica: [
+        {enun:"Resta: (5x²+2x−3) − (2x²+x−1)", resp:"3x²+x−2"},
+        {enun:"Resta: (3a−4b) − (a−6b+2)", resp:"2a+2b−2"},
+        {enun:"Resta: (x³−2x+5) − (x³+3x²−x+1)", resp:"−3x²−x+4"}
+      ]
+    },
+    {
+      titulo: "Producto de polinomios",
+      explicacion: "Se multiplica cada término del primer polinomio por cada término del segundo (propiedad distributiva), aplicando leyes de exponentes, y luego se reducen términos semejantes.",
+      ejemplos: [
+        {ctx:"Área de un terreno rectangular con lados variables", plan:"Un terreno mide (x+5) por (x+3) metros. Halla el área.", sol:"(x+5)(x+3)=x²+3x+5x+15=x²+8x+15 m²."},
+        {ctx:"Ingreso total según precio y cantidad variables", plan:"El precio por unidad es (p+2) y se venden (p−1) unidades. Ingreso total.", sol:"(p+2)(p−1)=p²−p+2p−2=p²+p−2."},
+        {ctx:"Volumen de una caja con dimensiones algebraicas", plan:"Una caja mide (x)(x+2)(x−1). Halla su volumen expandido.", sol:"Primero (x+2)(x−1)=x²+x−2. Luego x(x²+x−2)=x³+x²−2x."},
+        {ctx:"Producción total en fábrica (trabajadores × piezas)", plan:"(2w+3) trabajadores producen (w+4) piezas cada uno. Producción total.", sol:"(2w+3)(w+4)=2w²+8w+3w+12=2w²+11w+12."}
+      ],
+      practica: [
+        {enun:"Multiplica: (x+4)(x+6)", resp:"x²+10x+24"},
+        {enun:"Multiplica: (2x−3)(x+5)", resp:"2x²+10x−3x−15=2x²+7x−15"},
+        {enun:"Multiplica: (x−2)(x²+2x+4)", resp:"x³+2x²+4x−2x²−4x−8=x³−8"}
+      ]
+    },
+    {
+      titulo: "División de monomios y polinomios",
+      explicacion: "Para dividir monomios, se dividen coeficientes y se restan exponentes de la misma base (aᵐ÷aⁿ=aᵐ⁻ⁿ). Para dividir un polinomio entre un monomio, se divide cada término. Para polinomio entre polinomio se usa división larga (algoritmo similar a la división de números).",
+      ejemplos: [
+        {ctx:"Reparto de área entre franjas iguales", plan:"Un terreno de área 12x³ se divide en franjas de ancho 3x. Halla el largo de cada franja.", sol:"12x³ ÷ 3x = 4x²."},
+        {ctx:"Costo unitario a partir del costo total", plan:"El costo total es (6x²+9x) y se reparte entre 3x unidades. Costo por unidad.", sol:"(6x²+9x)÷3x = 2x+3."},
+        {ctx:"Longitud de un lado dado el área de un rectángulo", plan:"Área = x²+7x+12, un lado mide (x+3). Halla el otro lado con división larga.", sol:"(x²+7x+12)÷(x+3): x²÷x=x → x(x+3)=x²+3x, resta: 4x+12. 4x÷x=4 → 4(x+3)=4x+12, resta 0. Resultado: x+4."},
+        {ctx:"Velocidad promedio a partir de distancia y tiempo algebraicos", plan:"d=(20x²+10x) km, t=5x horas. Halla v=d/t.", sol:"(20x²+10x)÷5x = 4x+2 km/h."}
+      ],
+      practica: [
+        {enun:"Divide: 15x⁵ ÷ 3x²", resp:"5x³"},
+        {enun:"Divide: (8x²+12x) ÷ 4x", resp:"2x+3"},
+        {enun:"Divide (x²−5x+6) entre (x−2)", resp:"x−3"}
+      ]
+    },
+    {
+      titulo: "Triángulo de Pascal",
+      explicacion: "El triángulo de Pascal es un arreglo triangular de números donde cada fila empieza y termina en 1, y cada número interior es la suma de los dos números que están arriba de él. Se usa para hallar rápidamente los coeficientes del desarrollo de un binomio (a+b)ⁿ.",
+      ejemplos: [
+        {ctx:"Combinaciones de sabores en una heladería", plan:"Una heladería quiere saber de cuántas formas se eligen 2 sabores de un grupo de 4 disponibles, usando la fila del triángulo de Pascal correspondiente a n=4.", sol:"Fila n=4 del triángulo: 1,4,6,4,1. El valor en la posición k=2 es 6: hay 6 formas de elegir 2 sabores de 4."},
+        {ctx:"Expansión de probabilidad de monedas (cara/sello)", plan:"Al lanzar 3 monedas, ¿cuántas combinaciones hay para 0,1,2,3 caras? Usa la fila n=3.", sol:"Fila n=3: 1,3,3,1. Hay 1 forma de 0 caras, 3 de 1 cara, 3 de 2 caras, 1 de 3 caras (total 8 = 2³)."},
+        {ctx:"Desarrollo de (x+2)³ en ingeniería de señales", plan:"Usa el triángulo de Pascal para expandir (x+2)³.", sol:"Fila n=3: 1,3,3,1. (x+2)³ = 1·x³ + 3·x²(2) + 3·x(2²) + 1·2³ = x³+6x²+12x+8."},
+        {ctx:"Cálculo rápido de coeficientes binomiales en genética", plan:"Se cruza un rasgo con probabilidad binomial para 5 descendientes; se necesita la fila n=5.", sol:"Construyendo desde n=4 (1,4,6,4,1): sumando pares adyacentes se obtiene la fila n=5: 1,5,10,10,5,1."}
+      ],
+      practica: [
+        {enun:"Escribe la fila n=6 del triángulo de Pascal.", resp:"1,6,15,20,15,6,1"},
+        {enun:"Usa Pascal para expandir (a+b)⁴.", resp:"a⁴+4a³b+6a²b²+4ab³+b⁴"},
+        {enun:"¿Cuántas formas hay de elegir 3 objetos de un grupo de 5 (usa la fila n=5)?", resp:"La fila n=5 es 1,5,10,10,5,1; posición k=3 → 10 formas"}
+      ]
+    },
+    {
+      titulo: "Factorización de polinomios",
+      explicacion: "Factorizar es escribir un polinomio como producto de factores más simples. Técnicas comunes: factor común, diferencia de cuadrados a²−b²=(a+b)(a−b), trinomio cuadrado perfecto, y trinomio de la forma x²+bx+c buscando dos números que sumen b y multipliquen c.",
+      ejemplos: [
+        {ctx:"Simplificar el área de un jardín para encontrar sus dimensiones", plan:"El área de un jardín rectangular es x²+7x+10. Encuentra las posibles dimensiones (largo y ancho).", sol:"Se buscan dos números que sumen 7 y multipliquen 10: 5 y 2. x²+7x+10=(x+5)(x+2). Dimensiones: (x+5) por (x+2)."},
+        {ctx:"Optimizar costos con factor común en manufactura", plan:"El costo total es 4x²+8x. Factoriza para ver el factor común de producción.", sol:"4x²+8x = 4x(x+2)."},
+        {ctx:"Diferencia de áreas entre dos terrenos cuadrados", plan:"Un terreno cuadrado de lado a y otro de lado b tienen diferencia de área a²−b². Factorízalo para una fórmula rápida de cálculo.", sol:"a²−b² = (a+b)(a−b)."},
+        {ctx:"Diseño de una caja con volumen dado (trinomio cuadrado perfecto)", plan:"Una expresión de diseño da 9x²+12x+4 para el área de una cara. Factoriza.", sol:"Es un trinomio cuadrado perfecto: (3x)²+2(3x)(2)+2² = (3x+2)²."}
+      ],
+      practica: [
+        {enun:"Factoriza: x²+9x+20", resp:"(x+5)(x+4)"},
+        {enun:"Factoriza: 25x²−16", resp:"(5x+4)(5x−4)"},
+        {enun:"Factoriza: 6x²+3x", resp:"3x(2x+1)"}
+      ]
+    },
+    {
+      titulo: "Expresiones racionales enteras",
+      explicacion: "Una expresión racional es una fracción donde numerador y denominador son polinomios. Se simplifican factorizando numerador y denominador y cancelando factores comunes. Es importante identificar los valores que hacen cero al denominador (no permitidos).",
+      ejemplos: [
+        {ctx:"Costo promedio por unidad producida", plan:"El costo promedio es C(x) = (2x²+8x)/(2x). Simplifica la expresión.", sol:"(2x²+8x)/(2x) = 2x(x+4)/2x = x+4, con x≠0."},
+        {ctx:"Velocidad como razón de expresiones algebraicas", plan:"v = (x²−9)/(x−3), fórmula usada para una relación de rapidez. Simplifica.", sol:"(x²−9)/(x−3) = (x+3)(x−3)/(x−3) = x+3, con x≠3."},
+        {ctx:"Densidad de población en función de terreno y habitantes", plan:"D = (x²+5x+6)/(x+2). Simplifica la expresión de densidad.", sol:"Numerador factoriza: (x+2)(x+3). D = (x+2)(x+3)/(x+2) = x+3, con x≠−2."},
+        {ctx:"Eficiencia de una máquina (razón de tiempos)", plan:"E = (3x²−12)/(x²−4). Simplifica.", sol:"3x²−12=3(x²−4). E = 3(x²−4)/(x²−4) = 3, con x≠±2."}
+      ],
+      practica: [
+        {enun:"Simplifica: (x²−4)/(x+2)", resp:"(x+2)(x−2)/(x+2) = x−2, x≠−2"},
+        {enun:"Simplifica: (5x²+10x)/(5x)", resp:"x+2, x≠0"},
+        {enun:"Simplifica: (x²−x−6)/(x−3)", resp:"(x−3)(x+2)/(x−3) = x+2, x≠3"}
+      ]
+    }
+  ]
+};
+const UNIDAD_ECUACIONES = {
+  nombre: "Ecuaciones e Inecuaciones",
+  color: "#ffb454",
+  temas: [
+    {
+      titulo: "Ecuaciones lineales",
+      explicacion: "Una ecuación lineal tiene la variable elevada solo a la potencia 1 (sin exponentes ni raíces sobre la variable). Se resuelve despejando la variable: se agrupan los términos con variable a un lado y los números al otro, usando operaciones inversas.",
+      ejemplos: [
+        {ctx:"Facturación de un servicio de taxi/uber", plan:"La tarifa es: $1.50 fijos + $0.80 por km. Si pagaste $9.50, ¿cuántos km recorriste?", sol:"1.5+0.8x=9.5 → 0.8x=8 → x=10 km."},
+        {ctx:"Reparto de una herencia en partes desiguales", plan:"Dos hermanos se reparten $15,000; uno recibe $2,000 más que el otro. ¿Cuánto recibe cada uno?", sol:"x + (x+2000) = 15000 → 2x=13000 → x=6500. Uno recibe $6,500 y el otro $8,500."},
+        {ctx:"Plan de ahorro con meta fija", plan:"Tienes $200 ahorrados y ahorras $50 cada semana. ¿En cuántas semanas llegarás a $750?", sol:"200+50x=750 → 50x=550 → x=11 semanas."},
+        {ctx:"Punto de equilibrio de un negocio de venta de café", plan:"Cada café cuesta $2.50 producirlo y se vende a $4. Hay un costo fijo de $300. ¿Cuántos cafés hay que vender para cubrir exactamente el costo fijo (ingreso=costo)?", sol:"4x = 2.5x+300 → 1.5x=300 → x=200 cafés."}
+      ],
+      practica: [
+        {enun:"Resuelve: 3x+7=22", resp:"3x=15 → x=5"},
+        {enun:"Resuelve: 5x−3=2x+12", resp:"3x=15 → x=5"},
+        {enun:"Un plomero cobra $30 fijos más $15 por hora. Si la factura fue $120, ¿cuántas horas trabajó?", resp:"30+15x=120 → 15x=90 → x=6 horas"}
+      ]
+    },
+    {
+      titulo: "Problemas de aplicación que implican ecuaciones lineales",
+      explicacion: "Se traduce una situación en palabras a una ecuación: se identifica la incógnita, se nombra con una variable, se plantea la relación descrita y se resuelve. Clave: leer con cuidado y definir claramente qué representa la variable.",
+      ejemplos: [
+        {ctx:"Edades en una familia", plan:"La edad de un padre es el triple de la de su hijo. Entre los dos suman 52 años. ¿Qué edad tiene cada uno?", sol:"Hijo=x, padre=3x. x+3x=52 → 4x=52 → x=13. Hijo: 13 años, padre: 39 años."},
+        {ctx:"Reparto de ganancias en un negocio familiar", plan:"Dos socios invirtieron juntos $10,000 y las ganancias se reparten proporcionalmente. Si uno puso $4,000 más que el otro, ¿cuánto puso cada uno?", sol:"x+(x+4000)=10000 → 2x=6000 → x=3000. Uno puso $3,000 y otro $7,000."},
+        {ctx:"Números consecutivos en control de inventario", plan:"Se numeran 3 cajas con números consecutivos y la suma de los tres números es ft 90. ¿Cuáles son los números?", sol:"x+(x+1)+(x+2)=90 → 3x+3=90 → x=29. Números: 29, 30 y 31."},
+        {ctx:"Mezcla de soluciones en una farmacia", plan:"Se necesita mezclar una solución al 100% con agua pura para obtener 10 litros al 40%. ¿Cuántos litros de solución pura se necesitan?", sol:"x(1.0) + (10−x)(0)=10(0.4) → x=4 litros de solución pura y 6 litros de agua."}
+      ],
+      practica: [
+        {enun:"La suma de dos números consecutivos es 45. Encuéntralos.", resp:"x+(x+1)=45 → x=22, números: 22 y 23"},
+        {enun:"Un padre tiene el doble de edad que su hija. Juntos suman 63 años. ¿Edades?", resp:"x+2x=63 → x=21 (hija), padre=42"},
+        {enun:"Se reparten $840 entre dos personas; una recibe $120 más que la otra. ¿Cuánto recibe cada una?", resp:"x+(x+120)=840 → x=360; reciben $360 y $480"}
+      ]
+    },
+    {
+      titulo: "Desigualdades lineales de una variable",
+      explicacion: "Una desigualdad usa <, >, ≤ o ≥ en vez de =. Se resuelve igual que una ecuación, pero si se multiplica o divide por un número negativo, el símbolo de la desigualdad se invierte. La solución suele ser un intervalo de valores, no un solo número.",
+      ejemplos: [
+        {ctx:"Presupuesto máximo para una fiesta", plan:"Tienes máximo $300 para comprar snacks a $12 cada bolsa. ¿Cuántas bolsas puedes comprar como máximo?", sol:"12x ≤ 300 → x ≤ 25. Puedes comprar hasta 25 bolsas."},
+        {ctx:"Calificación mínima necesaria en un examen", plan:"Llevas 70 puntos de 3 exámenes y necesitas un promedio de al menos 80 en 4 exámenes para aprobar. ¿Qué nota mínima necesitas en el cuarto?", sol:"(70+x)/4 ≥ 80 → 70+x ≥ 320 → x ≥ 250… (ajustando escala: si los 3 exámenes suman 210 de 100 c/u) 210+x≥320 → x≥110 no es realista; con datos reales: si promedio actual es de 3 notas que suman 210, necesitas x≥110, imposible, mostrando que debe subir el promedio anterior. (Ejemplo conceptual de cómo plantear la desigualdad)."},
+        {ctx:"Límite de velocidad en zona escolar (magnitud física)", plan:"En una zona escolar la velocidad debe ser menor o igual a 30 km/h. Si un carro va a v km/h y acelera 5 km/h más, sigue sin infringir la norma. Expresa la condición.", sol:"v+5 ≤ 30 → v ≤ 25. El carro debía ir a 25 km/h o menos antes de acelerar."},
+        {ctx:"Renta de un carro con kilometraje libre limitado", plan:"Rentas un carro por $40 fijos más $0.20 por km, y tu presupuesto es de máximo $100. ¿Cuántos km puedes recorrer como máximo?", sol:"40+0.2x ≤ 100 → 0.2x ≤ 60 → x ≤ 300 km."}
+      ],
+      practica: [
+        {enun:"Resuelve: 4x−5 < 11", resp:"4x<16 → x<4"},
+        {enun:"Resuelve: −2x+3 ≥ 9", resp:"−2x≥6 → x≤−3 (se invierte el signo al dividir por −2)"},
+        {enun:"Una tienda vende camisetas a $8. ¿Cuántas debes vender para tener ingresos de al menos $200?", resp:"8x≥200 → x≥25 camisetas"}
+      ]
+    },
+    {
+      titulo: "Ecuaciones cuadráticas",
+      explicacion: "Una ecuación cuadrática tiene la forma ax²+bx+c=0 (a≠0). Se resuelve factorizando, completando el cuadrado, o con la fórmula general: x = (−b ± √(b²−4ac)) / (2a). Puede tener dos, una o ninguna solución real.",
+      ejemplos: [
+        {ctx:"Tiempo de caída de un objeto lanzado hacia arriba", plan:"La altura de una pelota es h=−5t²+20t (metros, t en segundos). ¿En qué momento(s) la pelota está en el suelo (h=0)?", sol:"−5t²+20t=0 → −5t(t−4)=0 → t=0 o t=4. La pelota sale en t=0 y cae al suelo en t=4 segundos."},
+        {ctx:"Dimensiones de un terreno rectangular con área conocida", plan:"Un terreno rectangular tiene área 96 m², y el largo es 4 m más que el ancho. Halla las dimensiones.", sol:"x(x+4)=96 → x²+4x−96=0 → (x+12)(x−8)=0 → x=8 (se descarta −12). Ancho=8 m, largo=12 m."},
+        {ctx:"Precio óptimo de venta para maximizar ingresos (ecuación relacionada)", plan:"El ingreso de una tienda es I=−2p²+40p (p=precio). ¿Para qué precios el ingreso es cero?", sol:"−2p(p−20)=0 → p=0 o p=20. El ingreso es cero en p=$0 y p=$20."},
+        {ctx:"Diseño de una piscina con borde de ancho uniforme", plan:"Una piscina de 6x8 m se rodea de un borde de ancho x, y el área total (piscina+borde) debe ser 63 m². Plantea y resuelve para x.", sol:"(6+2x)(8+2x)=63 → 48+28x+4x²=63 → 4x²+28x−15=0. Con la fórmula general: x=(−28±√(784+240))/8=(−28±32)/8 → x=0.5 (se descarta la negativa). El borde mide 0.5 m."}
+      ],
+      practica: [
+        {enun:"Resuelve por factorización: x²−5x+6=0", resp:"(x−2)(x−3)=0 → x=2 o x=3"},
+        {enun:"Resuelve con la fórmula general: x²+2x−8=0", resp:"x=(−2±√(4+32))/2=(−2±6)/2 → x=2 o x=−4"},
+        {enun:"Un rectángulo tiene área 45 m² y su largo es 4 m más que el ancho. Halla el ancho.", resp:"x(x+4)=45 → x²+4x−45=0 → (x+9)(x−5)=0 → x=5 m"}
+      ]
+    },
+    {
+      titulo: "Ecuaciones que conducen a ecuaciones lineales o cuadráticas",
+      explicacion: "Algunas ecuaciones (con fracciones, radicales o paréntesis) parecen complejas pero al simplificarlas se transforman en una ecuación lineal o cuadrática. Se elimina denominadores (multiplicando por el MCM), se despejan radicales elevando al cuadrado, o se expande, y luego se resuelve normalmente (verificando soluciones extrañas).",
+      ejemplos: [
+        {ctx:"Reparto de trabajo entre dos equipos (ecuación con fracciones)", plan:"Un equipo tarda x horas en pintar una casa y otro tarda x+3 horas. Juntos tardan 2 horas. Esto lleva a: 1/x + 1/(x+3) = 1/2. Resuélvela.", sol:"Multiplicando por 2x(x+3): 2(x+3)+2x = x(x+3) → 2x+6+2x=x²+3x → 4x+6=x²+3x → x²−x−6=0 → (x−3)(x+2)=0 → x=3 (se descarta −2). Un equipo tarda 3 horas, el otro 6 horas."},
+        {ctx:"Cálculo de la altura de un edificio usando un radical", plan:"El tiempo de caída de un objeto es t=√(h/5). Si t=4 segundos, halla la altura h (ecuación con radical que se vuelve lineal).", sol:"4=√(h/5) → 16=h/5 → h=80 m."},
+        {ctx:"Ecuación de una lente óptica (fracciones que llevan a cuadrática)", plan:"La fórmula de una lente es 1/x + 1/(x+2) = 1/(x−1) aproximada para cierto arreglo óptico. Resuelve para x.", sol:"Multiplicando por x(x+2)(x−1): (x+2)(x−1)+x(x−1)=x(x+2). Expandiendo: (x²+x−2)+(x²−x)=x²+2x → 2x²−2 = x²+2x → x²−2x−2=0. Con fórmula general: x=(2±√(4+8))/2=(2±√12)/2=1±√3."},
+        {ctx:"Ecuación con paréntesis en el cálculo de un descuento escalonado", plan:"2(x−3)+5 = 3(x+1)−4, del cálculo de dos promociones equivalentes. Resuelve.", sol:"2x−6+5=3x+3−4 → 2x−1=3x−1 → −1+1=3x−2x → x=0."}
+      ],
+      practica: [
+        {enun:"Resuelve: 1/x + 1/2 = 3/4", resp:"Multiplica por 4x: 4+2x=3x → x=4"},
+        {enun:"Resuelve: √(2x+1)=5", resp:"2x+1=25 → x=12"},
+        {enun:"Resuelve: 3(x−2)=2(x+5)", resp:"3x−6=2x+10 → x=16"}
+      ]
+    },
+    {
+      titulo: "Desigualdades cuadráticas de una variable",
+      explicacion: "Se resuelve la ecuación cuadrática asociada (=0) para hallar los puntos críticos, se ubican en la recta numérica dividiéndola en intervalos, y se evalúa el signo de la expresión en cada intervalo para saber dónde cumple la desigualdad.",
+      ejemplos: [
+        {ctx:"Rango de precios donde un negocio tiene ganancia", plan:"La ganancia de un negocio es G=−x²+10x−16 (x=precio). ¿Para qué precios hay ganancia positiva (G>0)?", sol:"−x²+10x−16>0 → x²−10x+16<0 → (x−2)(x−8)<0 → la expresión es negativa entre las raíces: 2<x<8. Hay ganancia con precios entre $2 y $8."},
+        {ctx:"Altura mínima de un cohete para estar por encima de un edificio", plan:"La altura de un cohete es h=t²−6t+5 y se necesita saber cuándo h<0 (por debajo del nivel de referencia).", sol:"t²−6t+5<0 → (t−1)(t−5)<0 → 1<t<5. Está por debajo del nivel de referencia entre t=1 y t=5 segundos."},
+        {ctx:"Zona segura de velocidad para evitar derrape (modelo cuadrático simplificado)", plan:"La distancia de frenado es D=v²/20 − 3 y se requiere D≤2 (segura). Resuelve v²/20−3≤2.", sol:"v²/20 ≤ 5 → v² ≤ 100 → −10≤v≤10. Como v es velocidad (positiva), 0≤v≤10 km/h es la zona segura del modelo."},
+        {ctx:"Dimensiones válidas de un cartel con área menor a un límite", plan:"El área de un cartel es A=x²−4x y debe cumplir A<32 por reglamento. Encuentra el rango de x válido.", sol:"x²−4x−32<0 → (x−8)(x+4)<0 → −4<x<8. Considerando que x>0 (una medida), el rango válido es 0<x<8."}
+      ],
+      practica: [
+        {enun:"Resuelve: x²−7x+10 ≤ 0", resp:"(x−2)(x−5)≤0 → 2≤x≤5"},
+        {enun:"Resuelve: x²−9 > 0", resp:"(x−3)(x+3)>0 → x<−3 o x>3"},
+        {enun:"Resuelve: x²+2x−3 < 0", resp:"(x+3)(x−1)<0 → −3<x<1"}
+      ]
+    }
+  ]
+};
+
+const UNIDAD_FUNCIONES = {
+  nombre: "Funciones",
+  color: "#f28fce",
+  temas: [
+    {
+      titulo: "Identificar si una relación es función",
+      explicacion: "Una relación es función si a cada valor de entrada (x) le corresponde exactamente un valor de salida (y). Gráficamente se usa la 'prueba de la línea vertical': si una línea vertical corta la gráfica en más de un punto, no es función.",
+      ejemplos: [
+        {ctx:"Relación entre DUI y persona", plan:"¿La relación 'número de DUI → persona a la que pertenece' es una función?", sol:"Sí, es función: cada número de DUI corresponde a exactamente una persona (no hay dos personas con el mismo DUI dando resultados distintos)."},
+        {ctx:"Relación entre nombre de un producto y sus precios en distintas tiendas", plan:"¿'Nombre del producto → precio' es función si el mismo producto tiene precios distintos en tiendas diferentes?", sol:"No es función en ese contexto general, porque un mismo producto (entrada) puede tener varios precios (salidas) distintos según la tienda."},
+        {ctx:"Relación entre hora del día y temperatura registrada", plan:"Un sensor mide la temperatura exacta en cada hora del día. ¿Es función 'hora → temperatura'?", sol:"Sí es función: para cada hora específica el sensor registra un único valor de temperatura."},
+        {ctx:"Relación entre un número y sus raíces cuadradas", plan:"¿'x → valores y tales que y²=x' es función?", sol:"No es función, porque un número positivo x tiene dos raíces cuadradas (positiva y negativa), es decir, dos salidas para una entrada."}
+      ],
+      practica: [
+        {enun:"¿'Estudiante → carnet universitario' es función?", resp:"Sí, cada estudiante tiene un único carnet"},
+        {enun:"¿'Apellido → todas las personas con ese apellido' es función?", resp:"No, un apellido puede corresponder a varias personas"},
+        {enun:"La gráfica de un círculo x²+y²=9, ¿pasa la prueba de la línea vertical?", resp:"No, una línea vertical la corta en 2 puntos, no es función"}
+      ]
+    },
+    {
+      titulo: "Evaluación de valores numéricos o algebraicos en funciones",
+      explicacion: "Evaluar f(a) significa sustituir cada 'x' de la función por el valor 'a' (numérico o algebraico) y simplificar el resultado.",
+      ejemplos: [
+        {ctx:"Costo de envío según el peso del paquete", plan:"f(x)=3x+5 es el costo de envío según el peso x en kg. Calcula el costo para un paquete de 4 kg.", sol:"f(4)=3(4)+5=17. El envío cuesta $17."},
+        {ctx:"Ingreso de un vendedor según horas trabajadas", plan:"f(h)=12h+30. Calcula f(h+1) para saber el ingreso si trabaja una hora más de lo habitual (algebraico).", sol:"f(h+1)=12(h+1)+30=12h+12+30=12h+42."},
+        {ctx:"Altura de una planta según semanas de crecimiento", plan:"f(t)=2t²+3 (cm). Calcula la altura a las 5 semanas.", sol:"f(5)=2(25)+3=50+3=53 cm."},
+        {ctx:"Fórmula de conversión de unidades de un sensor industrial", plan:"f(x)=(x−32)·5/9 convierte °F a °C. Evalúa f(98.6) (temperatura corporal en °F).", sol:"f(98.6)=(98.6−32)(5/9)=66.6×5/9=37 °C."}
+      ],
+      practica: [
+        {enun:"Si f(x)=2x²−3, halla f(4)", resp:"2(16)−3=29"},
+        {enun:"Si f(x)=5x+1, halla f(a+2)", resp:"5(a+2)+1=5a+11"},
+        {enun:"Si f(x)=x²−x, halla f(−3)", resp:"9+3=12"}
+      ]
+    },
+    {
+      titulo: "Dominio y rango",
+      explicacion: "El dominio son todos los valores de entrada (x) permitidos para una función; el rango son todos los valores de salida (y) que se pueden obtener. Hay que revisar restricciones como denominadores que no pueden ser cero, o radicales cuyo contenido no puede ser negativo (en reales).",
+      ejemplos: [
+        {ctx:"Número de asistentes posibles a un evento", plan:"Una función modela el costo de un salón: f(x)=200+15x, donde x es el número de asistentes (entero no negativo, con capacidad máxima de 150). ¿Cuál es el dominio realista?", sol:"Dominio: x ∈ {0,1,2,…,150} (números enteros de 0 a 150, por el contexto físico del problema)."},
+        {ctx:"Velocidad de un objeto con fórmula que tiene una raíz", plan:"v(h)=√(2·9.8·h) modela la velocidad de caída según la altura h. ¿Cuál es el dominio válido de h?", sol:"El contenido del radical debe ser ≥0: 2×9.8×h≥0 → h≥0. Dominio: h≥0 (no hay alturas negativas físicamente)."},
+        {ctx:"Costo por persona al repartir la renta de una casa", plan:"C(n)=1200/n, donde n es el número de personas que comparten la renta. ¿Cuál es el dominio?", sol:"n no puede ser 0 (no se puede dividir entre cero) y debe ser un entero positivo: n∈{1,2,3,…}."},
+        {ctx:"Rango de ingresos posibles de un vendedor con comisión", plan:"I(x)=50x+200, donde x son ventas (x≥0). ¿Cuál es el rango de ingresos posibles?", sol:"Como x≥0, el menor valor es I(0)=200, y crece sin límite. Rango: I≥200 (I∈[200,∞))."}
+      ],
+      practica: [
+        {enun:"Halla el dominio de f(x)=1/(x−5)", resp:"Todos los reales excepto x=5"},
+        {enun:"Halla el dominio de f(x)=√(x−3)", resp:"x≥3"},
+        {enun:"Si f(x)=x² con dominio todos los reales, ¿cuál es el rango?", resp:"y≥0 (todos los reales no negativos)"}
+      ]
+    },
+    {
+      titulo: "Función lineal",
+      explicacion: "Una función lineal tiene la forma f(x)=mx+b, donde m es la pendiente (razón de cambio, cuánto sube o baja y por cada unidad de x) y b es el valor donde cruza el eje y (valor inicial). Su gráfica es siempre una línea recta.",
+      ejemplos: [
+        {ctx:"Plan de datos de un celular", plan:"Un plan cuesta $10 fijos más $2 por cada GB extra usado: f(x)=2x+10. ¿Cuánto pagarás si usas 6 GB extra?", sol:"f(6)=2(6)+10=22. Pagarás $22."},
+        {ctx:"Depreciación de un vehículo con el tiempo", plan:"El valor de un carro es V(t)=25000−1500t (t en años). ¿Cuál es el valor a los 3 años y qué significa la pendiente?", sol:"V(3)=25000−4500=20500. La pendiente −1500 significa que el carro pierde $1,500 de valor cada año."},
+        {ctx:"Tarifa de un electricista según horas trabajadas", plan:"C(h)=40h+25. Grafica mentalmente: identifica pendiente y el costo inicial fijo.", sol:"Pendiente m=40 (cobra $40 por hora), b=25 (cobro fijo por visita, incluso si trabajara 0 horas)."},
+        {ctx:"Nivel de agua de un tanque que se llena constantemente", plan:"El nivel es N(t)=5t+20 (litros, t en minutos). ¿Cuánto tardará en llegar a 100 litros?", sol:"100=5t+20 → 5t=80 → t=16 minutos."}
+      ],
+      practica: [
+        {enun:"Si f(x)=3x−4, halla la pendiente y el intercepto y.", resp:"m=3, b=−4"},
+        {enun:"Una función lineal pasa por (0,5) y tiene pendiente 2. Escribe f(x).", resp:"f(x)=2x+5"},
+        {enun:"Un taxi cobra f(x)=1.2x+2 (x=km). ¿Cuánto cuesta un viaje de 8 km?", resp:"f(8)=1.2(8)+2=9.6+2=11.6"}
+      ]
+    },
+    {
+      titulo: "Función cuadrática",
+      explicacion: "Una función cuadrática tiene la forma f(x)=ax²+bx+c (a≠0). Su gráfica es una parábola: se abre hacia arriba si a>0 (tiene un mínimo) o hacia abajo si a<0 (tiene un máximo). El vértice está en x=−b/(2a).",
+      ejemplos: [
+        {ctx:"Trayectoria de un balón de fútbol pateado", plan:"La altura del balón es h(t)=−5t²+20t. ¿En qué tiempo alcanza la altura máxima y cuál es esa altura?", sol:"Vértice: t=−20/(2×−5)=2 segundos. h(2)=−5(4)+40=−20+40=20 m de altura máxima."},
+        {ctx:"Ingreso máximo de una tienda según el precio de venta", plan:"I(p)=−2p²+80p. ¿Qué precio p maximiza el ingreso y cuál es el ingreso máximo?", sol:"Vértice: p=−80/(2×−2)=20. I(20)=−2(400)+1600=−800+1600=800. Precio óptimo $20, ingreso máximo $800."},
+        {ctx:"Área máxima de un corral con cerca de longitud fija", plan:"Con 40 m de cerca para un corral rectangular, el área es A(x)=x(20−x) (x=un lado). Halla el área máxima.", sol:"Vértice: x=−20/(2×−1)... reescribiendo A(x)=−x²+20x, vértice en x=10. A(10)=10(10)=100 m² es el área máxima (un cuadrado de 10×10)."},
+        {ctx:"Costo mínimo de producción según cantidad fabricada", plan:"C(x)=2x²−40x+300 (costo según unidades x). ¿Cuántas unidades minimizan el costo?", sol:"Vértice: x=40/(2×2)=10 unidades. C(10)=200−400+300=100, el costo mínimo es $100 al producir 10 unidades."}
+      ],
+      practica: [
+        {enun:"Halla el vértice de f(x)=x²−6x+5", resp:"x=6/2=3; f(3)=9−18+5=−4 → vértice (3,−4)"},
+        {enun:"¿Hacia dónde abre la parábola f(x)=−3x²+2x−1 y por qué?", resp:"Hacia abajo, porque a=−3 es negativo"},
+        {enun:"Un objeto sigue h(t)=−4t²+16t. ¿Cuál es su altura máxima?", resp:"Vértice t=16/8=2; h(2)=−16+32=16 m"}
+      ]
+    },
+    {
+      titulo: "Función polinomial",
+      explicacion: "Una función polinomial es de la forma f(x)=aₙxⁿ+...+a₁x+a₀, con n entero no negativo. Incluye las lineales (n=1) y cuadráticas (n=2) como casos particulares, además de cúbicas (n=3) y de mayor grado, usadas para modelar comportamientos más complejos que una recta o parábola.",
+      ejemplos: [
+        {ctx:"Volumen de una caja construida al recortar esquinas de una lámina", plan:"De una lámina cuadrada de 20 cm se recortan esquinas de x cm para doblar una caja. El volumen es V(x)=x(20−2x)². Evalúa V para x=3.", sol:"V(3)=3(20−6)²=3(14)²=3×196=588 cm³."},
+        {ctx:"Modelo de ventas acumuladas de una empresa a lo largo de varios años", plan:"Las ventas acumuladas siguen S(t)=t³−6t²+9t+2 (miles de $, t en años). Evalúa las ventas en t=2 años.", sol:"S(2)=8−24+18+2=4 (miles de $), es decir $4,000."},
+        {ctx:"Espacio de frenado de un vehículo en función de la velocidad (modelo cúbico simplificado)", plan:"Un modelo experimental da D(v)=0.01v³−0.2v²+3v. Evalúa la distancia para v=10 km/h.", sol:"D(10)=0.01(1000)−0.2(100)+30=10−20+30=20 m."},
+        {ctx:"Crecimiento poblacional de una colonia de insectos con varios factores", plan:"P(t)=2t³−3t²+t+50 modela la población. Evalúa P(1) para comparar con el valor inicial P(0).", sol:"P(0)=50. P(1)=2−3+1+50=50. En este modelo particular, la población en t=1 es igual a la inicial (50), mostrando una meseta temporal."}
+      ],
+      practica: [
+        {enun:"Si f(x)=x³−2x²+x−5, halla f(2)", resp:"8−8+2−5=−3"},
+        {enun:"¿Cuál es el grado del polinomio f(x)=4x⁵−3x²+x?", resp:"Grado 5"},
+        {enun:"Si V(x)=x(10−2x)(6−2x) modela el volumen de una caja, halla V(1)", resp:"1×8×4=32"}
+      ]
+    }
+  ]
+};
+const UNIDAD_TRIGONOMETRIA = {
+  nombre: "Trigonometría",
+  color: "#c792ea",
+  temas: [
+    {
+      titulo: "Perímetro y área de una circunferencia",
+      explicacion: "El perímetro (circunferencia) de un círculo es P=2πr (o πd), y el área es A=πr², donde r es el radio y d el diámetro. π≈3.1416.",
+      ejemplos: [
+        {ctx:"Cantidad de cerca para un jardín circular", plan:"Un jardín circular tiene radio 5 m. ¿Cuántos metros de cerca se necesitan para rodearlo?", sol:"P=2π(5)=10π≈31.42 m de cerca."},
+        {ctx:"Cantidad de pintura para una mesa redonda", plan:"Una mesa circular tiene diámetro 1.4 m. ¿Cuál es el área a pintar (superficie superior)?", sol:"r=0.7 m. A=π(0.7)²=π(0.49)≈1.54 m²."},
+        {ctx:"Distancia recorrida por una rueda de bicicleta", plan:"Una rueda tiene radio 0.33 m. ¿Cuántos metros avanza la bicicleta en una vuelta completa de la rueda?", sol:"P=2π(0.33)≈2.07 m por cada vuelta."},
+        {ctx:"Área de una pizza para calcular el costo por cm²", plan:"Una pizza tiene 30 cm de diámetro y cuesta $9. ¿Cuál es el área y el costo por cm²?", sol:"r=15 cm. A=π(15)²=225π≈706.86 cm². Costo por cm²=9/706.86≈$0.0127."}
+      ],
+      practica: [
+        {enun:"Halla el perímetro de un círculo de radio 8 cm.", resp:"P=2π(8)=16π≈50.27 cm"},
+        {enun:"Halla el área de un círculo de diámetro 10 m.", resp:"r=5; A=π(25)≈78.54 m²"},
+        {enun:"Una piscina circular tiene área 50.24 m². Estima su radio (usa π≈3.14).", resp:"50.24=3.14r² → r²=16 → r=4 m"}
+      ]
+    },
+    {
+      titulo: "Ángulos y sus medidas",
+      explicacion: "Los ángulos se miden en grados (°) o radianes (rad). Una vuelta completa es 360° = 2π rad. Conversión: rad = grados×(π/180); grados = rad×(180/π).",
+      ejemplos: [
+        {ctx:"Ángulo de giro de una antena satelital", plan:"Una antena gira 90° para apuntar a otro satélite. Expresa ese giro en radianes.", sol:"90×(π/180)=π/2 rad ≈1.5708 rad."},
+        {ctx:"Ángulo de inclinación de una rampa para silla de ruedas", plan:"Una norma exige que una rampa tenga un ángulo de inclinación de 0.1745 rad. Conviértelo a grados.", sol:"0.1745×(180/π)≈10°."},
+        {ctx:"Rotación de las manecillas de un reloj", plan:"El minutero de un reloj se mueve 360° en 60 minutos. ¿Cuántos grados gira en 15 minutos?", sol:"360°/60min × 15min = 90°."},
+        {ctx:"Ángulo de un abanico o ventilador industrial oscilante", plan:"Un ventilador oscila describiendo un ángulo de 120°. Expresa el ángulo en radianes en términos de π.", sol:"120×(π/180)=2π/3 rad."}
+      ],
+      practica: [
+        {enun:"Convierte 45° a radianes (en términos de π).", resp:"45×(π/180)=π/4"},
+        {enun:"Convierte 3π/2 rad a grados.", resp:"3π/2 × 180/π = 270°"},
+        {enun:"Un engranaje gira 270°. ¿Cuántos radianes son (decimal aprox.)?", resp:"270×π/180=3π/2≈4.71 rad"}
+      ]
+    },
+    {
+      titulo: "Triángulo rectángulo y teorema de Pitágoras",
+      explicacion: "En un triángulo rectángulo, el teorema de Pitágoras dice: c² = a² + b², donde c es la hipotenusa (lado opuesto al ángulo recto) y a, b son los catetos. Se usa para hallar un lado desconocido cuando se conocen los otros dos.",
+      ejemplos: [
+        {ctx:"Longitud de una escalera apoyada en una pared", plan:"Una escalera se apoya a 3 m de la base de una pared y alcanza 4 m de altura. ¿Cuánto mide la escalera?", sol:"c²=3²+4²=9+16=25 → c=5 m de escalera."},
+        {ctx:"Distancia más corta cruzando un parque rectangular en diagonal", plan:"Un parque mide 60 m de largo y 80 m de ancho. ¿Cuánto se camina si cruzas en diagonal en vez de bordear?", sol:"diagonal=√(60²+80²)=√(3600+6400)=√10000=100 m."},
+        {ctx:"Altura de una cometa (papalote) según el hilo y la distancia horizontal", plan:"El hilo de una cometa mide 130 m y la distancia horizontal desde la persona hasta el punto bajo la cometa es 50 m. ¿A qué altura está?", sol:"altura²=130²−50²=16900−2500=14400 → altura=120 m."},
+        {ctx:"Tamaño de pantalla de TV a partir de ancho y alto", plan:"Una TV mide 40 pulgadas de ancho y 22.5 de alto. ¿Cuál es su tamaño diagonal (en pulgadas, redondeado)?", sol:"diagonal=√(40²+22.5²)=√(1600+506.25)=√2106.25≈45.9 pulgadas."}
+      ],
+      practica: [
+        {enun:"Un triángulo rectángulo tiene catetos 6 y 8. Halla la hipotenusa.", resp:"√(36+64)=√100=10"},
+        {enun:"La hipotenusa mide 13 y un cateto mide 5. Halla el otro cateto.", resp:"√(169−25)=√144=12"},
+        {enun:"Una rampa avanza 12 m horizontalmente y sube 5 m. ¿Cuánto mide la rampa (hipotenusa)?", resp:"√(144+25)=√169=13 m"}
+      ]
+    },
+    {
+      titulo: "Funciones trigonométricas de ángulos notables (30°, 60° y 45°) y ángulos cuadrantales",
+      explicacion: "Los ángulos notables tienen valores exactos memorizables: sen30°=1/2, cos30°=√3/2; sen45°=cos45°=√2/2; sen60°=√3/2, cos60°=1/2. Los ángulos cuadrantales (0°,90°,180°,270°,360°) tienen valores simples como sen90°=1, cos90°=0, etc.",
+      ejemplos: [
+        {ctx:"Altura alcanzada por una rampa de skate a 30°", plan:"Una rampa de 10 m de largo forma un ángulo de 30° con el piso. ¿Qué altura alcanza?", sol:"altura = 10×sen30° = 10×(1/2) = 5 m."},
+        {ctx:"Sombra proyectada por un poste con el sol a 45°", plan:"Un poste de 6 m proyecta una sombra cuando el sol forma 45° con el suelo. ¿Cuánto mide la sombra (igual a la base del triángulo)?", sol:"Como el ángulo es 45°, tan45°=1, entonces sombra=altura=6 m (porque cateto opuesto=cateto adyacente cuando el ángulo es 45°)."},
+        {ctx:"Componentes de una fuerza aplicada a 60°", plan:"Una persona jala una cuerda con 20 N de fuerza a 60° sobre la horizontal. Halla la componente vertical de la fuerza.", sol:"Componente vertical = 20×sen60° = 20×(√3/2) = 10√3 ≈17.32 N."},
+        {ctx:"Posición de un objeto en movimiento circular a 90° (ángulo cuadrantal)", plan:"Un punto en una rueda gira y llega a 90° respecto al eje horizontal. ¿Cuáles son sen90° y cos90°, usados para su posición (y,x)?", sol:"sen90°=1, cos90°=0. El punto está exactamente en la parte más alta de la rueda (coordenada y máxima, x=0 relativo al centro)."}
+      ],
+      practica: [
+        {enun:"¿Cuánto vale tan45°?", resp:"1"},
+        {enun:"¿Cuánto vale cos60°+sen30°?", resp:"1/2+1/2=1"},
+        {enun:"¿Cuánto vale sen180°?", resp:"0"}
+      ]
+    },
+    {
+      titulo: "Círculo unitario",
+      explicacion: "El círculo unitario tiene radio 1 y centro en el origen. Cada ángulo θ corresponde a un punto (cosθ, senθ) sobre el círculo. Es la base para entender el comportamiento de las funciones trigonométricas para cualquier ángulo, incluyendo mayores a 90°.",
+      ejemplos: [
+        {ctx:"Posición de un caballito en un carrusel", plan:"Un caballito de carrusel está en el ángulo 120° del círculo (radio=3 m, centrado en el eje). ¿Cuál es su posición (x,y) respecto al centro?", sol:"x=3cos120°=3(−1/2)=−1.5; y=3sen120°=3(√3/2)≈2.6. Posición aproximada: (−1.5, 2.6) m."},
+        {ctx:"Ubicación de un satélite en órbita circular simplificada", plan:"Un satélite orbita a radio 1 (unidad normalizada) y está en θ=210°. Halla sus coordenadas.", sol:"cos210°=−√3/2, sen210°=−1/2. Coordenadas: (−√3/2, −1/2) ≈(−0.87,−0.5)."},
+        {ctx:"Modelado de una rueda de la fortuna con el tiempo", plan:"La altura de una cabina en una rueda de la fortuna se modela con y=r·senθ. Con r=15 m y θ=270°, halla y.", sol:"sen270°=−1. y=15×(−1)=−15 (por debajo del centro, en la parte más baja del giro)."},
+        {ctx:"Coordenadas de un punto de referencia en diseño gráfico circular (logo)", plan:"Un diseñador coloca un punto en un logo circular de radio 1 en θ=0°, 90°, 180°, 270° para las 4 esquinas del diseño. Da las coordenadas de cada uno.", sol:"θ=0°→(1,0); θ=90°→(0,1); θ=180°→(−1,0); θ=270°→(0,−1)."}
+      ],
+      practica: [
+        {enun:"¿Cuáles son las coordenadas del punto en el círculo unitario para θ=0°?", resp:"(1,0)"},
+        {enun:"¿Cuáles son las coordenadas para θ=180°?", resp:"(−1,0)"},
+        {enun:"Halla cos(300°) usando el círculo unitario.", resp:"cos300°=1/2"}
+      ]
+    },
+    {
+      titulo: "Signos de las funciones trigonométricas",
+      explicacion: "Según el cuadrante donde está el ángulo, cambian los signos de seno, coseno y tangente: Cuadrante I: todo positivo. Cuadrante II: solo seno positivo. Cuadrante III: solo tangente positiva. Cuadrante IV: solo coseno positivo. (Regla mnemotécnica: 'Todos, Seno, Tangente, Coseno').",
+      ejemplos: [
+        {ctx:"Dirección de una fuerza en un diagrama de cuerpo libre (cuadrante II)", plan:"Un vector de fuerza apunta a 150° (cuadrante II). ¿Los valores de seno y coseno de 150° son positivos o negativos?", sol:"En el cuadrante II, seno es positivo y coseno es negativo: sen150°=1/2 (+), cos150°=−√3/2 (−)."},
+        {ctx:"Análisis de una señal eléctrica alterna en distintos momentos del ciclo", plan:"Una señal senoidal se evalúa en un ángulo de 200° (cuadrante III) del ciclo. ¿Qué signo tiene la tangente ahí?", sol:"En cuadrante III, tangente es positiva (seno y coseno son ambos negativos, y negativo entre negativo da positivo)."},
+        {ctx:"Trayectoria de un dron que rota describiendo un círculo (cuadrante IV)", plan:"Un dron está en la posición angular 320° de su trayectoria circular (cuadrante IV). ¿Qué signo tiene su coordenada 'y' (relacionada al seno)?", sol:"En el cuadrante IV, el seno es negativo, así que la coordenada y (altura relativa) es negativa: está por debajo del eje de referencia."},
+        {ctx:"Verificación de coherencia de resultados en un cálculo de ingeniería", plan:"Un cálculo da cos(100°)=+0.5, ¿es correcto? Verifica con la regla de signos.", sol:"100° está en el cuadrante II, donde el coseno debe ser negativo. El resultado +0.5 es incorrecto; debería ser cos(100°)≈−0.17 (negativo)."}
+      ],
+      practica: [
+        {enun:"¿Qué signo tiene sen(210°)?", resp:"Cuadrante III: seno negativo"},
+        {enun:"¿Qué signo tiene cos(320°)?", resp:"Cuadrante IV: coseno positivo"},
+        {enun:"¿Qué signo tiene tan(100°)?", resp:"Cuadrante II: tangente negativa"}
+      ]
+    },
+    {
+      titulo: "Funciones trigonométricas para un ángulo cualquiera (basado en ángulos de referencia)",
+      explicacion: "Para hallar sen, cos o tan de un ángulo mayor a 90°, se busca su ángulo de referencia (el ángulo agudo respecto al eje x) y se usa el valor del ángulo notable correspondiente, ajustando el signo según el cuadrante.",
+      ejemplos: [
+        {ctx:"Cálculo de la altura de una grúa cuyo brazo forma 150°", plan:"El brazo de una grúa forma un ángulo de 150° respecto a la horizontal (hacia el otro lado). Halla sen150° usando el ángulo de referencia.", sol:"Ángulo de referencia = 180°−150°=30°. sen150°=sen30°=1/2 (positivo, cuadrante II)."},
+        {ctx:"Dirección del viento en un reporte meteorológico (210°)", plan:"El viento sopla en dirección de 210°. Halla cos(210°) usando ángulo de referencia.", sol:"Ángulo de referencia=210°−180°=30°. cos210°=−cos30°=−√3/2 (cuadrante III, coseno negativo)."},
+        {ctx:"Trayectoria de un proyectil lanzado con ángulo mayor a 270°", plan:"Un radar mide un ángulo de 300° para la posición de un objeto. Halla tan(300°).", sol:"Ángulo de referencia=360°−300°=60°. tan300°=−tan60°=−√3 (cuadrante IV, tangente negativa)."},
+        {ctx:"Cálculo de fuerzas en un puente con cables a 135°", plan:"Un cable de soporte forma 135° con la horizontal. Halla cos(135°).", sol:"Ángulo de referencia=180°−135°=45°. cos135°=−cos45°=−√2/2 (cuadrante II, coseno negativo)."}
+      ],
+      practica: [
+        {enun:"Halla sen(120°) usando ángulo de referencia.", resp:"Ref=60°; sen120°=sen60°=√3/2"},
+        {enun:"Halla cos(300°) usando ángulo de referencia.", resp:"Ref=60°; cos300°=cos60°=1/2 (cuadrante IV, positivo)"},
+        {enun:"Halla tan(225°) usando ángulo de referencia.", resp:"Ref=45°; tan225°=tan45°=1 (cuadrante III, positivo)"}
+      ]
+    },
+    {
+      titulo: "Ley de senos y cosenos",
+      explicacion: "Se usan para resolver triángulos que NO son rectángulos. Ley de senos: a/senA = b/senB = c/senC (relaciona lados con sus ángulos opuestos). Ley de cosenos: c² = a²+b²−2ab·cosC (generaliza Pitágoras para cualquier triángulo).",
+      ejemplos: [
+        {ctx:"Distancia entre dos barcos vista desde un faro (ley de senos)", plan:"Desde un faro se ven dos barcos formando un triángulo. Se conoce un lado a=100 m, ángulo A=40° y ángulo B=60°. Halla el lado b.", sol:"a/senA = b/senB → 100/sen40° = b/sen60° → b = 100×sen60°/sen40° ≈ 100×0.866/0.643 ≈ 134.7 m."},
+        {ctx:"Distancia directa entre dos ciudades conociendo rutas y ángulo entre ellas (ley de cosenos)", plan:"Dos carreteras salen de una ciudad C: una de 80 km hacia A y otra de 60 km hacia B, formando un ángulo de 70° entre ellas. Halla la distancia directa AB.", sol:"c²=80²+60²−2(80)(60)cos70° = 6400+3600−9600(0.342) ≈ 10000−3283 = 6717 → c≈82 km."},
+        {ctx:"Triangulación para ubicar un incendio forestal (ley de senos)", plan:"Dos torres de vigilancia separadas 5 km ven un incendio con ángulos de 50° y 65° respectivamente (triángulo torre1-torre2-incendio). Halla la distancia de la torre 1 al incendio.", sol:"Ángulo en el incendio = 180−50−65=65°. Por ley de senos: 5/sen65° = d/sen65°... usando el lado opuesto correcto: d(torre1-incendio)/senB(65° en torre2) = 5/sen(65° en el incendio) → d = 5×sen65°/sen65° = 5 km (caso particular con ángulos iguales)."},
+        {ctx:"Fuerza resultante de dos cables que sostienen un poste (ley de cosenos)", plan:"Dos cables de 10 m y 14 m sostienen un poste, formando un ángulo de 80° entre ellos en la parte superior. Halla la distancia entre los puntos donde tocan el suelo.", sol:"c²=10²+14²−2(10)(14)cos80° = 100+196−280(0.1736) ≈ 296−48.6=247.4 → c≈15.73 m."}
+      ],
+      practica: [
+        {enun:"En un triángulo, a=7, A=30°, B=45°. Halla b (ley de senos).", resp:"7/sen30° = b/sen45° → b=7×sen45°/sen30°≈9.9"},
+        {enun:"En un triángulo, a=6, b=8, C=60°. Halla c (ley de cosenos).", resp:"c²=36+64−2(6)(8)cos60°=100−48=52 → c≈7.2"},
+        {enun:"En un triángulo, a=10, b=10, C=90°. Halla c.", resp:"c²=100+100−200cos90°=200−0=200 → c≈14.14"}
+      ]
+    },
+    {
+      titulo: "Identidades trigonométricas",
+      explicacion: "Son igualdades válidas para todo ángulo. Las fundamentales: sen²θ+cos²θ=1; tanθ=senθ/cosθ; 1+tan²θ=sec²θ. Se usan para simplificar expresiones o verificar igualdades trigonométricas.",
+      ejemplos: [
+        {ctx:"Verificación de mediciones de un sensor de inclinación", plan:"Un sensor mide senθ=0.6 en una rampa. Usa la identidad fundamental para hallar cosθ (θ agudo).", sol:"sen²θ+cos²θ=1 → cos²θ=1−0.36=0.64 → cosθ=0.8."},
+        {ctx:"Simplificación de una fórmula de energía en un péndulo", plan:"Una fórmula de física tiene el término senθ/cosθ. Simplifícalo usando identidades.", sol:"senθ/cosθ = tanθ (identidad de tangente)."},
+        {ctx:"Cálculo de la fuerza normal en un plano inclinado (uso de sec²)", plan:"En un análisis de fuerzas aparece la expresión 1+tan²θ. Reemplázala por su identidad equivalente para simplificar cálculos con calculadora.", sol:"1+tan²θ = sec²θ, que suele ser más directo de calcular con la función secante (1/cosθ)."},
+        {ctx:"Verificación de coherencia en un cálculo de trayectoria de proyectil", plan:"Un estudiante calculó senθ=0.9 y cosθ=0.5 para el mismo ángulo. ¿Es esto posible según la identidad fundamental?", sol:"sen²θ+cos²θ = 0.81+0.25=1.06 ≠1. No es posible; hay un error en alguno de los dos valores calculados."}
+      ],
+      practica: [
+        {enun:"Si senθ=3/5, halla cosθ (θ agudo) usando la identidad fundamental.", resp:"cos²θ=1−9/25=16/25 → cosθ=4/5"},
+        {enun:"Simplifica: senθ·(1/senθ)", resp:"=1"},
+        {enun:"Si cosθ=0.6, halla sec²θ usando la identidad 1+tan²θ=sec²θ (sabiendo sec=1/cos).", resp:"sec=1/0.6≈1.667; sec²θ≈2.78"}
+      ]
+    },
+    {
+      titulo: "Gráficas de las funciones trigonométricas (Seno, coseno y tangente)",
+      explicacion: "La gráfica de y=senx y y=cosx son ondas periódicas (repiten cada 2π) con valores entre −1 y 1 (amplitud 1). La gráfica de y=tanx tiene asíntotas verticales (no está definida) en x=90°, 270°, etc., y no tiene un valor máximo o mínimo fijo.",
+      ejemplos: [
+        {ctx:"Modelado de las mareas del mar con una función seno", plan:"El nivel del mar sigue h(t)=3sen(t)+5 (metros). ¿Cuál es el nivel máximo y mínimo del mar según la gráfica?", sol:"Como sen varía entre −1 y 1: máximo=3(1)+5=8 m, mínimo=3(−1)+5=2 m (la gráfica oscila entre esos valores)."},
+        {ctx:"Ciclo de temperatura diaria modelado con coseno", plan:"La temperatura sigue T(h)=10cos(h)+22 (°C, h=hora del día en radianes). ¿Cuál es la amplitud de la gráfica y qué representa?", sol:"Amplitud=10, representa cuánto sube o baja la temperatura respecto al promedio de 22°C a lo largo del ciclo diario."},
+        {ctx:"Comportamiento de una sombra que crece sin límite cerca del atardecer (tangente)", plan:"La longitud de una sombra sigue un modelo con tan(θ) donde θ es el ángulo del sol. ¿Qué ocurre con la gráfica cuando θ se acerca a 90°?", sol:"tan(θ) tiende a infinito cuando θ→90° (asíntota vertical), representando que la sombra se vuelve infinitamente larga cuando el sol está casi en el horizonte."},
+        {ctx:"Comparar dos señales de sonido (ondas) con distinto periodo", plan:"Dos bocinas emiten ondas y=sen(x) y y=sen(2x). ¿Cuál de las dos gráficas se repite más rápido (tiene menor periodo)?", sol:"y=sen(2x) tiene periodo π (la mitad de 2π), por lo que se repite el doble de rápido que y=sen(x), que tiene periodo 2π."}
+      ],
+      practica: [
+        {enun:"¿Cuál es el valor máximo de y=4sen(x)+1?", resp:"4(1)+1=5"},
+        {enun:"¿Cuál es el periodo de y=sen(x)?", resp:"2π"},
+        {enun:"¿En qué valores de x (0° a 360°) la gráfica de y=tan(x) tiene asíntotas?", resp:"En x=90° y x=270°"}
+      ]
+    },
+    {
+      titulo: "Plano cartesiano: Distancia entre puntos",
+      explicacion: "La distancia entre dos puntos (x₁,y₁) y (x₂,y₂) en el plano cartesiano se calcula con la fórmula (derivada de Pitágoras): d = √[(x₂−x₁)² + (y₂−y₁)²].",
+      ejemplos: [
+        {ctx:"Distancia real entre dos casas en un mapa con coordenadas GPS simplificadas", plan:"Casa A en (2,3) km y casa B en (7,11) km (coordenadas en un plano de la ciudad). Halla la distancia entre ambas.", sol:"d=√[(7−2)²+(11−3)²]=√[25+64]=√89≈9.43 km."},
+        {ctx:"Distancia entre dos antenas de telecomunicación en un plano de cobertura", plan:"Antena 1 en (0,0) y antena 2 en (15,20) (coordenadas en km). ¿Cuál es la distancia entre ellas?", sol:"d=√[(15−0)²+(20−0)²]=√[225+400]=√625=25 km."},
+        {ctx:"Distancia recorrida por un robot en una fábrica entre dos puntos de trabajo", plan:"El robot va del punto (1,1) al punto (4,5) (metros) en la línea de producción. Halla la distancia recta recorrida.", sol:"d=√[(4−1)²+(5−1)²]=√[9+16]=√25=5 m."},
+        {ctx:"Distancia entre dos jugadores en un mapa de videojuego", plan:"Jugador A en (−3,4) y jugador B en (2,−8) (coordenadas del mapa). Halla la distancia entre ellos.", sol:"d=√[(2−(−3))²+(−8−4)²]=√[25+144]=√169=13 unidades."}
+      ],
+      practica: [
+        {enun:"Halla la distancia entre (1,2) y (4,6).", resp:"√[(3)²+(4)²]=√25=5"},
+        {enun:"Halla la distancia entre (0,0) y (−6,8).", resp:"√[36+64]=√100=10"},
+        {enun:"Halla la distancia entre (3,−1) y (3,5) (mismo x).", resp:"√[0+36]=6"}
+      ]
+    },
+    {
+      titulo: "Punto medio",
+      explicacion: "El punto medio entre dos puntos (x₁,y₁) y (x₂,y₂) es el punto exactamente a la mitad del segmento que los une: M = ((x₁+x₂)/2, (y₁+y₂)/2).",
+      ejemplos: [
+        {ctx:"Ubicación de una parada de bus entre dos colonias", plan:"Colonia A está en (2,4) y colonia B en (8,10) (coordenadas en km del mapa). ¿Dónde debería ubicarse una parada de bus a mitad de camino?", sol:"M=((2+8)/2, (4+10)/2) = (5,7). La parada debería ubicarse en el punto (5,7) km."},
+        {ctx:"Punto de encuentro entre dos amigos que caminan uno hacia el otro", plan:"Un amigo está en (0,0) y otro en (10,6) (cuadras). Si se encuentran a mitad de camino, ¿en qué punto será?", sol:"M=((0+10)/2, (0+6)/2)=(5,3). Se encuentran en el punto (5,3)."},
+        {ctx:"Centro de una viga estructural para colocar un soporte", plan:"Una viga va del punto (1,2) al punto (9,2) (metros). ¿Dónde se debe colocar un soporte central?", sol:"M=((1+9)/2,(2+2)/2)=(5,2). El soporte va en (5,2)."},
+        {ctx:"Ubicación del centro de una cancha deportiva rectangular", plan:"Dos esquinas opuestas de una cancha están en (0,0) y (40,20) (metros). Halla el punto central de la cancha.", sol:"M=((0+40)/2,(0+20)/2)=(20,10). El centro de la cancha está en (20,10)."}
+      ],
+      practica: [
+        {enun:"Halla el punto medio entre (2,3) y (8,7).", resp:"((2+8)/2,(3+7)/2)=(5,5)"},
+        {enun:"Halla el punto medio entre (−4,6) y (2,−2).", resp:"((−4+2)/2,(6−2)/2)=(−1,2)"},
+        {enun:"Si el punto medio entre A(1,1) y B es (5,5), halla las coordenadas de B.", resp:"5=(1+x)/2 → x=9; 5=(1+y)/2 → y=9. B=(9,9)"}
+      ]
+    }
+  ]
+};
+const UNIDAD_PROBABILIDAD = {
+  nombre: "Probabilidad",
+  color: "#ff8080",
+  temas: [
+    {
+      titulo: "Diagrama de árbol",
+      explicacion: "Un diagrama de árbol es una representación gráfica de todos los resultados posibles de una serie de eventos, organizados en ramas. Cada rama representa una opción y, al final de cada camino completo, se obtiene un resultado posible combinado.",
+      ejemplos: [
+        {ctx:"Combinaciones de menú en un restaurante", plan:"Un restaurante ofrece 2 entradas (sopa, ensalada) y 3 platos fuertes (pollo, carne, pescado). Usa un diagrama de árbol para hallar cuántas combinaciones de menú hay.", sol:"El árbol tiene 2 ramas iniciales, cada una con 3 sub-ramas: 2×3=6 combinaciones posibles (sopa-pollo, sopa-carne, sopa-pescado, ensalada-pollo, ensalada-carne, ensalada-pescado)."},
+        {ctx:"Resultado de lanzar una moneda y luego un dado", plan:"Se lanza una moneda (cara/sello) y luego un dado (1-6). ¿Cuántos resultados posibles hay según el árbol?", sol:"2 ramas (cara, sello) × 6 ramas cada una = 12 resultados posibles en total."},
+        {ctx:"Selección de outfit (ropa) para el trabajo", plan:"Tienes 3 camisas y 2 pantalones. Arma el diagrama de árbol para ver cuántas combinaciones de outfit puedes formar.", sol:"3 ramas (camisas) × 2 sub-ramas (pantalones) = 6 combinaciones posibles de outfit."},
+        {ctx:"Ruta de entrega de un repartidor con dos decisiones consecutivas", plan:"Un repartidor puede tomar 2 rutas para salir de su base y, en cada una, hay 3 posibles calles para llegar al destino. ¿Cuántos caminos totales existen según el árbol?", sol:"2×3=6 caminos posibles totales, mostrados como 6 ramas finales del árbol."}
+      ],
+      practica: [
+        {enun:"Se lanzan 2 monedas. Dibuja mentalmente el árbol: ¿cuántos resultados posibles hay?", resp:"2×2=4 (CC, CS, SC, SS)"},
+        {enun:"Una heladería tiene 4 sabores y 2 tipos de cono. ¿Cuántas combinaciones hay?", resp:"4×2=8"},
+        {enun:"Se lanza un dado y luego una moneda. ¿Cuántos resultados posibles totales?", resp:"6×2=12"}
+      ]
+    },
+    {
+      titulo: "Principio del producto",
+      explicacion: "Si una tarea se puede dividir en varias etapas independientes, y la etapa 1 tiene m formas de realizarse, la etapa 2 tiene n formas, etc., el número total de formas de completar toda la tarea es m×n×… (se multiplican las opciones de cada etapa).",
+      ejemplos: [
+        {ctx:"Creación de placas de vehículos", plan:"Una placa tiene 3 letras (26 posibles cada una) seguidas de 3 dígitos (10 posibles cada uno, sin restricciones). ¿Cuántas placas distintas se pueden formar?", sol:"26×26×26×10×10×10 = 17,576×1,000 = 17,576,000 placas posibles."},
+        {ctx:"Contraseñas de un sistema de seguridad", plan:"Una contraseña de 4 dígitos (0-9) se necesita para una caja fuerte. ¿Cuántas contraseñas distintas son posibles?", sol:"10×10×10×10 = 10,000 contraseñas posibles."},
+        {ctx:"Opciones de un pedido de sándwich personalizado", plan:"Un local ofrece 3 tipos de pan, 4 tipos de carne y 2 tipos de queso. ¿Cuántos sándwiches distintos se pueden armar (uno de cada categoría)?", sol:"3×4×2 = 24 combinaciones distintas de sándwich."},
+        {ctx:"Formas de sentar personas en fila para una foto", plan:"3 personas se sientan en 3 sillas distintas en fila. ¿De cuántas formas distintas se pueden sentar (usando el principio del producto por posición)?", sol:"Para la 1ra silla hay 3 opciones, para la 2da quedan 2, para la 3ra queda 1: 3×2×1=6 formas distintas."}
+      ],
+      practica: [
+        {enun:"Un menú tiene 5 entradas, 4 platos fuertes y 3 postres. ¿Cuántas comidas completas (una de cada tipo) hay?", resp:"5×4×3=60"},
+        {enun:"¿Cuántos códigos de 2 letras (A-Z) seguidas de 2 dígitos (0-9) existen?", resp:"26×26×10×10=67,600"},
+        {enun:"Una tienda de zapatos tiene 6 estilos y cada uno en 4 colores. ¿Cuántas combinaciones estilo-color hay?", resp:"6×4=24"}
+      ]
+    },
+    {
+      titulo: "Permutaciones y combinaciones",
+      explicacion: "Una permutación es un arreglo donde el ORDEN importa: nPr = n!/(n−r)!. Una combinación es una selección donde el orden NO importa: nCr = n!/[r!(n−r)!]. Se usa permutación para 'organizar/ordenar' y combinación para 'elegir un grupo'.",
+      ejemplos: [
+        {ctx:"Orden de llegada en una carrera (permutación, el orden importa)", plan:"En una carrera de 8 corredores, ¿de cuántas formas distintas se pueden repartir los 3 primeros lugares (oro, plata, bronce)?", sol:"Es permutación porque el orden importa: 8P3 = 8!/(8−3)! = 8×7×6 = 336 formas distintas."},
+        {ctx:"Selección de un comité sin cargos específicos (combinación, orden no importa)", plan:"De un grupo de 10 personas, se debe elegir un comité de 3 personas (todas con el mismo rol, sin cargos). ¿Cuántos comités distintos son posibles?", sol:"Es combinación porque el orden no importa: 10C3 = 10!/(3!×7!) = (10×9×8)/(3×2×1) = 720/6 = 120 comités posibles."},
+        {ctx:"Contraseñas sin repetir dígitos (permutación)", plan:"¿Cuántas contraseñas de 4 dígitos distintos (sin repetir, del 0 al 9) se pueden formar?", sol:"10P4 = 10!/(10−4)! = 10×9×8×7 = 5,040 contraseñas distintas."},
+        {ctx:"Elección de sabores para una caja de donas (combinación)", plan:"Una pastelería tiene 6 sabores de dona y se debe elegir una caja con 4 sabores distintos (sin importar el orden en que se colocan). ¿Cuántas cajas distintas son posibles?", sol:"6C4 = 6!/(4!×2!) = (6×5)/(2×1) = 15 combinaciones posibles de caja."}
+      ],
+      practica: [
+        {enun:"¿De cuántas formas se pueden ordenar 5 libros distintos en un estante?", resp:"5!=120 (permutación de los 5 elementos)"},
+        {enun:"De un grupo de 7 amigos, ¿cuántos grupos de 2 se pueden formar para un juego (sin orden)?", resp:"7C2=21"},
+        {enun:"¿Cuántas formas hay de asignar el 1er y 2do lugar en un concurso entre 6 participantes?", resp:"6P2=6×5=30"}
+      ]
+    },
+    {
+      titulo: "Probabilidad clásica",
+      explicacion: "La probabilidad clásica de un evento se calcula como: P(evento) = (número de resultados favorables) / (número total de resultados posibles), asumiendo que todos los resultados son igual de probables. El resultado siempre está entre 0 y 1 (o entre 0% y 100%).",
+      ejemplos: [
+        {ctx:"Probabilidad de ganar un sorteo de rifa", plan:"Se venden 200 boletos de rifa y compras 5. ¿Cuál es la probabilidad de que ganes el premio?", sol:"P = 5/200 = 1/40 = 0.025 = 2.5% de probabilidad de ganar."},
+        {ctx:"Probabilidad de sacar una carta específica de una baraja", plan:"De una baraja estándar de 52 cartas, ¿cuál es la probabilidad de sacar un As?", sol:"Hay 4 ases en 52 cartas: P = 4/52 = 1/13 ≈ 7.69%."},
+        {ctx:"Probabilidad de que un producto defectuoso salga en un control de calidad", plan:"En un lote de 500 productos hay 15 defectuosos. Si se elige uno al azar para inspección, ¿cuál es la probabilidad de que sea defectuoso?", sol:"P = 15/500 = 0.03 = 3% de probabilidad."},
+        {ctx:"Probabilidad de acertar una pregunta de opción múltiple al adivinar", plan:"Una pregunta tiene 4 opciones y solo una es correcta. Si un estudiante adivina al azar, ¿cuál es la probabilidad de acertar?", sol:"P = 1/4 = 0.25 = 25% de probabilidad de acertar."}
+      ],
+      practica: [
+        {enun:"Se lanza un dado. ¿Cuál es la probabilidad de obtener un número par?", resp:"3/6=1/2=50%"},
+        {enun:"En una urna hay 8 bolas rojas y 12 azules. ¿Cuál es la probabilidad de sacar una roja al azar?", resp:"8/20=2/5=40%"},
+        {enun:"En una clase de 30 estudiantes, 18 son mujeres. ¿Cuál es la probabilidad de elegir al azar a un hombre?", resp:"12/30=2/5=40%"}
+      ]
+    }
+  ]
+};
+
+
+const UNIDADES = [UNIDAD_ARITMETICA, UNIDAD_ALGEBRA, UNIDAD_ECUACIONES, UNIDAD_FUNCIONES, UNIDAD_TRIGONOMETRIA, UNIDAD_PROBABILIDAD];
+
+const toc = document.getElementById('toc');
+const contenido = document.getElementById('contenido');
+
+UNIDADES.forEach((unidad, uIdx) => {
+  const uId = 'unidad-' + uIdx;
+
+  // TOC link
+  const a = document.createElement('a');
+  a.href = '#' + uId;
+  a.textContent = unidad.nombre;
+  a.style.borderColor = unidad.color + '55';
+  toc.appendChild(a);
+
+  // Unidad container
+  const uDiv = document.createElement('div');
+  uDiv.className = 'unidad';
+  uDiv.id = uId;
+
+  const uHeader = document.createElement('div');
+  uHeader.className = 'unidad-header';
+  uHeader.innerHTML = `
+    <span class="dot" style="background:${unidad.color}"></span>
+    <h2>${unidad.nombre}</h2>
+    <span class="count">${unidad.temas.length} temas</span>
+    <span class="chev">▶</span>
+  `;
+  uHeader.addEventListener('click', () => uDiv.classList.toggle('open'));
+  uDiv.appendChild(uHeader);
+
+  const uBody = document.createElement('div');
+  uBody.className = 'unidad-body';
+
+  unidad.temas.forEach((tema, tIdx) => {
+    const tDiv = document.createElement('div');
+    tDiv.className = 'tema';
+    tDiv.dataset.search = (tema.titulo + ' ' + tema.explicacion).toLowerCase();
+
+    const tHeader = document.createElement('div');
+    tHeader.className = 'tema-header';
+    tHeader.innerHTML = `
+      <span class="idx">${tIdx+1}.</span>
+      <h3>${tema.titulo}</h3>
+      <span class="chev">▶</span>
+    `;
+    tHeader.addEventListener('click', () => tDiv.classList.toggle('open'));
+    tDiv.appendChild(tHeader);
+
+    const tBody = document.createElement('div');
+    tBody.className = 'tema-body';
+
+    const exp = document.createElement('div');
+    exp.className = 'explicacion';
+    exp.textContent = tema.explicacion;
+    tBody.appendChild(exp);
+
+    const labelEj = document.createElement('div');
+    labelEj.className = 'sec-label';
+    labelEj.textContent = '🌍 Ejemplos en la vida real';
+    tBody.appendChild(labelEj);
+
+    tema.ejemplos.forEach((ej, i) => {
+      const eDiv = document.createElement('div');
+      eDiv.className = 'ejemplo';
+      eDiv.innerHTML = `
+        <span class="num">EJEMPLO ${i+1}</span>
+        <div class="ctx">${ej.ctx}</div>
+        <div class="plan">${ej.plan}</div>
+        <div class="sol"><b>Solución:</b> ${ej.sol}</div>
+      `;
+      tBody.appendChild(eDiv);
+    });
+
+    const labelPr = document.createElement('div');
+    labelPr.className = 'sec-label';
+    labelPr.textContent = '✏️ Para practicar';
+    tBody.appendChild(labelPr);
+
+    tema.practica.forEach((pr) => {
+      const pDiv = document.createElement('div');
+      pDiv.className = 'practica-item';
+      pDiv.innerHTML = `
+        <div class="enun">${pr.enun}</div>
+        <span class="toggle-resp">Mostrar respuesta ▾</span>
+        <div class="resp">${pr.resp}</div>
+      `;
+      const toggle = pDiv.querySelector('.toggle-resp');
+      toggle.addEventListener('click', () => {
+        pDiv.classList.toggle('show');
+        toggle.textContent = pDiv.classList.contains('show') ? 'Ocultar respuesta ▴' : 'Mostrar respuesta ▾';
+      });
+      tBody.appendChild(pDiv);
+    });
+
+    tDiv.appendChild(tBody);
+    uBody.appendChild(tDiv);
+  });
+
+  uDiv.appendChild(uBody);
+  contenido.appendChild(uDiv);
+});
+
+// Búsqueda
+document.getElementById('search').addEventListener('input', (e) => {
+  const q = e.target.value.toLowerCase().trim();
+  document.querySelectorAll('.tema').forEach(tDiv => {
+    const match = q === '' || tDiv.dataset.search.includes(q);
+    tDiv.classList.toggle('hidden-by-search', !match);
+    if (q !== '' && match) tDiv.classList.add('open');
+    if (q === '') tDiv.classList.remove('open');
+  });
+  document.querySelectorAll('.unidad').forEach(uDiv => {
+    const anyVisible = uDiv.querySelectorAll('.tema:not(.hidden-by-search)').length > 0;
+    uDiv.style.display = (q !== '' && !anyVisible) ? 'none' : '';
+    if (q !== '' && anyVisible) uDiv.classList.add('open');
+    if (q === '') uDiv.classList.remove('open');
+  });
+});
+
+document.getElementById('expandAll').addEventListener('click', () => {
+  document.querySelectorAll('.unidad').forEach(u => u.classList.add('open'));
+  document.querySelectorAll('.tema').forEach(t => t.classList.add('open'));
+});
+document.getElementById('collapseAll').addEventListener('click', () => {
+  document.querySelectorAll('.unidad').forEach(u => u.classList.remove('open'));
+  document.querySelectorAll('.tema').forEach(t => t.classList.remove('open'));
+});
+
+// Abrir la primera unidad por defecto
+document.querySelector('.unidad').classList.add('open');
+</script>
+</body>
+</html>
